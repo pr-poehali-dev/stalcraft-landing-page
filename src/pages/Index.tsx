@@ -7,6 +7,300 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
+  const [language, setLanguage] = useState<'ru' | 'en'>('ru');
+
+  const translations = {
+    ru: {
+      nav: {
+        home: 'Главная',
+        products: 'Продукты',
+        faq: 'FAQ',
+        contact: 'Контакты',
+        getIt: 'Получить'
+      },
+      hero: {
+        title1: 'Необнаружим.',
+        title2: 'Непревзойден. Неудержим.',
+        subtitle1: 'Мы предлагаем самые эффективные и необнаруживаемые читы,',
+        subtitle2: 'подкрепленные поддержкой 24/7 и непревзойденным набором функций.',
+        aboutBtn: 'О нас',
+        buyBtn: 'Купить сейчас'
+      },
+      whyChoose: {
+        title: 'Почему выбирают',
+        brand: 'EXOVISION',
+        fastUpdate: 'Быстрые обновления',
+        fastUpdateDesc: 'Мгновенные обновления после каждого патча игры',
+        undetected: 'Необнаружим',
+        undetectedDesc: '100% защита от античита с 2019 года',
+        support: '24/7 Поддержка',
+        supportDesc: 'Круглосуточная поддержка в Telegram и Discord',
+        customization: 'Полная кастомизация',
+        customizationDesc: 'Настраивай каждую функцию под себя',
+        fullDesc: 'Полное описание'
+      },
+      products: {
+        title: 'Наши продукты',
+        subtitle: 'Выберите подходящий пакет функций',
+        espVision: {
+          title: 'STALCRAFT EspVision',
+          status: '✅ Необнаружим',
+          desc: 'Базовый пакет с ESP функциями для отображения игроков и NPC',
+          features: [
+            'PlayerEsp - Игроки через стены',
+            'NpcEsp - NPC через стены',
+            'EspType - Edged, Filled, Line',
+            'Distance - Дистанция до цели',
+            'Tracers - Линии до игроков',
+            'CrossHair - Кастомный прицел',
+            'Clicker - Автокликер',
+            'Hud - Полезная информация',
+            'MaxRange - Макс. прогруз',
+            'AntiAnomaly - Удаление аномалий'
+          ]
+        },
+        artVision: {
+          title: 'STALCRAFT ArtVision',
+          status: '✅ Необнаружим',
+          desc: 'Специализированный пакет для поиска артефактов',
+          features: [
+            'ArtefactEsp - Артефакты через стены',
+            'CheckName - Название артефакта',
+            'EspType - Edged, Filled, Line',
+            'Distance - Дистанция до артефакта',
+            'Tracers - Линии до артефактов',
+            'CrossHair - Кастомный прицел',
+            'CrossHairType - Типы прицела',
+            'Hud - Полезная информация',
+            'ShowWaterMark - Watermark',
+            'Color Settings - Настройка цветов'
+          ]
+        },
+        privateVision: {
+          title: 'STALCRAFT PrivateVision',
+          status: '✅ Необнаружим • Премиум',
+          desc: 'Полный пакет - все функции EspVision + ArtVision + эксклюзив',
+          allFrom: 'Все из EspVision + ArtVision',
+          features: [
+            'CheckArmor - Броня врагов',
+            'CheckWeapons - Оружие врагов',
+            'BagsEsp - Сумки после смерти',
+            'TainikEsp - Схроны всех типов',
+            'BarterEsp - Бартеры, минералы',
+            'MobEsp - Все мутанты',
+            'MaxPnv - Админ ПНВ',
+            'AimBot - Авто-наводка',
+            '+ Полная кастомизация'
+          ]
+        }
+      },
+      pricing: {
+        title: 'Купить подписку',
+        subtitle: 'Управление через @KamiPanelbot',
+        panelTitle: 'Telegram Bot Panel',
+        panelDesc: 'Все подписки и платежи оформляются через нашего Telegram бота. Удобная панель управления, мгновенная активация, история покупок.',
+        openBtn: 'Открыть @KamiPanelbot'
+      },
+      faq: {
+        title: 'Частые Вопросы',
+        subtitle: 'Не рискуйте своими данными и временем — выбирайте наше',
+        subtitle2: 'гарантированно пользуйтесь о вашем успехе!',
+        notFoundBtn: 'Не нашли ответ? Перейдите на FAQ',
+        questions: [
+          {
+            q: 'Какие системные требования?',
+            a: 'Операционная система: Windows 8 (все версии) - Windows 11 (все версии). Требуется компьютер или ноутбук с монитором.'
+          },
+          {
+            q: 'Как купить и активировать подписку?',
+            a: 'Все покупки через @KamiPanelbot. После оплаты мгновенный доступ с инструкцией.'
+          },
+          {
+            q: 'В чем разница между продуктами?',
+            a: 'EspVision - базовый ESP. ArtVision - артефакты. PrivateVision - премиум со всем.'
+          }
+        ]
+      },
+      about: {
+        title: 'О проекте ExoVision',
+        historyTitle: 'История проекта',
+        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал бесплатные инструменты для STALCRAFT - базовые ESP и колор аимбот. Спрос превзошел ожидания, наши разработки даже перепродавались на других площадках.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
+        teamTitle: 'Наша команда',
+        admin: 'Администратор-Программист',
+        adminDesc: '@KripKripo1ek - Главный архитектор',
+        support: 'Техподдержка - Гл. менеджер',
+        supportDesc: '@BelyaGetSexBelka',
+        smm: 'SMM - Ютуберы',
+        smmDesc: '@ii_558zmi, @Mlecknul',
+        mods: 'Модерация чатов',
+        modsDesc: '@DrvSwapBuffers, @urchex',
+        helpers: 'Помощь проекту',
+        helpersDesc: '@rxznve, @hehehoue, @yaropolkkl, @Cnclv, @akurise'
+      },
+      contact: {
+        title: 'Наши ресурсы',
+        subtitle: 'Присоединяйтесь к сообществу ExoVision',
+        telegramNews: 'Telegram News',
+        telegramNewsDesc: 'Новости и обновления',
+        telegramChat: 'Telegram Chat',
+        telegramChatDesc: 'Общение с командой',
+        discord: 'Discord',
+        discordDesc: 'Сообщество игроков',
+        youtube: 'YouTube',
+        youtubeDesc: 'Гайды и обзоры'
+      },
+      footer: {
+        rights: '© 2019-2025 ExoVision Project. Все права защищены.',
+        panel: 'Управление подписками: @KamiPanelbot'
+      }
+    },
+    en: {
+      nav: {
+        home: 'Home',
+        products: 'Products',
+        faq: 'FAQ',
+        contact: 'Contact',
+        getIt: 'Get it'
+      },
+      hero: {
+        title1: 'Undetected.',
+        title2: 'Unrivaled. Unstoppable.',
+        subtitle1: 'We deliver the market\'s most effective and undetected cheats,',
+        subtitle2: 'backed by 24/7 support and an unbeatable feature set.',
+        aboutBtn: 'About Us',
+        buyBtn: 'Buy Now'
+      },
+      whyChoose: {
+        title: 'Why choose',
+        brand: 'EXOVISION',
+        fastUpdate: 'Fastest to update',
+        fastUpdateDesc: 'Instant updates after every game patch',
+        undetected: 'Undetected',
+        undetectedDesc: '100% anti-cheat protection since 2019',
+        support: '24/7 Support',
+        supportDesc: 'Round-the-clock support in Telegram and Discord',
+        customization: 'Full customization',
+        customizationDesc: 'Customize every feature to your liking',
+        fullDesc: 'Full description'
+      },
+      products: {
+        title: 'Our Products',
+        subtitle: 'Choose the right feature package',
+        espVision: {
+          title: 'STALCRAFT EspVision',
+          status: '✅ Undetected',
+          desc: 'Basic package with ESP features for displaying players and NPCs',
+          features: [
+            'PlayerEsp - See players through walls',
+            'NpcEsp - See NPCs through walls',
+            'EspType - Edged, Filled, Line',
+            'Distance - Distance to target',
+            'Tracers - Lines to players',
+            'CrossHair - Custom crosshair',
+            'Clicker - Auto clicker',
+            'Hud - Useful information',
+            'MaxRange - Max render distance',
+            'AntiAnomaly - Remove anomalies'
+          ]
+        },
+        artVision: {
+          title: 'STALCRAFT ArtVision',
+          status: '✅ Undetected',
+          desc: 'Specialized package for finding artifacts',
+          features: [
+            'ArtefactEsp - Artifacts through walls',
+            'CheckName - Artifact name',
+            'EspType - Edged, Filled, Line',
+            'Distance - Distance to artifact',
+            'Tracers - Lines to artifacts',
+            'CrossHair - Custom crosshair',
+            'CrossHairType - Crosshair types',
+            'Hud - Useful information',
+            'ShowWaterMark - Watermark',
+            'Color Settings - Color customization'
+          ]
+        },
+        privateVision: {
+          title: 'STALCRAFT PrivateVision',
+          status: '✅ Undetected • Premium',
+          desc: 'Full package - all EspVision + ArtVision features + exclusive',
+          allFrom: 'All from EspVision + ArtVision',
+          features: [
+            'CheckArmor - Enemy armor',
+            'CheckWeapons - Enemy weapons',
+            'BagsEsp - Death bags',
+            'TainikEsp - All types of stashes',
+            'BarterEsp - Barters, minerals',
+            'MobEsp - All mutants',
+            'MaxPnv - Admin NVG',
+            'AimBot - Auto aim',
+            '+ Full customization'
+          ]
+        }
+      },
+      pricing: {
+        title: 'Buy Subscription',
+        subtitle: 'Managed via @KamiPanelbot',
+        panelTitle: 'Telegram Bot Panel',
+        panelDesc: 'All subscriptions and payments are processed through our Telegram bot. Convenient control panel, instant activation, purchase history.',
+        openBtn: 'Open @KamiPanelbot'
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        subtitle: 'Don\'t risk your data and time — choose our',
+        subtitle2: 'guaranteed peace of mind for your success!',
+        notFoundBtn: 'Didn\'t find the answer? Go to FAQ',
+        questions: [
+          {
+            q: 'What are the system requirements?',
+            a: 'Operating System: Windows 8 (all versions) - Windows 11 (all versions). Computer or laptop with monitor required.'
+          },
+          {
+            q: 'How to buy and activate subscription?',
+            a: 'All purchases via @KamiPanelbot. Instant access with instructions after payment.'
+          },
+          {
+            q: 'What\'s the difference between products?',
+            a: 'EspVision - basic ESP. ArtVision - artifacts. PrivateVision - premium with everything.'
+          }
+        ]
+      },
+      about: {
+        title: 'About ExoVision Project',
+        historyTitle: 'Project History',
+        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create free tools for STALCRAFT - basic ESP and color aimbot. Demand exceeded expectations, our developments were even resold on other platforms.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
+        teamTitle: 'Our Team',
+        admin: 'Administrator-Programmer',
+        adminDesc: '@KripKripo1ek - Chief Architect',
+        support: 'Tech Support - Head Manager',
+        supportDesc: '@BelyaGetSexBelka',
+        smm: 'SMM - YouTubers',
+        smmDesc: '@ii_558zmi, @Mlecknul',
+        mods: 'Chat Moderation',
+        modsDesc: '@DrvSwapBuffers, @urchex',
+        helpers: 'Project Help',
+        helpersDesc: '@rxznve, @hehehoue, @yaropolkkl, @Cnclv, @akurise'
+      },
+      contact: {
+        title: 'Our Resources',
+        subtitle: 'Join the ExoVision community',
+        telegramNews: 'Telegram News',
+        telegramNewsDesc: 'News and updates',
+        telegramChat: 'Telegram Chat',
+        telegramChatDesc: 'Chat with team',
+        discord: 'Discord',
+        discordDesc: 'Player community',
+        youtube: 'YouTube',
+        youtubeDesc: 'Guides and reviews'
+      },
+      footer: {
+        rights: '© 2019-2025 ExoVision Project. All rights reserved.',
+        panel: 'Subscription management: @KamiPanelbot'
+      }
+    }
+  };
+
+  const t = translations[language];
 
   useEffect(() => {
     const createParticle = () => {
@@ -27,10 +321,10 @@ const Index = () => {
       }, 25000);
     };
 
-    const interval = setInterval(createParticle, 300);
+    const interval = setInterval(createParticle, 100);
     
-    for (let i = 0; i < 30; i++) {
-      setTimeout(createParticle, i * 100);
+    for (let i = 0; i < 80; i++) {
+      setTimeout(createParticle, i * 50);
     }
 
     return () => clearInterval(interval);
@@ -52,25 +346,36 @@ const Index = () => {
             <div className="hidden md:flex items-center gap-8">
               <a href="#home" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
                 <Icon name="Home" size={16} />
-                Home
+                {t.nav.home}
               </a>
               <a href="#products" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
                 <Icon name="Package" size={16} />
-                Products
+                {t.nav.products}
               </a>
               <a href="#faq" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
                 <Icon name="HelpCircle" size={16} />
-                Faq
+                {t.nav.faq}
               </a>
               <a href="#contact" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
                 <Icon name="MessageCircle" size={16} />
-                Contact
+                {t.nav.contact}
               </a>
             </div>
-            <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-lg px-6">
-              <Icon name="ShoppingCart" className="mr-2" size={16} />
-              Get it
-            </Button>
+            <div className="flex items-center gap-3">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => setLanguage(language === 'ru' ? 'en' : 'ru')}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="Languages" className="mr-2" size={16} />
+                {language === 'ru' ? 'EN' : 'RU'}
+              </Button>
+              <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-lg px-6">
+                <Icon name="ShoppingCart" className="mr-2" size={16} />
+                {t.nav.getIt}
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
@@ -80,24 +385,24 @@ const Index = () => {
         <div className="container mx-auto text-center animate-fade-in relative z-10">
           <div className="inline-block mb-6">
             <h2 className="text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              Undetected.<br/>Unrivaled. Unstoppable.
+              {t.hero.title1}<br/>{t.hero.title2}
             </h2>
             <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse-glow"></div>
           </div>
           <p className="text-xl md:text-2xl text-foreground/60 mb-4 font-light">
-            We deliver the market's most effective and undetected cheats,
+            {t.hero.subtitle1}
           </p>
           <p className="text-xl md:text-2xl text-foreground/60 mb-10 font-light">
-            backed by 24/7 support and an unbeatable feature set.
+            {t.hero.subtitle2}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-10 py-6 rounded-lg font-semibold border-0">
               <Icon name="Info" className="mr-2" size={20} />
-              About Us
+              {t.hero.aboutBtn}
             </Button>
             <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-10 py-6 rounded-lg font-semibold border-0">
               <Icon name="ShoppingCart" className="mr-2" size={20} />
-              Buy Now
+              {t.hero.buyBtn}
             </Button>
           </div>
         </div>
@@ -106,8 +411,8 @@ const Index = () => {
       <section className="py-20 px-6 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <p className="text-sm text-primary mb-2 tracking-widest uppercase">Why choose</p>
-            <h3 className="text-4xl font-bold mb-4">EXOVISION</h3>
+            <p className="text-sm text-primary mb-2 tracking-widest uppercase">{t.whyChoose.title}</p>
+            <h3 className="text-4xl font-bold mb-4">{t.whyChoose.brand}</h3>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -117,10 +422,10 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Zap" className="text-primary" size={32} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">Fastest to update</h4>
-                <p className="text-sm text-muted-foreground mb-4">Мгновенные обновления после каждого патча игры</p>
+                <h4 className="text-xl font-bold mb-3">{t.whyChoose.fastUpdate}</h4>
+                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.fastUpdateDesc}</p>
                 <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  Full description <Icon name="ArrowRight" size={14} />
+                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
                 </a>
               </Card>
             </div>
@@ -131,10 +436,10 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="ShieldCheck" className="text-secondary" size={32} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">Undetected</h4>
-                <p className="text-sm text-muted-foreground mb-4">100% защита от античита с 2019 года</p>
+                <h4 className="text-xl font-bold mb-3">{t.whyChoose.undetected}</h4>
+                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.undetectedDesc}</p>
                 <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  Full description <Icon name="ArrowRight" size={14} />
+                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
                 </a>
               </Card>
             </div>
@@ -145,10 +450,10 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Users" className="text-primary" size={32} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">24/7 Support</h4>
-                <p className="text-sm text-muted-foreground mb-4">Круглосуточная поддержка в Telegram и Discord</p>
+                <h4 className="text-xl font-bold mb-3">{t.whyChoose.support}</h4>
+                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.supportDesc}</p>
                 <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  Full description <Icon name="ArrowRight" size={14} />
+                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
                 </a>
               </Card>
             </div>
@@ -159,10 +464,10 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Settings" className="text-secondary" size={32} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">Full customization</h4>
-                <p className="text-sm text-muted-foreground mb-4">Настраивай каждую функцию под себя</p>
+                <h4 className="text-xl font-bold mb-3">{t.whyChoose.customization}</h4>
+                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.customizationDesc}</p>
                 <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  Full description <Icon name="ArrowRight" size={14} />
+                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
                 </a>
               </Card>
             </div>
@@ -173,8 +478,8 @@ const Index = () => {
       <section id="products" className="py-20 px-6 bg-black/30 relative">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h3 className="text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Наши продукты</h3>
-            <p className="text-muted-foreground text-lg">Выберите подходящий пакет функций</p>
+            <h3 className="text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h3>
+            <p className="text-muted-foreground text-lg">{t.products.subtitle}</p>
           </div>
 
           <Tabs defaultValue="espvision" className="w-full" onValueChange={setSelectedProduct}>
@@ -200,56 +505,18 @@ const Index = () => {
                     <Icon name="Eye" className="text-primary" size={48} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-3xl font-bold mb-2">STALCRAFT EspVision</h4>
-                    <p className="text-xl text-primary mb-4">✅ Undetected</p>
-                    <p className="text-muted-foreground">Базовый пакет с ESP функциями для отображения игроков и NPC</p>
+                    <h4 className="text-3xl font-bold mb-2">{t.products.espVision.title}</h4>
+                    <p className="text-xl text-primary mb-4">{t.products.espVision.status}</p>
+                    <p className="text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
+                  {t.products.espVision.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
                       <Icon name="Check" className="text-primary" size={20} />
-                      <span>PlayerEsp - Игроки через стены</span>
+                      <span>{feature}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>NpcEsp - NPC через стены</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>EspType - Edged, Filled, Line</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Distance - Дистанция до цели</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Tracers - Линии до игроков</span>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>CrossHair - Кастомный прицел</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Clicker - Автокликер</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Hud - Полезная информация</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>MaxRange - Макс. прогруз</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>AntiAnomaly - Удаление аномалий</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </Card>
             </TabsContent>
@@ -261,56 +528,18 @@ const Index = () => {
                     <Icon name="Gem" className="text-primary" size={48} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-3xl font-bold mb-2">STALCRAFT ArtVision</h4>
-                    <p className="text-xl text-primary mb-4">✅ Undetected</p>
-                    <p className="text-muted-foreground">Специализированный пакет для поиска артефактов</p>
+                    <h4 className="text-3xl font-bold mb-2">{t.products.artVision.title}</h4>
+                    <p className="text-xl text-primary mb-4">{t.products.artVision.status}</p>
+                    <p className="text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
+                  {t.products.artVision.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
                       <Icon name="Check" className="text-primary" size={20} />
-                      <span>ArtefactEsp - Артефакты через стены</span>
+                      <span>{feature}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>CheckName - Название артефакта</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>EspType - Edged, Filled, Line</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Distance - Дистанция до артефакта</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Tracers - Линии до артефактов</span>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>CrossHair - Кастомный прицел</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>CrossHairType - Типы прицела</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Hud - Полезная информация</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>ShowWaterMark - Watermark</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>Color Settings - Настройка цветов</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </Card>
             </TabsContent>
@@ -322,56 +551,38 @@ const Index = () => {
                     <Icon name="Crown" className="text-secondary" size={48} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-3xl font-bold mb-2">STALCRAFT PrivateVision</h4>
-                    <p className="text-xl text-secondary mb-4">✅ Undetected • Premium</p>
-                    <p className="text-muted-foreground">Полный пакет - все функции EspVision + ArtVision + эксклюзив</p>
+                    <h4 className="text-3xl font-bold mb-2">{t.products.privateVision.title}</h4>
+                    <p className="text-xl text-secondary mb-4">{t.products.privateVision.status}</p>
+                    <p className="text-muted-foreground">{t.products.privateVision.desc}</p>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-secondary mb-2">Все из EspVision + ArtVision</p>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>CheckArmor - Броня врагов</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>CheckWeapons - Оружие врагов</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>BagsEsp - Сумки после смерти</span>
-                    </div>
+                    <p className="text-sm font-semibold text-secondary mb-2">{t.products.privateVision.allFrom}</p>
+                    {t.products.privateVision.features.slice(0, 3).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <Icon name="Check" className="text-secondary" size={20} />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
                   </div>
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-secondary mb-2 opacity-0">.</p>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>TainikEsp - Схроны всех типов</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>BarterEsp - Бартеры, минералы</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>MobEsp - Все мутанты</span>
-                    </div>
+                    {t.products.privateVision.features.slice(3, 6).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <Icon name="Check" className="text-secondary" size={20} />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
                   </div>
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-secondary mb-2 opacity-0">.</p>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>MaxPnv - Админ ПНВ</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>AimBot - Авто-наводка</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Check" className="text-secondary" size={20} />
-                      <span>+ Полная кастомизация</span>
-                    </div>
+                    {t.products.privateVision.features.slice(6).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <Icon name="Check" className="text-secondary" size={20} />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Card>
@@ -382,19 +593,18 @@ const Index = () => {
 
       <section id="pricing" className="py-20 px-6 relative">
         <div className="container mx-auto">
-          <h3 className="text-4xl font-bold text-center mb-4 text-neon">Купить подписку</h3>
-          <p className="text-center text-muted-foreground mb-12">Управление через @KamiPanelbot</p>
+          <h3 className="text-4xl font-bold text-center mb-4 text-neon">{t.pricing.title}</h3>
+          <p className="text-center text-muted-foreground mb-12">{t.pricing.subtitle}</p>
           <div className="max-w-5xl mx-auto text-center">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-12 rounded-2xl">
               <Icon name="Bot" className="text-primary mx-auto mb-6" size={64} />
-              <h4 className="text-2xl font-bold mb-4">Telegram Bot Panel</h4>
+              <h4 className="text-2xl font-bold mb-4">{t.pricing.panelTitle}</h4>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Все подписки и платежи оформляются через нашего Telegram бота. 
-                Удобная панель управления, мгновенная активация, история покупок.
+                {t.pricing.panelDesc}
               </p>
               <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-12 py-6 border-0">
                 <Icon name="ExternalLink" className="mr-2" size={20} />
-                Открыть @KamiPanelbot
+                {t.pricing.openBtn}
               </Button>
             </Card>
           </div>
@@ -402,85 +612,60 @@ const Index = () => {
       </section>
 
       <section id="faq" className="py-20 px-6 bg-black/30 relative">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-primary text-sm mb-2 tracking-widest uppercase">Частые Вопросы</p>
+            <p className="text-primary text-sm mb-2 tracking-widest uppercase">{t.faq.title}</p>
             <h3 className="text-4xl font-bold mb-4">
-              Не рискуйте своими данными и временем — выбирайте наше <br/>
-              <span className="text-primary">гарантированно пользуйтесь о вашем успехе!</span>
+              {t.faq.subtitle} <br/>
+              <span className="text-primary">{t.faq.subtitle2}</span>
             </h3>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="item-1" className="border border-primary/20 bg-card/40 backdrop-blur-sm px-6 rounded-xl">
-                  <AccordionTrigger className="text-left font-semibold hover:text-primary py-4">
-                    How Can I get in Touch With Support After Bought The Product
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4">
-                    Операционная система: Windows 8 (все версии) - Windows 11 (все версии). 
-                    Требуется компьютер или ноутбук с монитором.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-2" className="border border-primary/20 bg-card/40 backdrop-blur-sm px-6 rounded-xl">
-                  <AccordionTrigger className="text-left font-semibold hover:text-primary py-4">
-                    How Can I get in Touch With Support After Bought The Product
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4">
-                    Все покупки через @KamiPanelbot. После оплаты мгновенный доступ с инструкцией.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-3" className="border border-primary/20 bg-card/40 backdrop-blur-sm px-6 rounded-xl">
-                  <AccordionTrigger className="text-left font-semibold hover:text-primary py-4">
-                    How Can I get in Touch With Support After Bought The Product
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4">
-                    EspVision - базовый ESP. ArtVision - артефакты. PrivateVision - премиум со всем.
-                  </AccordionContent>
-                </AccordionItem>
+                {t.faq.questions.map((item, idx) => (
+                  <AccordionItem key={idx} value={`item-${idx}`} className="border border-primary/20 bg-card/40 backdrop-blur-sm px-6 rounded-xl">
+                    <AccordionTrigger className="text-left font-semibold hover:text-primary py-4">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-4">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
               </Accordion>
+              <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-xl py-6">
+                {t.faq.notFoundBtn}
+              </Button>
             </div>
 
-            <div className="relative hidden md:flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
-              <div className="relative w-full h-full min-h-[400px] rounded-3xl overflow-hidden">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl blur-3xl"></div>
+              <div className="relative w-full h-full min-h-[500px] rounded-3xl overflow-hidden border border-primary/20">
                 <img 
-                  src="https://cdn.poehali.dev/files/50763a7e-8335-46a8-b2ad-78327704a110.png" 
-                  alt="Support" 
-                  className="w-full h-full object-cover opacity-80"
+                  src="https://cdn.poehali.dev/files/4d9ec427-7885-4b16-919e-b640def4e82c.png" 
+                  alt="STALCRAFT Character" 
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 px-8 py-6 border-0 rounded-xl">
-              Не нашли ответ? Перейдите на Faq
-            </Button>
           </div>
         </div>
       </section>
 
       <section id="about" className="py-20 px-6 relative">
         <div className="container mx-auto max-w-6xl">
-          <h3 className="text-4xl font-bold text-center mb-12 text-neon">О проекте ExoVision</h3>
+          <h3 className="text-4xl font-bold text-center mb-12 text-neon">{t.about.title}</h3>
           
           <div className="space-y-8">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-8 rounded-2xl">
               <div className="flex items-start gap-4 mb-4">
                 <Icon name="History" className="text-primary" size={32} />
                 <div>
-                  <h4 className="text-2xl font-bold mb-3">История проекта</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Всё началось в <span className="text-primary font-semibold">2019 году</span> с идеи KamiProject. 
-                    Мы были одними из первых, кто создал бесплатные инструменты для STALCRAFT - базовые ESP и колор аимбот. 
-                    Спрос превзошел ожидания, наши разработки даже перепродавались на других площадках.
-                    <br/><br/>
-                    В <span className="text-secondary font-semibold">2024 году</span> произошел момент X - полное обновление концепции и дизайна проекта.
-                    С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.
+                  <h4 className="text-2xl font-bold mb-3">{t.about.historyTitle}</h4>
+                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                    {t.about.historyText}
                   </p>
                 </div>
               </div>
@@ -489,29 +674,29 @@ const Index = () => {
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-8 rounded-2xl">
               <div className="flex items-start gap-4 mb-6">
                 <Icon name="Users" className="text-secondary" size={32} />
-                <h4 className="text-2xl font-bold">Наша команда</h4>
+                <h4 className="text-2xl font-bold">{t.about.teamTitle}</h4>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <Icon name="Crown" className="text-primary mt-1" size={20} />
                     <div>
-                      <p className="font-semibold">Администратор-Программист</p>
-                      <p className="text-sm text-muted-foreground">@KripKripo1ek - Главный архитектор</p>
+                      <p className="font-semibold">{t.about.admin}</p>
+                      <p className="text-sm text-muted-foreground">{t.about.adminDesc}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Icon name="Wrench" className="text-primary mt-1" size={20} />
                     <div>
-                      <p className="font-semibold">Техподдержка - Гл. менеджер</p>
-                      <p className="text-sm text-muted-foreground">@BelyaGetSexBelka</p>
+                      <p className="font-semibold">{t.about.support}</p>
+                      <p className="text-sm text-muted-foreground">{t.about.supportDesc}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Icon name="Video" className="text-primary mt-1" size={20} />
                     <div>
-                      <p className="font-semibold">SMM - Ютуберы</p>
-                      <p className="text-sm text-muted-foreground">@ii_558zmi, @Mlecknul</p>
+                      <p className="font-semibold">{t.about.smm}</p>
+                      <p className="text-sm text-muted-foreground">{t.about.smmDesc}</p>
                     </div>
                   </div>
                 </div>
@@ -519,15 +704,15 @@ const Index = () => {
                   <div className="flex items-start gap-3">
                     <Icon name="Shield" className="text-primary mt-1" size={20} />
                     <div>
-                      <p className="font-semibold">Модерация чатов</p>
-                      <p className="text-sm text-muted-foreground">@DrvSwapBuffers, @urchex</p>
+                      <p className="font-semibold">{t.about.mods}</p>
+                      <p className="text-sm text-muted-foreground">{t.about.modsDesc}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Icon name="Heart" className="text-secondary mt-1" size={20} />
                     <div>
-                      <p className="font-semibold">Помощь проекту</p>
-                      <p className="text-sm text-muted-foreground">@rxznve, @hehehoue, @yaropolkkl, @Cnclv, @akurise</p>
+                      <p className="font-semibold">{t.about.helpers}</p>
+                      <p className="text-sm text-muted-foreground">{t.about.helpersDesc}</p>
                     </div>
                   </div>
                 </div>
@@ -539,28 +724,28 @@ const Index = () => {
 
       <section id="contact" className="py-20 px-6 bg-black/30 relative">
         <div className="container mx-auto text-center">
-          <h3 className="text-4xl font-bold mb-8 text-neon">Наши ресурсы</h3>
-          <p className="text-xl text-muted-foreground mb-12">Присоединяйтесь к сообществу ExoVision</p>
+          <h3 className="text-4xl font-bold mb-8 text-neon">{t.contact.title}</h3>
+          <p className="text-xl text-muted-foreground mb-12">{t.contact.subtitle}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <a href="https://t.me/Kripme4nik" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
               <Icon name="Newspaper" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">Telegram News</h4>
-              <p className="text-sm text-muted-foreground">Новости и обновления</p>
+              <h4 className="font-bold mb-2">{t.contact.telegramNews}</h4>
+              <p className="text-sm text-muted-foreground">{t.contact.telegramNewsDesc}</p>
             </a>
             <a href="https://t.me/+xNvCqrGN6uNhMTdi" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
               <Icon name="MessageCircle" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">Telegram Chat</h4>
-              <p className="text-sm text-muted-foreground">Общение с командой</p>
+              <h4 className="font-bold mb-2">{t.contact.telegramChat}</h4>
+              <p className="text-sm text-muted-foreground">{t.contact.telegramChatDesc}</p>
             </a>
             <a href="https://discord.gg/6JuG3e484Y" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
               <Icon name="Gamepad2" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">Discord</h4>
-              <p className="text-sm text-muted-foreground">Сообщество игроков</p>
+              <h4 className="font-bold mb-2">{t.contact.discord}</h4>
+              <p className="text-sm text-muted-foreground">{t.contact.discordDesc}</p>
             </a>
             <a href="https://www.youtube.com/@EXOMAINMEDIA" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
               <Icon name="Youtube" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">YouTube</h4>
-              <p className="text-sm text-muted-foreground">Гайды и обзоры</p>
+              <h4 className="font-bold mb-2">{t.contact.youtube}</h4>
+              <p className="text-sm text-muted-foreground">{t.contact.youtubeDesc}</p>
             </a>
           </div>
         </div>
@@ -568,8 +753,8 @@ const Index = () => {
 
       <footer className="py-8 px-6 border-t border-primary/20 relative">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p className="mb-2">© 2019-2025 ExoVision Project. Все права защищены.</p>
-          <p className="text-sm">Управление подписками: @KamiPanelbot</p>
+          <p className="mb-2">{t.footer.rights}</p>
+          <p className="text-sm">{t.footer.panel}</p>
         </div>
       </footer>
     </div>
