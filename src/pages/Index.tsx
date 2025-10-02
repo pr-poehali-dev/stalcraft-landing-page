@@ -370,9 +370,12 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 py-3">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Icon name="Crosshair" className="text-white" size={20} />
-              </div>
+              <img 
+                src="/logo.svg" 
+                alt="ExoVision Logo" 
+                className="w-8 h-8 sm:w-10 sm:h-10" 
+                style={{ filter: 'drop-shadow(0 0 8px rgba(255, 20, 147, 0.6))' }}
+              />
               <h1 className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision Stalcraft</h1>
             </div>
             <div className="hidden md:flex items-center gap-8">

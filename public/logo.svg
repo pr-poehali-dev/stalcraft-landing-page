@@ -1,0 +1,36 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#glow)">
+    <!-- Outer circle -->
+    <circle cx="64" cy="30" r="24" stroke="#FF1493" stroke-width="4" fill="none"/>
+    
+    <!-- Left circle -->
+    <circle cx="38" cy="68" r="28" stroke="#FF1493" stroke-width="4" fill="none"/>
+    
+    <!-- Right circle -->
+    <circle cx="90" cy="68" r="28" stroke="#FF1493" stroke-width="4" fill="none"/>
+    
+    <!-- Inner left small -->
+    <circle cx="44" cy="58" r="14" stroke="#FF1493" stroke-width="3.5" fill="none"/>
+    
+    <!-- Inner right small -->
+    <circle cx="84" cy="58" r="14" stroke="#FF1493" stroke-width="3.5" fill="none"/>
+    
+    <!-- Center ornament -->
+    <path d="M 64 45 L 58 65 L 70 65 Z" stroke="#FF1493" stroke-width="3" fill="none"/>
+    <path d="M 50 75 Q 64 85 78 75" stroke="#FF1493" stroke-width="3.5" fill="none"/>
+    
+    <!-- Decorative arcs -->
+    <path d="M 30 85 Q 35 95 45 98" stroke="#FF1493" stroke-width="3" fill="none"/>
+    <path d="M 98 85 Q 93 95 83 98" stroke="#FF1493" stroke-width="3" fill="none"/>
+  </g>
+  
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
