@@ -366,13 +366,13 @@ const Index = () => {
       <div id="particles-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
       
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-primary/20">
-        <div className="container mx-auto px-6 py-3">
+        <div className="container mx-auto px-4 sm:px-6 py-3">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Icon name="Shield" className="text-white" size={24} />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <Icon name="Shield" className="text-white" size={20} />
               </div>
-              <h1 className="text-2xl font-bold text-neon tracking-wider">ExoVision</h1>
+              <h1 className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision</h1>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
@@ -392,214 +392,199 @@ const Index = () => {
                 {t.nav.contact}
               </a>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Button 
                 variant="outline" 
                 size="sm" 
                 onClick={() => setLanguage(language === 'ru' ? 'en' : 'ru')}
-                className="border-primary/20 hover:bg-primary/10"
+                className="border-primary/20 hover:bg-primary/10 px-2 sm:px-3"
               >
-                <Icon name="Languages" className="mr-2" size={16} />
-                {language === 'ru' ? 'EN' : 'RU'}
+                <Icon name="Languages" className="sm:mr-2" size={16} />
+                <span className="hidden sm:inline">{language === 'ru' ? 'EN' : 'RU'}</span>
               </Button>
-              <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-lg px-6">
-                <Icon name="ShoppingCart" className="mr-2" size={16} />
-                {t.nav.getIt}
+              <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-lg px-3 sm:px-6 text-xs sm:text-sm">
+                <Icon name="ShoppingCart" className="sm:mr-2" size={16} />
+                <span className="hidden sm:inline">{t.nav.getIt}</span>
               </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      <section id="home" className="pt-32 pb-20 px-6 relative overflow-hidden">
+      <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhCNUNGNiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
         <div className="container mx-auto text-center animate-fade-in relative z-10">
           <div className="inline-block mb-6">
-            <h2 className="text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
               {t.hero.title1}<br/>{t.hero.title2}
             </h2>
             <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse-glow"></div>
           </div>
-          <p className="text-xl md:text-2xl text-foreground/60 mb-4 font-light">
+          <p className="text-base sm:text-xl md:text-2xl text-foreground/60 mb-3 sm:mb-4 font-light px-4">
             {t.hero.subtitle1}
           </p>
-          <p className="text-xl md:text-2xl text-foreground/60 mb-10 font-light">
+          <p className="text-base sm:text-xl md:text-2xl text-foreground/60 mb-8 sm:mb-10 font-light px-4">
             {t.hero.subtitle2}
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-10 py-6 rounded-lg font-semibold border-0">
-              <Icon name="Info" className="mr-2" size={20} />
+          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-lg font-semibold border-0">
+              <Icon name="Info" className="mr-2" size={18} />
               {t.hero.aboutBtn}
             </Button>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-10 py-6 rounded-lg font-semibold border-0">
-              <Icon name="ShoppingCart" className="mr-2" size={20} />
+            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-lg font-semibold border-0">
+              <Icon name="ShoppingCart" className="mr-2" size={18} />
               {t.hero.buyBtn}
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-6 relative">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <p className="text-sm text-primary mb-2 tracking-widest uppercase">{t.whyChoose.title}</p>
-            <h3 className="text-4xl font-bold mb-4">{t.whyChoose.brand}</h3>
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">{t.whyChoose.title}</p>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-4">{t.whyChoose.brand}</h3>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse"></div>
-              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name="Zap" className="text-primary" size={32} />
+              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 sm:p-8 rounded-2xl hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Zap" className="text-primary" size={28} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">{t.whyChoose.fastUpdate}</h4>
-                <p className="text-sm text-muted-foreground">{t.whyChoose.fastUpdateDesc}</p>
+                <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{t.whyChoose.fastUpdate}</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">{t.whyChoose.fastUpdateDesc}</p>
               </Card>
             </div>
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse" style={{animationDelay: '0.5s'}}></div>
-              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name="ShieldCheck" className="text-secondary" size={32} />
+              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 sm:p-8 rounded-2xl hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="ShieldCheck" className="text-secondary" size={28} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">{t.whyChoose.undetected}</h4>
-                <p className="text-sm text-muted-foreground">{t.whyChoose.undetectedDesc}</p>
+                <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{t.whyChoose.undetected}</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">{t.whyChoose.undetectedDesc}</p>
               </Card>
             </div>
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse" style={{animationDelay: '1s'}}></div>
-              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name="Users" className="text-primary" size={32} />
+              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 sm:p-8 rounded-2xl hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Users" className="text-primary" size={28} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">{t.whyChoose.support}</h4>
-                <p className="text-sm text-muted-foreground">{t.whyChoose.supportDesc}</p>
+                <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{t.whyChoose.support}</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">{t.whyChoose.supportDesc}</p>
               </Card>
             </div>
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse" style={{animationDelay: '1.5s'}}></div>
-              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name="Settings" className="text-secondary" size={32} />
+              <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 sm:p-8 rounded-2xl hover:border-primary/40 transition-all">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Settings" className="text-secondary" size={28} />
                 </div>
-                <h4 className="text-xl font-bold mb-3">{t.whyChoose.customization}</h4>
-                <p className="text-sm text-muted-foreground">{t.whyChoose.customizationDesc}</p>
+                <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{t.whyChoose.customization}</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">{t.whyChoose.customizationDesc}</p>
               </Card>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="products" className="py-20 px-6 bg-black/30 relative">
+      <section id="products" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h3 className="text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h3>
-            <p className="text-muted-foreground text-lg">{t.products.subtitle}</p>
+          <div className="text-center mb-12 sm:mb-16">
+            <h3 className="text-3xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h3>
+            <p className="text-muted-foreground text-sm sm:text-lg">{t.products.subtitle}</p>
           </div>
 
           <Tabs defaultValue="espvision" className="w-full" onValueChange={setSelectedProduct}>
-            <TabsList className="grid w-full grid-cols-3 mb-12 bg-card/50 border border-primary/20 p-2 rounded-xl">
-              <TabsTrigger value="espvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg">
-                <Icon name="Eye" className="mr-2" size={18} />
-                EspVision
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-card/50 border border-primary/20 p-2 rounded-xl max-w-2xl mx-auto">
+              <TabsTrigger value="espvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2 sm:py-3">
+                <Icon name="Eye" className="mr-1 sm:mr-2" size={16} />
+                <span className="hidden sm:inline">EspVision</span>
+                <span className="sm:hidden">Esp</span>
               </TabsTrigger>
-              <TabsTrigger value="artvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg">
-                <Icon name="Gem" className="mr-2" size={18} />
-                ArtVision
+              <TabsTrigger value="artvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2 sm:py-3">
+                <Icon name="Gem" className="mr-1 sm:mr-2" size={16} />
+                <span className="hidden sm:inline">ArtVision</span>
+                <span className="sm:hidden">Art</span>
               </TabsTrigger>
-              <TabsTrigger value="privatevision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg">
-                <Icon name="Crown" className="mr-2" size={18} />
-                PrivateVision
+              <TabsTrigger value="privatevision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2 sm:py-3">
+                <Icon name="Crown" className="mr-1 sm:mr-2" size={16} />
+                <span className="hidden sm:inline">PrivateVision</span>
+                <span className="sm:hidden">Private</span>
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="espvision" className="animate-fade-in">
-              <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-8 rounded-2xl">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
-                    <Icon name="Eye" className="text-primary" size={48} />
+            <TabsContent value="espvision" className="animate-fade-in mt-0">
+              <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+                  <div className="p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
+                    <Icon name="Eye" className="text-primary" size={40} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-3xl font-bold mb-2">{t.products.espVision.title}</h4>
-                    <p className="text-xl text-primary mb-4">{t.products.espVision.status}</p>
-                    <p className="text-muted-foreground">{t.products.espVision.desc}</p>
+                    <h4 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.espVision.title}</h4>
+                    <p className="text-lg sm:text-xl text-primary mb-4">{t.products.espVision.status}</p>
+                    <p className="text-sm sm:text-base text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   {t.products.espVision.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>{feature}</span>
+                    <div key={idx} className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span className="text-sm sm:text-base">{feature}</span>
                     </div>
                   ))}
                 </div>
               </Card>
             </TabsContent>
 
-            <TabsContent value="artvision" className="animate-fade-in">
-              <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-8 rounded-2xl">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
-                    <Icon name="Gem" className="text-primary" size={48} />
+            <TabsContent value="artvision" className="animate-fade-in mt-0">
+              <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+                  <div className="p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
+                    <Icon name="Gem" className="text-primary" size={40} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-3xl font-bold mb-2">{t.products.artVision.title}</h4>
-                    <p className="text-xl text-primary mb-4">{t.products.artVision.status}</p>
-                    <p className="text-muted-foreground">{t.products.artVision.desc}</p>
+                    <h4 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.artVision.title}</h4>
+                    <p className="text-lg sm:text-xl text-primary mb-4">{t.products.artVision.status}</p>
+                    <p className="text-sm sm:text-base text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   {t.products.artVision.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <Icon name="Check" className="text-primary" size={20} />
-                      <span>{feature}</span>
+                    <div key={idx} className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span className="text-sm sm:text-base">{feature}</span>
                     </div>
                   ))}
                 </div>
               </Card>
             </TabsContent>
 
-            <TabsContent value="privatevision" className="animate-fade-in">
-              <Card className="border border-secondary/40 bg-gradient-to-br from-card/80 to-secondary/10 backdrop-blur-sm p-8 rounded-2xl">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="p-4 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent">
-                    <Icon name="Crown" className="text-secondary" size={48} />
+            <TabsContent value="privatevision" className="animate-fade-in mt-0">
+              <Card className="border border-secondary/40 bg-gradient-to-br from-card/80 to-secondary/10 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+                  <div className="p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent">
+                    <Icon name="Crown" className="text-secondary" size={40} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-3xl font-bold mb-2">{t.products.privateVision.title}</h4>
-                    <p className="text-xl text-secondary mb-4">{t.products.privateVision.status}</p>
-                    <p className="text-muted-foreground">{t.products.privateVision.desc}</p>
+                    <h4 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.privateVision.title}</h4>
+                    <p className="text-lg sm:text-xl text-secondary mb-4">{t.products.privateVision.status}</p>
+                    <p className="text-sm sm:text-base text-muted-foreground">{t.products.privateVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-secondary mb-2">{t.products.privateVision.allFrom}</p>
-                    {t.products.privateVision.features.slice(0, 3).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <Icon name="Check" className="text-secondary" size={20} />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-secondary mb-2 opacity-0">.</p>
-                    {t.products.privateVision.features.slice(3, 6).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <Icon name="Check" className="text-secondary" size={20} />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-secondary mb-2 opacity-0">.</p>
-                    {t.products.privateVision.features.slice(6).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <Icon name="Check" className="text-secondary" size={20} />
-                        <span>{feature}</span>
+                <div className="space-y-4">
+                  <p className="text-sm font-semibold text-secondary">{t.products.privateVision.allFrom}</p>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {t.products.privateVision.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <Icon name="Check" className="text-secondary flex-shrink-0 mt-0.5" size={18} />
+                        <span className="text-sm sm:text-base">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -610,12 +595,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 px-6 relative">
+      <section id="pricing" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto">
-          <h3 className="text-4xl font-bold text-center mb-4 text-neon">{t.pricing.title}</h3>
-          <p className="text-center text-muted-foreground mb-12">{t.pricing.subtitle}</p>
+          <h3 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-neon">{t.pricing.title}</h3>
+          <p className="text-center text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12">{t.pricing.subtitle}</p>
           <div className="max-w-5xl mx-auto text-center">
-            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-12 rounded-2xl">
+            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-12 rounded-2xl">
               <Icon name="Bot" className="text-primary mx-auto mb-6" size={64} />
               <h4 className="text-2xl font-bold mb-4">{t.pricing.panelTitle}</h4>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -630,17 +615,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="faq" className="py-20 px-6 bg-black/30 relative">
+      <section id="faq" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
         <div className="container mx-auto max-w-6xl">
-          <div className="mb-16">
-            <p className="text-primary text-sm mb-2 tracking-widest uppercase">{t.faq.title}</p>
-            <h3 className="text-4xl font-bold mb-4">
+          <div className="mb-12 sm:mb-16">
+            <p className="text-primary text-xs sm:text-sm mb-2 tracking-widest uppercase">{t.faq.title}</p>
+            <h3 className="text-2xl sm:text-4xl font-bold mb-4">
               {t.faq.subtitle} <br/>
               <span className="text-primary">{t.faq.subtitle2}</span>
             </h3>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <div className="space-y-4">
               <Accordion type="single" collapsible className="space-y-4">
                 {t.faq.questions.map((item, idx) => (
@@ -654,8 +639,13 @@ const Index = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-              <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-xl py-6">
-                {t.faq.notFoundBtn}
+              <Button 
+                asChild
+                className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-xl py-6"
+              >
+                <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer">
+                  {t.faq.notFoundBtn}
+                </a>
               </Button>
             </div>
 
@@ -673,65 +663,78 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-6 relative">
+      <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto max-w-6xl">
-          <h3 className="text-4xl font-bold text-center mb-12 text-neon">{t.about.title}</h3>
+          <h3 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-neon">{t.about.title}</h3>
           
-          <div className="space-y-8">
-            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-8 rounded-2xl">
-              <div className="flex items-start gap-4 mb-4">
-                <Icon name="History" className="text-primary" size={32} />
+          <div className="space-y-6 sm:space-y-8">
+            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                <Icon name="History" className="text-primary flex-shrink-0" size={28} />
                 <div>
-                  <h4 className="text-2xl font-bold mb-3">{t.about.historyTitle}</h4>
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                  <h4 className="text-xl sm:text-2xl font-bold mb-3">{t.about.historyTitle}</h4>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
                     {t.about.historyText}
                   </p>
                 </div>
               </div>
             </Card>
 
-            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-8 rounded-2xl">
-              <div className="flex items-start gap-4 mb-6">
-                <Icon name="Users" className="text-secondary" size={32} />
-                <h4 className="text-2xl font-bold">{t.about.teamTitle}</h4>
+            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+              <div className="flex items-start gap-3 sm:gap-4 mb-6">
+                <Icon name="Users" className="text-secondary flex-shrink-0" size={28} />
+                <h4 className="text-xl sm:text-2xl font-bold">{t.about.teamTitle}</h4>
               </div>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Icon name="Crown" className="text-primary mt-1" size={20} />
+                    <Icon name="Crown" className="text-primary mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <p className="font-semibold">{t.about.admin}</p>
-                      <p className="text-sm text-muted-foreground">{t.about.adminDesc}</p>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.admin}</p>
+                      <a href="https://t.me/KripKripo1ek" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@KripKripo1ek</a>
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1">{language === 'ru' ? 'Главный архитектор' : 'Chief Architect'}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="Wrench" className="text-primary mt-1" size={20} />
+                    <Icon name="Wrench" className="text-primary mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <p className="font-semibold">{t.about.support}</p>
-                      <p className="text-sm text-muted-foreground">{t.about.supportDesc}</p>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.support}</p>
+                      <a href="https://t.me/BelyaGetSexBelka" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@BelyaGetSexBelka</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="Video" className="text-primary mt-1" size={20} />
+                    <Icon name="Video" className="text-primary mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <p className="font-semibold">{t.about.smm}</p>
-                      <p className="text-sm text-muted-foreground">{t.about.smmDesc}</p>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.smm}</p>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <a href="https://t.me/ii_558zmi" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@ii_558zmi</a>
+                        <a href="https://t.me/Mlecknul" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@Mlecknul</a>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Icon name="Shield" className="text-primary mt-1" size={20} />
+                    <Icon name="Shield" className="text-primary mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <p className="font-semibold">{t.about.mods}</p>
-                      <p className="text-sm text-muted-foreground">{t.about.modsDesc}</p>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.mods}</p>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <a href="https://t.me/DrvSwapBuffers" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@DrvSwapBuffers</a>
+                        <a href="https://t.me/urchex" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@urchex</a>
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="Heart" className="text-secondary mt-1" size={20} />
+                    <Icon name="Heart" className="text-secondary mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <p className="font-semibold">{t.about.helpers}</p>
-                      <p className="text-sm text-muted-foreground">{t.about.helpersDesc}</p>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.helpers}</p>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <a href="https://t.me/rxznve" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@rxznve</a>
+                        <a href="https://t.me/hehehoue" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@hehehoue</a>
+                        <a href="https://t.me/yaropolkkl" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@yaropolkkl</a>
+                        <a href="https://t.me/Cnclv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@Cnclv</a>
+                        <a href="https://t.me/akurise" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@akurise</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -741,39 +744,39 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-6 bg-black/30 relative">
+      <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
         <div className="container mx-auto text-center">
-          <h3 className="text-4xl font-bold mb-8 text-neon">{t.contact.title}</h3>
-          <p className="text-xl text-muted-foreground mb-12">{t.contact.subtitle}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <a href="https://t.me/Kripme4nik" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
-              <Icon name="Newspaper" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">{t.contact.telegramNews}</h4>
-              <p className="text-sm text-muted-foreground">{t.contact.telegramNewsDesc}</p>
+          <h3 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-neon">{t.contact.title}</h3>
+          <p className="text-base sm:text-xl text-muted-foreground mb-8 sm:mb-12">{t.contact.subtitle}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+            <a href="https://t.me/Kripme4nik" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:border-primary/40 transition-all group">
+              <Icon name="Newspaper" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={36} />
+              <h4 className="font-bold mb-2 text-sm sm:text-base">{t.contact.telegramNews}</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.telegramNewsDesc}</p>
             </a>
-            <a href="https://t.me/+xNvCqrGN6uNhMTdi" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
-              <Icon name="MessageCircle" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">{t.contact.telegramChat}</h4>
-              <p className="text-sm text-muted-foreground">{t.contact.telegramChatDesc}</p>
+            <a href="https://t.me/+xNvCqrGN6uNhMTdi" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:border-primary/40 transition-all group">
+              <Icon name="MessageCircle" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={36} />
+              <h4 className="font-bold mb-2 text-sm sm:text-base">{t.contact.telegramChat}</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.telegramChatDesc}</p>
             </a>
-            <a href="https://discord.gg/6JuG3e484Y" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
-              <Icon name="Gamepad2" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">{t.contact.discord}</h4>
-              <p className="text-sm text-muted-foreground">{t.contact.discordDesc}</p>
+            <a href="https://discord.gg/6JuG3e484Y" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:border-primary/40 transition-all group">
+              <Icon name="Gamepad2" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={36} />
+              <h4 className="font-bold mb-2 text-sm sm:text-base">{t.contact.discord}</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.discordDesc}</p>
             </a>
-            <a href="https://www.youtube.com/@EXOMAINMEDIA" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl hover:border-primary/40 transition-all group">
-              <Icon name="Youtube" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={40} />
-              <h4 className="font-bold mb-2">{t.contact.youtube}</h4>
-              <p className="text-sm text-muted-foreground">{t.contact.youtubeDesc}</p>
+            <a href="https://www.youtube.com/@EXOMAINMEDIA" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:border-primary/40 transition-all group">
+              <Icon name="Youtube" className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={36} />
+              <h4 className="font-bold mb-2 text-sm sm:text-base">{t.contact.youtube}</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.youtubeDesc}</p>
             </a>
           </div>
         </div>
       </section>
 
-      <footer className="py-8 px-6 border-t border-primary/20 relative">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-primary/20 relative">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p className="mb-2">{t.footer.rights}</p>
-          <p className="text-sm">{t.footer.panel}</p>
+          <p className="mb-2 text-xs sm:text-base">{t.footer.rights}</p>
+          <p className="text-xs sm:text-sm">{t.footer.panel}</p>
         </div>
       </footer>
     </div>
