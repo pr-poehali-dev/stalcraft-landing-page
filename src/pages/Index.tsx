@@ -344,6 +344,7 @@ const Index = () => {
       particle.style.left = `${Math.random() * 100}%`;
       particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
       particle.style.animationDelay = `${Math.random() * 5}s`;
+      particle.style.willChange = 'transform';
       
       document.getElementById('particles-container')?.appendChild(particle);
       
@@ -352,10 +353,10 @@ const Index = () => {
       }, 25000);
     };
 
-    const interval = setInterval(createParticle, 100);
+    const interval = setInterval(createParticle, 200);
     
-    for (let i = 0; i < 80; i++) {
-      setTimeout(createParticle, i * 50);
+    for (let i = 0; i < 40; i++) {
+      setTimeout(createParticle, i * 100);
     }
 
     return () => clearInterval(interval);
@@ -363,7 +364,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black relative">
-      <div id="particles-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+      <div id="particles-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0" style={{ willChange: 'transform' }}></div>
       
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-primary/20">
         <div className="container mx-auto px-4 sm:px-6 py-3">
