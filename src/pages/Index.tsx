@@ -52,8 +52,8 @@ const Index = () => {
         getIt: 'Получить'
       },
       hero: {
-        title1: 'Необнаружим.',
-        title2: 'Непревзойден. Неудержим.',
+        title1: 'STALCRAFT',
+        title2: 'CHEAT',
         subtitle1: 'Мы предлагаем самые эффективные и необнаруживаемые читы,',
         subtitle2: 'подкрепленные поддержкой 24/7 и непревзойденным набором функций.',
         aboutBtn: 'О нас',
@@ -195,8 +195,8 @@ const Index = () => {
         getIt: 'Get it'
       },
       hero: {
-        title1: 'Undetected.',
-        title2: 'Unrivaled. Unstoppable.',
+        title1: 'STALCRAFT',
+        title2: 'CHEAT',
         subtitle1: 'We deliver the market\'s most effective and undetected cheats,',
         subtitle2: 'backed by 24/7 support and an unbeatable feature set.',
         aboutBtn: 'About Us',
@@ -489,6 +489,56 @@ const Index = () => {
                 <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{t.whyChoose.customization}</h4>
                 <p className="text-xs sm:text-sm text-muted-foreground">{t.whyChoose.customizationDesc}</p>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">СКРИНШОТЫ</p>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-4">Чит в действии</h3>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+              <img 
+                src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
+                alt="ESP функционал" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h4 className="text-xl font-bold mb-2">ESP через стены</h4>
+                <p className="text-sm text-muted-foreground">Видимость игроков и NPC</p>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+              <img 
+                src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
+                alt="Аномалии и артефакты" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h4 className="text-xl font-bold mb-2">Поиск артефактов</h4>
+                <p className="text-sm text-muted-foreground">Отображение аномалий</p>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+              <img 
+                src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
+                alt="Visuals" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h4 className="text-xl font-bold mb-2">Визуалы</h4>
+                <p className="text-sm text-muted-foreground">Кастомные эффекты</p>
+              </div>
             </div>
           </div>
         </div>
