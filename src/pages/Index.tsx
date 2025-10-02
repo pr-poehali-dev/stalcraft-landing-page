@@ -417,7 +417,7 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
               alt="Stalcraft" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
           </div>
@@ -425,7 +425,7 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
               alt="Stalcraft" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent"></div>
           </div>
@@ -433,7 +433,7 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
               alt="Stalcraft" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
           </div>
