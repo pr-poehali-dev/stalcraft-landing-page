@@ -15,12 +15,30 @@ const Index = () => {
     if (element) {
       const navHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+      const offsetPosition = elementPosition + window.scrollY - navHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      const startPosition = window.scrollY;
+      const distance = offsetPosition - startPosition;
+      const duration = 1000;
+      let start: number | null = null;
+
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        const ease = (t: number) => {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        };
+        
+        window.scrollTo(0, startPosition + distance * ease(progress));
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      };
+
+      requestAnimationFrame(animation);
     }
   };
 
