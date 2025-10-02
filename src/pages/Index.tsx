@@ -502,18 +502,18 @@ const Index = () => {
           </div>
 
           <Tabs defaultValue="espvision" className="w-full" onValueChange={setSelectedProduct}>
-            <TabsList className="grid w-full grid-cols-3 mb-8 bg-card/50 border border-primary/20 p-2 rounded-xl max-w-2xl mx-auto">
-              <TabsTrigger value="espvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2 sm:py-3">
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-card/50 border border-primary/20 p-1 sm:p-2 rounded-xl max-w-2xl mx-auto h-auto">
+              <TabsTrigger value="espvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2.5 sm:py-3 flex items-center justify-center">
                 <Icon name="Eye" className="mr-1 sm:mr-2" size={16} />
                 <span className="hidden sm:inline">EspVision</span>
                 <span className="sm:hidden">Esp</span>
               </TabsTrigger>
-              <TabsTrigger value="artvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2 sm:py-3">
+              <TabsTrigger value="artvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2.5 sm:py-3 flex items-center justify-center">
                 <Icon name="Gem" className="mr-1 sm:mr-2" size={16} />
                 <span className="hidden sm:inline">ArtVision</span>
                 <span className="sm:hidden">Art</span>
               </TabsTrigger>
-              <TabsTrigger value="privatevision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2 sm:py-3">
+              <TabsTrigger value="privatevision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2.5 sm:py-3 flex items-center justify-center">
                 <Icon name="Crown" className="mr-1 sm:mr-2" size={16} />
                 <span className="hidden sm:inline">PrivateVision</span>
                 <span className="sm:hidden">Private</span>
@@ -601,14 +601,14 @@ const Index = () => {
           <p className="text-center text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12">{t.pricing.subtitle}</p>
           <div className="max-w-5xl mx-auto text-center">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-12 rounded-2xl">
-              <Icon name="Bot" className="text-primary mx-auto mb-6" size={64} />
-              <h4 className="text-2xl font-bold mb-4">{t.pricing.panelTitle}</h4>
-              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <Icon name="Bot" className="text-primary mx-auto mb-4 sm:mb-6" size={48} />
+              <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{t.pricing.panelTitle}</h4>
+              <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
                 {t.pricing.panelDesc}
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-12 py-6 border-0">
-                <Icon name="ExternalLink" className="mr-2" size={20} />
-                {t.pricing.openBtn}
+              <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-6 border-0 w-full sm:w-auto">
+                <Icon name="ExternalLink" className="mr-2" size={18} />
+                <span className="truncate">{t.pricing.openBtn}</span>
               </Button>
             </Card>
           </div>
