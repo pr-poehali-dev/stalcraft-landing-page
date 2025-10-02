@@ -411,13 +411,34 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 flex gap-2 opacity-30">
-          <div className="flex-1 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png)'}}></div>
-          <div className="flex-1 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png)'}}></div>
-          <div className="flex-1 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png)'}}></div>
+      <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden min-h-[600px]">
+        <div className="absolute inset-0 grid grid-cols-3 gap-4 p-8">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/30">
+            <img 
+              src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
+              alt="Stalcraft" 
+              className="w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl border border-primary/30">
+            <img 
+              src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
+              alt="Stalcraft" 
+              className="w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent"></div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl border border-primary/30">
+            <img 
+              src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
+              alt="Stalcraft" 
+              className="w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/90"></div>
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/40"></div>
         <div className="container mx-auto text-center animate-fade-in relative z-10">
           <div className="inline-block mb-6">
             <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
