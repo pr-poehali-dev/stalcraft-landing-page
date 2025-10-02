@@ -412,7 +412,12 @@ const Index = () => {
       </nav>
 
       <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhCNUNGNiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
+        <div className="absolute inset-0 flex gap-2 opacity-10">
+          <div className="flex-1 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png)'}}></div>
+          <div className="flex-1 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png)'}}></div>
+          <div className="flex-1 h-full bg-cover bg-center" style={{backgroundImage: 'url(https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png)'}}></div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
         <div className="container mx-auto text-center animate-fade-in relative z-10">
           <div className="inline-block mb-6">
             <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
@@ -505,39 +510,39 @@ const Index = () => {
             <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
-                src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
-                alt="ESP функционал" 
+                src="https://cdn.poehali.dev/files/dfc53c5b-ecf1-460a-b412-fa582f397426.png" 
+                alt="ESP через стены" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <h4 className="text-xl font-bold mb-2">ESP через стены</h4>
-                <p className="text-sm text-muted-foreground">Видимость игроков и NPC</p>
+                <p className="text-sm text-muted-foreground">Видимость игроков и объектов</p>
               </div>
             </div>
 
             <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
-                src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
-                alt="Аномалии и артефакты" 
+                src="https://cdn.poehali.dev/files/c9b76ade-9b6a-46f7-8258-4db212d101ec.png" 
+                alt="Разделение игроков и NPC" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                <h4 className="text-xl font-bold mb-2">Поиск артефактов</h4>
-                <p className="text-sm text-muted-foreground">Отображение аномалий</p>
+                <h4 className="text-xl font-bold mb-2">Разделение игроков и NPC</h4>
+                <p className="text-sm text-muted-foreground">Разные цвета подсветки</p>
               </div>
             </div>
 
             <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
-                src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
-                alt="Visuals" 
+                src="https://cdn.poehali.dev/files/01bf24f6-bf67-4298-aa3f-5c2a3c672fab.png" 
+                alt="Визуалы" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <h4 className="text-xl font-bold mb-2">Визуалы</h4>
-                <p className="text-sm text-muted-foreground">Кастомные эффекты</p>
+                <p className="text-sm text-muted-foreground">Кастомные эффекты и подсветка</p>
               </div>
             </div>
           </div>
