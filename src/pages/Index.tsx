@@ -16,29 +16,11 @@ const Index = () => {
       const navHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - navHeight;
-
-      const startPosition = window.scrollY;
-      const distance = offsetPosition - startPosition;
-      const duration = 1000;
-      let start: number | null = null;
-
-      const animation = (currentTime: number) => {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const progress = Math.min(timeElapsed / duration, 1);
-        
-        const ease = (t: number) => {
-          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-        };
-        
-        window.scrollTo(0, startPosition + distance * ease(progress));
-        
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        }
-      };
-
-      requestAnimationFrame(animation);
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -334,6 +316,15 @@ const Index = () => {
   const t = translations[language];
 
   useEffect(() => {
+    const isLowEndDevice = () => {
+      const memory = (navigator as any).deviceMemory;
+      const cores = navigator.hardwareConcurrency;
+      return (memory && memory < 4) || (cores && cores < 4);
+    };
+
+    const particleCount = isLowEndDevice() ? 15 : 40;
+    const particleInterval = isLowEndDevice() ? 500 : 200;
+
     const createParticle = () => {
       const particle = document.createElement('div');
       particle.className = 'particle';
@@ -344,7 +335,6 @@ const Index = () => {
       particle.style.left = `${Math.random() * 100}%`;
       particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
       particle.style.animationDelay = `${Math.random() * 5}s`;
-      particle.style.willChange = 'transform';
       
       document.getElementById('particles-container')?.appendChild(particle);
       
@@ -353,9 +343,9 @@ const Index = () => {
       }, 25000);
     };
 
-    const interval = setInterval(createParticle, 200);
+    const interval = setInterval(createParticle, particleInterval);
     
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < particleCount; i++) {
       setTimeout(createParticle, i * 100);
     }
 
@@ -364,7 +354,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black relative">
-      <div id="particles-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0" style={{ willChange: 'transform' }}></div>
+      <div id="particles-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
       
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-primary/20">
         <div className="container mx-auto px-4 sm:px-6 py-3">

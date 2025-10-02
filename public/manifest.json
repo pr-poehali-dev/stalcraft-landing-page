@@ -1,0 +1,15 @@
+{
+  "short_name": "ExoVision",
+  "name": "ExoVision - STALCRAFT Cheat",
+  "icons": [
+    {
+      "src": "https://cdn.poehali.dev/files/c08315bf-df77-4ad5-a24a-e8e84fda8ac3.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#8B5CF6",
+  "background_color": "#000000"
+}
