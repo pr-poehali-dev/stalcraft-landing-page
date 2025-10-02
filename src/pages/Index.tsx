@@ -370,9 +370,9 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Icon name="Shield" className="text-white" size={20} />
+                <Icon name="Crosshair" className="text-white" size={20} />
               </div>
-              <h1 className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision</h1>
+              <h1 className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision Stalcraft</h1>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
@@ -402,7 +402,10 @@ const Index = () => {
                 <Icon name="Languages" className="sm:mr-2" size={16} />
                 <span className="hidden sm:inline">{language === 'ru' ? 'EN' : 'RU'}</span>
               </Button>
-              <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-lg px-3 sm:px-6 text-xs sm:text-sm">
+              <Button 
+                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-0 rounded-lg px-3 sm:px-6 text-xs sm:text-sm"
+                onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
+              >
                 <Icon name="ShoppingCart" className="sm:mr-2" size={16} />
                 <span className="hidden sm:inline">{t.nav.getIt}</span>
               </Button>
@@ -453,11 +456,19 @@ const Index = () => {
             {t.hero.subtitle2}
           </p>
           <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-lg font-semibold border-0">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-lg font-semibold border-0"
+              onClick={(e) => scrollToSection(e as any, '#about')}
+            >
               <Icon name="Info" className="mr-2" size={18} />
               {t.hero.aboutBtn}
             </Button>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-lg font-semibold border-0">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-lg font-semibold border-0"
+              onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
+            >
               <Icon name="ShoppingCart" className="mr-2" size={18} />
               {t.hero.buyBtn}
             </Button>
@@ -465,7 +476,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 relative">
+      <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">{t.whyChoose.title}</p>
@@ -682,7 +693,11 @@ const Index = () => {
               <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
                 {t.pricing.panelDesc}
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-6 border-0 w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-6 border-0 w-full sm:w-auto"
+                onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
+              >
                 <Icon name="ExternalLink" className="mr-2" size={18} />
                 <span className="truncate">{t.pricing.openBtn}</span>
               </Button>
