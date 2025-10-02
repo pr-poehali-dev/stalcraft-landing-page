@@ -319,34 +319,39 @@ const Index = () => {
     const isLowEndDevice = () => {
       const memory = (navigator as any).deviceMemory;
       const cores = navigator.hardwareConcurrency;
-      return (memory && memory < 4) || (cores && cores < 4);
+      return (memory && memory < 6) || (cores && cores < 6);
     };
 
-    const particleCount = isLowEndDevice() ? 15 : 40;
-    const particleInterval = isLowEndDevice() ? 500 : 200;
+    if (isLowEndDevice()) {
+      document.body.classList.add('low-end-device');
+      return;
+    }
+
+    const particleCount = 20;
+    const particleInterval = 800;
 
     const createParticle = () => {
       const particle = document.createElement('div');
       particle.className = 'particle';
       
-      const size = Math.random() * 8 + 4;
+      const size = Math.random() * 6 + 3;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       particle.style.left = `${Math.random() * 100}%`;
-      particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
-      particle.style.animationDelay = `${Math.random() * 5}s`;
+      particle.style.animationDuration = `${Math.random() * 8 + 20}s`;
+      particle.style.animationDelay = `${Math.random() * 3}s`;
       
       document.getElementById('particles-container')?.appendChild(particle);
       
       setTimeout(() => {
         particle.remove();
-      }, 25000);
+      }, 30000);
     };
 
     const interval = setInterval(createParticle, particleInterval);
     
     for (let i = 0; i < particleCount; i++) {
-      setTimeout(createParticle, i * 100);
+      setTimeout(createParticle, i * 200);
     }
 
     return () => clearInterval(interval);
@@ -414,6 +419,7 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
               alt="Stalcraft" 
+              loading="lazy"
               className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
@@ -421,7 +427,8 @@ const Index = () => {
           <div className="relative overflow-hidden rounded-3xl border border-primary/40">
             <img 
               src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
-              alt="Stalcraft" 
+              alt="Stalcraft"
+              loading="lazy" 
               className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent"></div>
@@ -429,7 +436,8 @@ const Index = () => {
           <div className="relative overflow-hidden rounded-3xl border border-primary/40">
             <img 
               src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
-              alt="Stalcraft" 
+              alt="Stalcraft"
+              loading="lazy" 
               className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
@@ -537,8 +545,9 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
                 src="https://cdn.poehali.dev/files/dfc53c5b-ecf1-460a-b412-fa582f397426.png" 
-                alt="ESP через стены" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                alt="ESP через стены"
+                loading="lazy" 
+                className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <h4 className="text-xl font-bold mb-2">ESP через стены</h4>
@@ -550,8 +559,9 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
                 src="https://cdn.poehali.dev/files/c9b76ade-9b6a-46f7-8258-4db212d101ec.png" 
-                alt="Разделение игроков и NPC" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                alt="Разделение игроков и NPC"
+                loading="lazy" 
+                className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <h4 className="text-xl font-bold mb-2">Разделение игроков и NPC</h4>
@@ -563,8 +573,9 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
                 src="https://cdn.poehali.dev/files/01bf24f6-bf67-4298-aa3f-5c2a3c672fab.png" 
-                alt="Визуалы" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                alt="Визуалы"
+                loading="lazy" 
+                className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <h4 className="text-xl font-bold mb-2">Визуалы</h4>
@@ -739,7 +750,8 @@ const Index = () => {
               <div className="relative w-full rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-b from-purple-900/20 to-black/50">
                 <img 
                   src="https://cdn.poehali.dev/files/4d9ec427-7885-4b16-919e-b640def4e82c.png" 
-                  alt="STALCRAFT Character" 
+                  alt="STALCRAFT Character"
+                  loading="lazy" 
                   className="w-full h-auto object-contain"
                 />
               </div>

@@ -56,6 +56,11 @@
     scroll-behavior: smooth !important;
   }
 
+  .low-end-device * {
+    animation: none !important;
+    transition: none !important;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Roboto", sans-serif;
@@ -73,10 +78,11 @@
 
 @layer utilities {
   .neon-glow {
-    box-shadow:
-      0 0 10px rgba(139, 92, 246, 0.5),
-      0 0 20px rgba(139, 92, 246, 0.3),
-      0 0 30px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+  }
+
+  .low-end-device .neon-glow {
+    box-shadow: none;
   }
 
   .neon-border {
@@ -88,64 +94,61 @@
 
   .text-neon {
     color: #8b5cf6;
-    text-shadow:
-      0 0 10px rgba(139, 92, 246, 0.8),
-      0 0 20px rgba(139, 92, 246, 0.5);
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+  }
+
+  .low-end-device .text-neon {
+    text-shadow: none;
   }
 
   .particle {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(139, 92, 246, 0.7) 0%,
-      rgba(168, 85, 247, 0.4) 30%,
-      rgba(139, 92, 246, 0) 70%
-    );
+    background: rgba(139, 92, 246, 0.4);
     pointer-events: none;
     animation: float linear infinite;
-    filter: blur(0.5px);
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
     transform: translateZ(0);
   }
 
   @keyframes float {
     0% {
-      transform: translateY(100vh) scale(0);
+      transform: translateY(100vh);
       opacity: 0;
     }
     10% {
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(50vh) scale(1.1);
+      opacity: 0.6;
     }
     90% {
-      opacity: 1;
+      opacity: 0.6;
     }
     100% {
-      transform: translateY(-100vh) scale(0.8);
+      transform: translateY(-100vh);
       opacity: 0;
     }
   }
 
+  .low-end-device .particle {
+    display: none !important;
+  }
+
+  .low-end-device .glow-pulse,
+  .low-end-device .animate-fade-in {
+    animation: none !important;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .glow-pulse {
-      animation: glowPulse 3s ease-in-out infinite;
+      animation: glowPulse 4s ease-in-out infinite;
     }
   }
 
   @keyframes glowPulse {
     0%,
     100% {
-      box-shadow:
-        0 0 15px rgba(139, 92, 246, 0.2),
-        0 0 30px rgba(139, 92, 246, 0.15);
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.15);
     }
     50% {
-      box-shadow:
-        0 0 25px rgba(139, 92, 246, 0.35),
-        0 0 50px rgba(139, 92, 246, 0.2);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
     }
   }
 
