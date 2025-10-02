@@ -9,6 +9,14 @@ const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
   const [language, setLanguage] = useState<'ru' | 'en'>('ru');
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const translations = {
     ru: {
       nav: {
@@ -36,8 +44,7 @@ const Index = () => {
         support: '24/7 Поддержка',
         supportDesc: 'Круглосуточная поддержка в Telegram и Discord',
         customization: 'Полная кастомизация',
-        customizationDesc: 'Настраивай каждую функцию под себя',
-        fullDesc: 'Полное описание'
+        customizationDesc: 'Настраивай каждую функцию под себя'
       },
       products: {
         title: 'Наши продукты',
@@ -180,8 +187,7 @@ const Index = () => {
         support: '24/7 Support',
         supportDesc: 'Round-the-clock support in Telegram and Discord',
         customization: 'Full customization',
-        customizationDesc: 'Customize every feature to your liking',
-        fullDesc: 'Full description'
+        customizationDesc: 'Customize every feature to your liking'
       },
       products: {
         title: 'Our Products',
@@ -307,7 +313,7 @@ const Index = () => {
       const particle = document.createElement('div');
       particle.className = 'particle';
       
-      const size = Math.random() * 4 + 2;
+      const size = Math.random() * 8 + 4;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       particle.style.left = `${Math.random() * 100}%`;
@@ -344,19 +350,19 @@ const Index = () => {
               <h1 className="text-2xl font-bold text-neon tracking-wider">ExoVision</h1>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#home" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
+              <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
                 <Icon name="Home" size={16} />
                 {t.nav.home}
               </a>
-              <a href="#products" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
+              <a href="#products" onClick={(e) => scrollToSection(e, '#products')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
                 <Icon name="Package" size={16} />
                 {t.nav.products}
               </a>
-              <a href="#faq" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
+              <a href="#faq" onClick={(e) => scrollToSection(e, '#faq')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
                 <Icon name="HelpCircle" size={16} />
                 {t.nav.faq}
               </a>
-              <a href="#contact" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
+              <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
                 <Icon name="MessageCircle" size={16} />
                 {t.nav.contact}
               </a>
@@ -417,58 +423,46 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse"></div>
               <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Zap" className="text-primary" size={32} />
                 </div>
                 <h4 className="text-xl font-bold mb-3">{t.whyChoose.fastUpdate}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.fastUpdateDesc}</p>
-                <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
-                </a>
+                <p className="text-sm text-muted-foreground">{t.whyChoose.fastUpdateDesc}</p>
               </Card>
             </div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse" style={{animationDelay: '0.5s'}}></div>
               <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="ShieldCheck" className="text-secondary" size={32} />
                 </div>
                 <h4 className="text-xl font-bold mb-3">{t.whyChoose.undetected}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.undetectedDesc}</p>
-                <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
-                </a>
+                <p className="text-sm text-muted-foreground">{t.whyChoose.undetectedDesc}</p>
               </Card>
             </div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse" style={{animationDelay: '1s'}}></div>
               <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Users" className="text-primary" size={32} />
                 </div>
                 <h4 className="text-xl font-bold mb-3">{t.whyChoose.support}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.supportDesc}</p>
-                <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
-                </a>
+                <p className="text-sm text-muted-foreground">{t.whyChoose.supportDesc}</p>
               </Card>
             </div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse" style={{animationDelay: '1.5s'}}></div>
               <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-8 rounded-2xl hover:border-primary/40 transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Settings" className="text-secondary" size={32} />
                 </div>
                 <h4 className="text-xl font-bold mb-3">{t.whyChoose.customization}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{t.whyChoose.customizationDesc}</p>
-                <a href="#" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                  {t.whyChoose.fullDesc} <Icon name="ArrowRight" size={14} />
-                </a>
+                <p className="text-sm text-muted-foreground">{t.whyChoose.customizationDesc}</p>
               </Card>
             </div>
           </div>
@@ -640,13 +634,13 @@ const Index = () => {
               </Button>
             </div>
 
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl blur-3xl"></div>
-              <div className="relative w-full h-full min-h-[500px] rounded-3xl overflow-hidden border border-primary/20">
+            <div className="relative h-full flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl blur-3xl glow-pulse"></div>
+              <div className="relative w-full rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-b from-purple-900/20 to-black/50">
                 <img 
                   src="https://cdn.poehali.dev/files/4d9ec427-7885-4b16-919e-b640def4e82c.png" 
                   alt="STALCRAFT Character" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
