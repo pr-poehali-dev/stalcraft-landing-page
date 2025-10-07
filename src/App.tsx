@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import Terms from "./pages/Terms";
 import Payment from "./pages/Payment";
 import Custom404 from "./pages/Custom404";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -22,9 +21,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/404" element={<Custom404 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Custom404 />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
