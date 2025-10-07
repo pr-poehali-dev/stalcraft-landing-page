@@ -60,22 +60,22 @@ const Terms = () => {
                 <Icon name="AlertTriangle" className="text-primary" size={28} />
                 2. Риски и ответственность
               </h2>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Использование читов нарушает правила игры STALCRAFT и может привести к блокировке вашего игрового аккаунта</span>
+                  <span className="break-words">Использование читов нарушает правила игры STALCRAFT и может привести к блокировке вашего игрового аккаунта</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Вы используете наши продукты на свой страх и риск. ExoVision не несёт ответственности за блокировки аккаунтов</span>
+                  <span className="break-words">Вы используете наши продукты на свой страх и риск. ExoVision не несёт ответственности за блокировки аккаунтов</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Мы прилагаем усилия для безопасности, но не можем гарантировать 100% защиту от обнаружения</span>
+                  <span className="break-words">Мы прилагаем усилия для безопасности, но не можем гарантировать 100% защиту от обнаружения</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Возврат средств невозможен в случае блокировки вашего игрового аккаунта</span>
+                  <span className="break-words">Возврат средств невозможен в случае блокировки вашего игрового аккаунта</span>
                 </li>
               </ul>
             </section>
@@ -85,22 +85,22 @@ const Terms = () => {
                 <Icon name="ShieldCheck" className="text-primary" size={28} />
                 3. Правила использования
               </h2>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Один ключ активации = один игровой аккаунт. Передача ключей третьим лицам запрещена</span>
+                  <span className="break-words">Один ключ активации = один игровой аккаунт. Передача ключей третьим лицам запрещена</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Запрещено декомпилировать, модифицировать или распространять наше программное обеспечение</span>
+                  <span className="break-words">Запрещено декомпилировать, модифицировать или распространять наше программное обеспечение</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Запрещено использовать продукты для коммерческой выгоды (продажа игровых ресурсов и т.п.)</span>
+                  <span className="break-words">Запрещено использовать продукты для коммерческой выгоды (продажа игровых ресурсов и т.п.)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Требуется соблюдение системных требований: Windows 8-11, стабильное интернет-соединение</span>
+                  <span className="break-words">Требуется соблюдение системных требований: Windows 8-11, стабильное интернет-соединение</span>
                 </li>
               </ul>
             </section>
@@ -110,22 +110,22 @@ const Terms = () => {
                 <Icon name="CreditCard" className="text-primary" size={28} />
                 4. Подписка и оплата
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Все подписки приобретаются через Telegram бот <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@KamiPanelbot</a>. 
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
+                Все подписки приобретаются через Telegram бот <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">@KamiPanelbot</a>. 
                 Подписка активируется мгновенно после оплаты.
               </p>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Подписка действует в течение оплаченного периода (день, неделя, месяц)</span>
+                  <span className="break-words">Подписка действует в течение оплаченного периода (день, неделя, месяц)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Автопродление отсутствует — подписку нужно продлевать вручную</span>
+                  <span className="break-words">Автопродление отсутствует — подписку нужно продлевать вручную</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Возврат средств возможен только при технических проблемах со стороны ExoVision</span>
+                  <span className="break-words">Возврат средств возможен только при технических проблемах со стороны ExoVision</span>
                 </li>
               </ul>
             </section>
@@ -135,21 +135,21 @@ const Terms = () => {
                 <Icon name="RefreshCw" className="text-primary" size={28} />
                 5. Обновления и поддержка
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
                 Мы гарантируем быстрое обновление продуктов после патчей игры. Поддержка доступна 24/7 через Telegram и Discord.
               </p>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Обновления выходят в течение нескольких часов после игровых патчей</span>
+                  <span className="break-words">Обновления выходят в течение нескольких часов после игровых патчей</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Техподдержка отвечает в течение 1-24 часов в зависимости от сложности вопроса</span>
+                  <span className="break-words">Техподдержка отвечает в течение 1-24 часов в зависимости от сложности вопроса</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span>Мы оставляем за собой право изменять функционал продуктов для повышения безопасности</span>
+                  <span className="break-words">Мы оставляем за собой право изменять функционал продуктов для повышения безопасности</span>
                 </li>
               </ul>
             </section>
@@ -159,7 +159,7 @@ const Terms = () => {
                 <Icon name="Lock" className="text-primary" size={28} />
                 6. Конфиденциальность
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
                 Мы не собираем и не храним персональные данные игроков. Для работы продукта требуется только игровой аккаунт и 
                 Telegram ID для привязки подписки. Ваши игровые данные не передаются третьим лицам.
               </p>
@@ -170,7 +170,7 @@ const Terms = () => {
                 <Icon name="Scale" className="text-primary" size={28} />
                 7. Изменение условий
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
                 ExoVision оставляет за собой право изменять данные условия использования в любое время. 
                 Об изменениях мы сообщаем в нашем Telegram-канале. Продолжая использовать продукты после изменений, 
                 вы автоматически соглашаетесь с новыми условиями.

@@ -49,11 +49,11 @@ const Payment = () => {
               </p>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-12 py-6 border-0"
+                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-6 border-0 w-full sm:w-auto"
                 onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
               >
                 <Icon name="ExternalLink" className="mr-2" size={20} />
-                Открыть @KamiPanelbot
+                <span className="truncate">Открыть @KamiPanelbot</span>
               </Button>
             </Card>
 
@@ -70,7 +70,7 @@ const Payment = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Откройте Telegram бот</h3>
-                      <p className="text-muted-foreground">Нажмите на кнопку выше или перейдите по ссылке <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@KamiPanelbot</a></p>
+                      <p className="text-muted-foreground text-sm sm:text-base break-words">Нажмите на кнопку выше или перейдите по ссылке <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">@KamiPanelbot</a></p>
                     </div>
                   </div>
 
@@ -80,7 +80,7 @@ const Payment = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Выберите продукт</h3>
-                      <p className="text-muted-foreground">EspVision (базовый), ArtVision (артефакты) или PrivateVision (премиум)</p>
+                      <p className="text-muted-foreground text-sm sm:text-base">EspVision (базовый), ArtVision (артефакты) или PrivateVision (премиум)</p>
                     </div>
                   </div>
 
@@ -90,7 +90,7 @@ const Payment = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Выберите период</h3>
-                      <p className="text-muted-foreground">1 день, 7 дней, 30 дней — выберите удобный вам срок подписки</p>
+                      <p className="text-muted-foreground text-sm sm:text-base">1 день, 7 дней, 30 дней — выберите удобный срок</p>
                     </div>
                   </div>
 
@@ -100,7 +100,7 @@ const Payment = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Оплатите</h3>
-                      <p className="text-muted-foreground">Доступны карты РФ, криптовалюта, электронные кошельки</p>
+                      <p className="text-muted-foreground text-sm sm:text-base">Доступны карты РФ, криптовалюта, электронные кошельки</p>
                     </div>
                   </div>
 
@@ -110,7 +110,7 @@ const Payment = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Получите доступ</h3>
-                      <p className="text-muted-foreground">Мгновенная активация! Ключ и инструкция придут в бот автоматически</p>
+                      <p className="text-muted-foreground text-sm sm:text-base">Мгновенная активация! Ключ и инструкция придут в бот</p>
                     </div>
                   </div>
                 </div>
