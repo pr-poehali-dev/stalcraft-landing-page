@@ -41,24 +41,24 @@ const Terms = () => {
 
           <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-10 rounded-2xl space-y-8">
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="FileText" className="text-primary" size={28} />
-                1. Общие положения
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="FileText" className="text-primary flex-shrink-0" size={24} />
+                <span>1. Общие положения</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
                 Используя продукты ExoVision (EspVision, ArtVision, PrivateVision), вы соглашаетесь с настоящими условиями использования. 
                 Если вы не согласны с какими-либо из этих условий, пожалуйста, не используйте наши продукты.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
                 ExoVision — это независимый проект, не связанный с разработчиками игры STALCRAFT. 
                 Мы предоставляем программное обеспечение "как есть" без каких-либо гарантий.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="AlertTriangle" className="text-primary" size={28} />
-                2. Риски и ответственность
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="AlertTriangle" className="text-primary flex-shrink-0" size={24} />
+                <span>2. Риски и ответственность</span>
               </h2>
               <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
                 <li className="flex items-start gap-2">
@@ -81,9 +81,9 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="ShieldCheck" className="text-primary" size={28} />
-                3. Правила использования
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="ShieldCheck" className="text-primary flex-shrink-0" size={24} />
+                <span>3. Правила использования</span>
               </h2>
               <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
                 <li className="flex items-start gap-2">
@@ -106,9 +106,9 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="CreditCard" className="text-primary" size={28} />
-                4. Подписка и оплата
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="CreditCard" className="text-primary flex-shrink-0" size={24} />
+                <span>4. Подписка и оплата</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
                 Все подписки приобретаются через Telegram бот <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">@KamiPanelbot</a>. 
@@ -131,9 +131,9 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="RefreshCw" className="text-primary" size={28} />
-                5. Обновления и поддержка
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="RefreshCw" className="text-primary flex-shrink-0" size={24} />
+                <span>5. Обновления и поддержка</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
                 Мы гарантируем быстрое обновление продуктов после патчей игры. Поддержка доступна 24/7 через Telegram и Discord.
@@ -155,9 +155,9 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="Lock" className="text-primary" size={28} />
-                6. Конфиденциальность
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="Lock" className="text-primary flex-shrink-0" size={24} />
+                <span>6. Конфиденциальность</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
                 Мы не собираем и не храним персональные данные игроков. Для работы продукта требуется только игровой аккаунт и 
@@ -166,9 +166,9 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="Scale" className="text-primary" size={28} />
-                7. Изменение условий
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="Scale" className="text-primary flex-shrink-0" size={24} />
+                <span>7. Изменение условий</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
                 ExoVision оставляет за собой право изменять данные условия использования в любое время. 
@@ -178,11 +178,11 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Icon name="MessageCircle" className="text-primary" size={28} />
-                8. Контакты
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
+                <Icon name="MessageCircle" className="text-primary flex-shrink-0" size={24} />
+                <span>8. Контакты</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
                 По вопросам условий использования обращайтесь:
               </p>
               <div className="flex flex-wrap gap-4">
