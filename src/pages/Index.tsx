@@ -371,7 +371,7 @@ const Index = () => {
                 className="w-8 h-8 sm:w-10 sm:h-10" 
                 style={{ filter: 'drop-shadow(0 0 8px rgba(255, 20, 147, 0.6))' }}
               />
-              <h1 className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision Stalcraft</h1>
+              <span className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision Stalcraft</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
@@ -446,9 +446,9 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto text-center animate-fade-in relative z-10">
           <div className="inline-block mb-6">
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
               {t.hero.title1}<br/>{t.hero.title2}
-            </h2>
+            </h1>
             <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse-glow"></div>
           </div>
           <p className="text-base sm:text-xl md:text-2xl text-foreground/60 mb-3 sm:mb-4 font-light px-4">
@@ -482,7 +482,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">{t.whyChoose.title}</p>
-            <h3 className="text-3xl sm:text-4xl font-bold mb-4">{t.whyChoose.brand}</h3>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.whyChoose.brand}</h2>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -537,7 +537,7 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">СКРИНШОТЫ</p>
-            <h3 className="text-3xl sm:text-4xl font-bold mb-4">Чит в действии</h3>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Чит в действии</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
@@ -589,7 +589,7 @@ const Index = () => {
       <section id="products" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 sm:mb-16">
-            <h3 className="text-3xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h3>
+            <h2 className="text-3xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h2>
             <p className="text-muted-foreground text-sm sm:text-lg">{t.products.subtitle}</p>
           </div>
 
@@ -619,7 +619,7 @@ const Index = () => {
                     <Icon name="Eye" className="text-primary" size={40} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.espVision.title}</h4>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.espVision.title}</h3>
                     <p className="text-lg sm:text-xl text-primary mb-4">{t.products.espVision.status}</p>
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
@@ -642,7 +642,7 @@ const Index = () => {
                     <Icon name="Gem" className="text-primary" size={40} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.artVision.title}</h4>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.artVision.title}</h3>
                     <p className="text-lg sm:text-xl text-primary mb-4">{t.products.artVision.status}</p>
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
@@ -665,7 +665,7 @@ const Index = () => {
                     <Icon name="Crown" className="text-secondary" size={40} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.privateVision.title}</h4>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.privateVision.title}</h3>
                     <p className="text-lg sm:text-xl text-secondary mb-4">{t.products.privateVision.status}</p>
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.privateVision.desc}</p>
                   </div>
@@ -689,7 +689,7 @@ const Index = () => {
 
       <section id="pricing" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto">
-          <h3 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-neon">{t.pricing.title}</h3>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-neon">{t.pricing.title}</h2>
           <p className="text-center text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12">{t.pricing.subtitle}</p>
           <div className="max-w-5xl mx-auto text-center">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-12 rounded-2xl">
@@ -715,10 +715,10 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="mb-12 sm:mb-16">
             <p className="text-primary text-xs sm:text-sm mb-2 tracking-widest uppercase">{t.faq.title}</p>
-            <h3 className="text-2xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4">
               {t.faq.subtitle} <br/>
               <span className="text-primary">{t.faq.subtitle2}</span>
-            </h3>
+            </h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
@@ -762,7 +762,7 @@ const Index = () => {
 
       <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto max-w-6xl">
-          <h3 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-neon">{t.about.title}</h3>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-neon">{t.about.title}</h2>
           
           <div className="space-y-6 sm:space-y-8">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
@@ -843,7 +843,7 @@ const Index = () => {
 
       <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
         <div className="container mx-auto text-center">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-neon">{t.contact.title}</h3>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-neon">{t.contact.title}</h2>
           <p className="text-base sm:text-xl text-muted-foreground mb-8 sm:mb-12">{t.contact.subtitle}</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
             <a href="https://t.me/Kripme4nik" target="_blank" rel="noopener noreferrer" className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:border-primary/40 transition-all group">
@@ -872,6 +872,13 @@ const Index = () => {
 
       <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-primary/20 relative">
         <div className="container mx-auto text-center text-muted-foreground">
+          <div className="flex justify-center gap-4 mb-4 text-xs sm:text-sm">
+            <a href="/terms" className="hover:text-primary transition-colors">Условия использования</a>
+            <span>•</span>
+            <a href="/payment" className="hover:text-primary transition-colors">Оплата</a>
+            <span>•</span>
+            <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Поддержка</a>
+          </div>
           <p className="mb-2 text-xs sm:text-base">{t.footer.rights}</p>
           <p className="text-xs sm:text-sm">{t.footer.panel}</p>
         </div>
