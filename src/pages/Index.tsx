@@ -447,7 +447,7 @@ const Index = () => {
         <div className="container mx-auto text-center animate-fade-in relative z-10">
           <div className="inline-block mb-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-2" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              {t.hero.title1}<br/>{t.hero.title2}
+              STALCRAFT<br/>CHEAT
             </h1>
             <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse-glow"></div>
           </div>
