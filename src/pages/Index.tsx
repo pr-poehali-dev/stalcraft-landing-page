@@ -61,33 +61,46 @@ const Index = () => {
           status: '✅ Необнаружим',
           desc: 'Базовый пакет с ESP функциями для отображения игроков и NPC',
           features: [
-            'PlayerEsp - Игроки через стены',
-            'NpcEsp - NPC через стены',
-            'EspType - Edged, Filled, Line',
-            'Distance - Дистанция до цели',
-            'Tracers - Линии до игроков',
-            'CrossHair - Кастомный прицел',
-            'Clicker - Автокликер',
+            'PlayerEsp - Отображение игроков через стены',
+            'DrawName - Отображение имена игроков',
+            'CheckTeamates - Отображение союзников',
+            'NpcEsp - Отображение нпс через стены',
+            'EspType (Edged,Filled,Line) - Тип рисовки',
+            'Filled - Заливка бокса',
+            'EspColor - Изменение цвета бокса',
+            'Distance - Дистанция до игрока',
+            'Tracers - Линия до игрока',
+            'DistanceColor - Цвет Distance',
+            'TracersColor - Цвет Tracers',
+            'CrossHair - Прицел в центре экрана',
+            'CrossHairType - Выбор типа прицела',
+            'CrossHairColor - Цвет прицела',
+            'Clicker - Удобный автокликер',
             'Hud - Полезная информация',
-            'MaxRange - Макс. прогруз',
-            'AntiAnomaly - Удаление аномалий'
+            'ShowWaterMark - Watermark на экране',
+            'MaxRange - Максимальный прогруз',
+            'AntiAnomaly - Удаляет аномалии'
           ]
         },
         artVision: {
           title: 'STALCRAFT ArtVision',
           status: '✅ Необнаружим',
-          desc: 'Специализированный пакет для поиска артефактов',
+          desc: 'Специализированный пакет для поиска артефактов. Дальность: 80+ метров | Работает на 360°',
           features: [
-            'ArtefactEsp - Артефакты через стены',
-            'CheckName - Название артефакта',
-            'EspType - Edged, Filled, Line',
+            'ArtefactEsp - Отображение артефактов через стены',
+            'EspType (Edged,Filled,Line) - Тип рисовки',
+            'Filled - Заливка бокса',
+            'CheckName - Показывает название',
+            'EspColor - Изменение цвета бокса',
             'Distance - Дистанция до артефакта',
-            'Tracers - Линии до артефактов',
-            'CrossHair - Кастомный прицел',
-            'CrossHairType - Типы прицела',
+            'Tracers - Линия до артефакта',
+            'DistanceColor - Цвет Distance',
+            'TracersColor - Цвет Tracers',
+            'CrossHair - Прицел в центре экрана',
+            'CrossHairType - Выбор типа прицела',
+            'CrossHairColor - Цвет прицела',
             'Hud - Полезная информация',
-            'ShowWaterMark - Watermark',
-            'Color Settings - Настройка цветов'
+            'ShowWaterMark - Watermark на экране'
           ]
         },
         privateVision: {
@@ -204,33 +217,46 @@ const Index = () => {
           status: '✅ Undetected',
           desc: 'Basic package with ESP features for displaying players and NPCs',
           features: [
-            'PlayerEsp - See players through walls',
-            'NpcEsp - See NPCs through walls',
-            'EspType - Edged, Filled, Line',
-            'Distance - Distance to target',
-            'Tracers - Lines to players',
-            'CrossHair - Custom crosshair',
-            'Clicker - Auto clicker',
+            'PlayerEsp - Display players through walls',
+            'DrawName - Display player names',
+            'CheckTeamates - Display teammates',
+            'NpcEsp - Display NPCs through walls',
+            'EspType (Edged,Filled,Line) - Drawing type',
+            'Filled - Box fill',
+            'EspColor - Box color change',
+            'Distance - Distance to player',
+            'Tracers - Line to player',
+            'DistanceColor - Distance color',
+            'TracersColor - Tracers color',
+            'CrossHair - Crosshair in screen center',
+            'CrossHairType - Crosshair type selection',
+            'CrossHairColor - Crosshair color',
+            'Clicker - Convenient auto-clicker',
             'Hud - Useful information',
-            'MaxRange - Max render distance',
+            'ShowWaterMark - Watermark on screen',
+            'MaxRange - Maximum render distance',
             'AntiAnomaly - Remove anomalies'
           ]
         },
         artVision: {
           title: 'STALCRAFT ArtVision',
           status: '✅ Undetected',
-          desc: 'Specialized package for finding artifacts',
+          desc: 'Specialized package for artifact hunting. Range: 80+ meters | Works 360°',
           features: [
-            'ArtefactEsp - Artifacts through walls',
-            'CheckName - Artifact name',
-            'EspType - Edged, Filled, Line',
+            'ArtefactEsp - Display artifacts through walls',
+            'EspType (Edged,Filled,Line) - Drawing type',
+            'Filled - Box fill',
+            'CheckName - Shows name',
+            'EspColor - Box color change',
             'Distance - Distance to artifact',
-            'Tracers - Lines to artifacts',
-            'CrossHair - Custom crosshair',
-            'CrossHairType - Crosshair types',
+            'Tracers - Line to artifact',
+            'DistanceColor - Distance color',
+            'TracersColor - Tracers color',
+            'CrossHair - Crosshair in screen center',
+            'CrossHairType - Crosshair type selection',
+            'CrossHairColor - Crosshair color',
             'Hud - Useful information',
-            'ShowWaterMark - Watermark',
-            'Color Settings - Color customization'
+            'ShowWaterMark - Watermark on screen'
           ]
         },
         privateVision: {
@@ -624,13 +650,24 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
                   {t.products.espVision.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm sm:text-base">{feature}</span>
                     </div>
                   ))}
+                </div>
+                <div className="mt-6">
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
+                    <iframe 
+                      src="https://disk.yandex.ru/i/PLFFBXpozl0Dqw" 
+                      className="w-full h-full" 
+                      allow="autoplay; fullscreen; picture-in-picture" 
+                      allowFullScreen
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
                 </div>
               </Card>
             </TabsContent>
@@ -647,13 +684,24 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
                   {t.products.artVision.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm sm:text-base">{feature}</span>
                     </div>
                   ))}
+                </div>
+                <div className="mt-6">
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
+                    <iframe 
+                      src="https://disk.yandex.ru/i/PLFFBXpozl0Dqw" 
+                      className="w-full h-full" 
+                      allow="autoplay; fullscreen; picture-in-picture" 
+                      allowFullScreen
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
                 </div>
               </Card>
             </TabsContent>
