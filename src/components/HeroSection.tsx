@@ -16,37 +16,37 @@ interface HeroSectionProps {
 export default function HeroSection({ t, scrollToSection }: HeroSectionProps) {
   return (
     <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden min-h-[90vh] flex items-center">
-      <div className="absolute inset-0 grid grid-cols-3 gap-2 sm:gap-4 p-2 sm:p-8">
-        <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-primary/30 hover:border-primary/50 transition-colors duration-300">
+      <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 p-2 sm:p-8">
+        <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-500 animate-[fadeInUp_1s_ease-out]">
           <img 
             src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
             alt="Stalcraft" 
             loading="lazy"
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-0 sm:opacity-60 animate-[scaleIn_1.2s_ease-out_0.2s_forwards]"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 sm:from-primary/30 to-transparent"></div>
         </div>
-        <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-secondary/30 hover:border-secondary/50 transition-colors duration-300">
+        <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-secondary/30 hover:border-secondary/50 transition-all duration-500 animate-[fadeInUp_1s_ease-out_0.2s]">
           <img 
             src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
             alt="Stalcraft"
             loading="lazy" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-0 sm:opacity-60 animate-[scaleIn_1.2s_ease-out_0.4s_forwards]"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 sm:from-secondary/30 to-transparent"></div>
         </div>
-        <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-primary/30 hover:border-primary/50 transition-colors duration-300">
+        <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-500 animate-[fadeInUp_1s_ease-out_0.4s]">
           <img 
             src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
             alt="Stalcraft"
             loading="lazy" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-0 sm:opacity-60 animate-[scaleIn_1.2s_ease-out_0.6s_forwards]"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 sm:from-primary/30 to-transparent"></div>
         </div>
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/85"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/90 sm:from-black/70 sm:via-black/60 sm:to-black/85"></div>
       
       <div className="container mx-auto text-center relative z-10">
         <div className="mb-8">
