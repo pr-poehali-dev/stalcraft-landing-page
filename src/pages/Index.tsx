@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import InteractiveBackground from "@/components/InteractiveBackground";
+import HeroSection from "@/components/HeroSection";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
@@ -513,89 +514,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 grid grid-cols-3 gap-4 p-8 opacity-0 animate-fade-in" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/40 transform hover:scale-105 transition-transform duration-500">
-            <img 
-              src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
-              alt="Stalcraft" 
-              loading="lazy"
-              className="w-full h-full object-cover opacity-60"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/40 transform hover:scale-105 transition-transform duration-500">
-            <img 
-              src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
-              alt="Stalcraft"
-              loading="lazy" 
-              className="w-full h-full object-cover opacity-60"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent"></div>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/40 transform hover:scale-105 transition-transform duration-500">
-            <img 
-              src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
-              alt="Stalcraft"
-              loading="lazy" 
-              className="w-full h-full object-cover opacity-60"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-          </div>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80"></div>
-        
-        <div className="container mx-auto text-center relative z-10">
-          <div className="mb-8 opacity-0 animate-fade-in" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
-            <div className="relative inline-block">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-secondary/30 to-primary/30 blur-3xl animate-pulse-glow"></div>
-              <h1 className="relative text-5xl sm:text-7xl md:text-9xl font-black tracking-tight">
-                <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient" style={{backgroundSize: '200% auto'}}>
-                  STALCRAFT
-                </span>
-                <span className="block bg-gradient-to-r from-secondary via-primary to-secondary bg-clip-text text-transparent animate-gradient" style={{backgroundSize: '200% auto', animationDelay: '0.5s'}}>
-                  CHEAT
-                </span>
-              </h1>
-            </div>
-            <div className="flex gap-2 justify-center mt-6">
-              <div className="h-1 w-20 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse"></div>
-              <div className="h-1 w-20 bg-gradient-to-r from-transparent via-secondary to-transparent animate-pulse" style={{animationDelay: '0.3s'}}></div>
-              <div className="h-1 w-20 bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" style={{animationDelay: '0.6s'}}></div>
-            </div>
-          </div>
-          
-          <div className="space-y-4 mb-10 opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
-            <p className="text-lg sm:text-2xl md:text-3xl font-semibold text-foreground/90 px-4">
-              {t.hero.subtitle1}
-            </p>
-            <p className="text-base sm:text-xl md:text-2xl text-foreground/70 px-4">
-              {t.hero.subtitle2}
-            </p>
-          </div>
-          
-          <div className="flex gap-4 justify-center flex-wrap px-4 opacity-0 animate-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-            <Button 
-              size="lg" 
-              className="group relative bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-base sm:text-xl px-8 sm:px-12 py-6 sm:py-7 rounded-xl font-bold border-0 shadow-2xl shadow-primary/50 hover:shadow-primary/70 transition-all duration-300 hover:scale-105"
-              onClick={(e) => scrollToSection(e as any, '#about')}
-            >
-              <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <Icon name="Info" className="mr-2 relative z-10" size={20} />
-              <span className="relative z-10">{t.hero.aboutBtn}</span>
-            </Button>
-            <Button 
-              size="lg" 
-              className="group relative bg-gradient-to-r from-secondary to-primary hover:opacity-90 text-base sm:text-xl px-8 sm:px-12 py-6 sm:py-7 rounded-xl font-bold border-0 shadow-2xl shadow-secondary/50 hover:shadow-secondary/70 transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
-            >
-              <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <Icon name="ShoppingCart" className="mr-2 relative z-10" size={20} />
-              <span className="relative z-10">{t.hero.buyBtn}</span>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSection t={t} scrollToSection={scrollToSection} />
 
       <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto max-w-6xl">
