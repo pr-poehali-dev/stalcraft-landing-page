@@ -16,4 +16,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://kamicheat.ru/sitemap.xml
+Sitemap: https://stalcraft-cheat.ru/sitemap.xml
