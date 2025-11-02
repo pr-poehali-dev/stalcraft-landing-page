@@ -128,6 +128,42 @@ const Index = () => {
         panelDesc: 'Все подписки и платежи оформляются через нашего Telegram бота. Удобная панель управления, мгновенная активация, история покупок.',
         openBtn: 'Открыть @KamiPanelbot'
       },
+      howToBuy: {
+        title: 'Как купить',
+        subtitle: 'Получите доступ всего за 5 простых шагов',
+        steps: [
+          {
+            number: '01',
+            title: 'Откройте Telegram бота',
+            desc: 'Перейдите в @KamiPanelbot и нажмите «Начать»',
+            icon: 'MessageCircle'
+          },
+          {
+            number: '02',
+            title: 'Зарегистрируйтесь',
+            desc: 'Введите команду /reg логин пароль',
+            icon: 'UserPlus'
+          },
+          {
+            number: '03',
+            title: 'Выберите продукт',
+            desc: 'Нажмите «Покупка», выберите софт и период подписки',
+            icon: 'ShoppingCart'
+          },
+          {
+            number: '04',
+            title: 'Оплатите',
+            desc: 'Выберите удобный способ оплаты и завершите платеж',
+            icon: 'CreditCard'
+          },
+          {
+            number: '05',
+            title: 'Начните играть',
+            desc: 'Скачайте лоадер и наслаждайтесь игрой с читом',
+            icon: 'Rocket'
+          }
+        ]
+      },
       faq: {
         title: 'Частые Вопросы',
         subtitle: 'Не рискуйте своей безопасностью - выбирайте нас!',
@@ -283,6 +319,42 @@ const Index = () => {
         panelTitle: 'Telegram Bot Panel',
         panelDesc: 'All subscriptions and payments are processed through our Telegram bot. Convenient control panel, instant activation, purchase history.',
         openBtn: 'Open @KamiPanelbot'
+      },
+      howToBuy: {
+        title: 'How to buy',
+        subtitle: 'Get access in just 5 simple steps',
+        steps: [
+          {
+            number: '01',
+            title: 'Open Telegram Bot',
+            desc: 'Go to @KamiPanelbot and click «Start»',
+            icon: 'MessageCircle'
+          },
+          {
+            number: '02',
+            title: 'Register',
+            desc: 'Enter command /reg login password',
+            icon: 'UserPlus'
+          },
+          {
+            number: '03',
+            title: 'Choose Product',
+            desc: 'Click «Purchase», select software and subscription period',
+            icon: 'ShoppingCart'
+          },
+          {
+            number: '04',
+            title: 'Pay',
+            desc: 'Choose convenient payment method and complete the transaction',
+            icon: 'CreditCard'
+          },
+          {
+            number: '05',
+            title: 'Start Playing',
+            desc: 'Download loader and enjoy the game with cheats',
+            icon: 'Rocket'
+          }
+        ]
       },
       faq: {
         title: 'Frequently Asked Questions',
@@ -769,6 +841,53 @@ const Index = () => {
                 <span className="truncate">{t.pricing.openBtn}</span>
               </Button>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-to-buy" className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-black/50 to-black/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-primary text-xs sm:text-sm mb-2 tracking-widest uppercase">{t.howToBuy.title}</p>
+            <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              {t.howToBuy.subtitle}
+            </h2>
+          </div>
+          
+          <div className="grid gap-6 sm:gap-8">
+            {t.howToBuy.steps.map((step, idx) => (
+              <Card 
+                key={idx}
+                className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:border-primary/40 transition-all duration-300 group"
+              >
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                  <div className="flex items-center gap-4 sm:gap-6 w-full sm:w-auto">
+                    <div className="text-5xl sm:text-6xl font-bold text-primary/20 group-hover:text-primary/30 transition-colors">
+                      {step.number}
+                    </div>
+                    <div className="p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent group-hover:from-primary/30 transition-colors">
+                      <Icon name={step.icon} className="text-primary" size={32} />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-2">{step.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">{step.desc}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-12 py-6 border-0"
+              onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
+            >
+              <Icon name="MessageCircle" className="mr-2" size={20} />
+              Начать покупку
+            </Button>
           </div>
         </div>
       </section>
