@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import InteractiveBackground from "@/components/InteractiveBackground";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
@@ -457,6 +458,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black relative">
+      <InteractiveBackground />
       <div id="particles-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
       
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-primary/20">
