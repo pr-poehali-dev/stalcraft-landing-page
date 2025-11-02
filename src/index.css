@@ -166,4 +166,47 @@
       transform: translateY(0);
     }
   }
+
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%,
+    100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.5;
+      filter: blur(8px);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(12px);
+    }
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .low-end-device .animate-gradient,
+  .low-end-device .animate-pulse-glow {
+    animation: none !important;
+  }
 }
