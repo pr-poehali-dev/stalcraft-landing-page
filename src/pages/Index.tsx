@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import VideoPlayer from "@/components/VideoPlayer";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
@@ -659,15 +660,10 @@ const Index = () => {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
-                    <iframe 
-                      src="https://disk.yandex.ru/i/PLFFBXpozl0Dqw" 
-                      className="w-full h-full" 
-                      allow="autoplay; fullscreen; picture-in-picture" 
-                      allowFullScreen
-                      frameBorder="0"
-                    ></iframe>
-                  </div>
+                  <VideoPlayer 
+                    src="/demo-video.mp4" 
+                    poster="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png"
+                  />
                 </div>
               </Card>
             </TabsContent>
@@ -693,15 +689,10 @@ const Index = () => {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
-                    <iframe 
-                      src="https://disk.yandex.ru/i/PLFFBXpozl0Dqw" 
-                      className="w-full h-full" 
-                      allow="autoplay; fullscreen; picture-in-picture" 
-                      allowFullScreen
-                      frameBorder="0"
-                    ></iframe>
-                  </div>
+                  <VideoPlayer 
+                    src="/demo-video.mp4" 
+                    poster="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png"
+                  />
                 </div>
               </Card>
             </TabsContent>
