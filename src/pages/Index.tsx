@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
-import VideoPlayer from "@/components/VideoPlayer";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
@@ -660,10 +659,16 @@ const Index = () => {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <VideoPlayer 
-                    src="https://upnow-prod.ff45e40d1a1c8f7e7de4e976d0c9e555.r2.cloudflarestorage.com/Yw9ZSbS9MLhth8Kwh7qojW3wRz73/ee3fec6a-5280-4f48-97d1-05c05789ec09?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=2f488bd324502ec20fee5b40e9c9ed39%2F20251102%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251102T111527Z&X-Amz-Expires=43200&X-Amz-Signature=ed358e80f98c8094cd57b46f24180f504f4df441d553e437206a18b4608d4a0a&X-Amz-SignedHeaders=host" 
-                    poster="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png"
-                  />
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
+                    <iframe 
+                      src="https://vkvideo.ru/video_ext.php?oid=-233657980&id=456239017&hash=932956d3b3c9b547" 
+                      className="w-full h-full" 
+                      style={{ backgroundColor: '#000' }}
+                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture" 
+                      allowFullScreen
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
                 </div>
               </Card>
             </TabsContent>
@@ -689,10 +694,16 @@ const Index = () => {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <VideoPlayer 
-                    src="https://upnow-prod.ff45e40d1a1c8f7e7de4e976d0c9e555.r2.cloudflarestorage.com/Yw9ZSbS9MLhth8Kwh7qojW3wRz73/ee3fec6a-5280-4f48-97d1-05c05789ec09?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=2f488bd324502ec20fee5b40e9c9ed39%2F20251102%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251102T111527Z&X-Amz-Expires=43200&X-Amz-Signature=ed358e80f98c8094cd57b46f24180f504f4df441d553e437206a18b4608d4a0a&X-Amz-SignedHeaders=host" 
-                    poster="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png"
-                  />
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
+                    <iframe 
+                      src="https://vkvideo.ru/video_ext.php?oid=-233657980&id=456239017&hash=932956d3b3c9b547" 
+                      className="w-full h-full" 
+                      style={{ backgroundColor: '#000' }}
+                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture" 
+                      allowFullScreen
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
                 </div>
               </Card>
             </TabsContent>
@@ -718,6 +729,18 @@ const Index = () => {
                         <span className="text-sm sm:text-base">{feature}</span>
                       </div>
                     ))}
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-secondary/20">
+                    <iframe 
+                      src="https://vkvideo.ru/video_ext.php?oid=-233657980&id=456239017&hash=932956d3b3c9b547" 
+                      className="w-full h-full" 
+                      style={{ backgroundColor: '#000' }}
+                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture" 
+                      allowFullScreen
+                      frameBorder="0"
+                    ></iframe>
                   </div>
                 </div>
               </Card>
