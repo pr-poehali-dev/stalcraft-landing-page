@@ -516,7 +516,7 @@ const Index = () => {
 
       <HeroSection t={t} scrollToSection={scrollToSection} />
 
-      <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 relative">
+      <section id="about" className="sm:py-20 px-4 sm:px-6 relative py-5">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">{t.whyChoose.title}</p>
