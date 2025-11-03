@@ -709,11 +709,13 @@ const Index = () => {
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
                     <iframe 
                       src="https://vkvideo.ru/video_ext.php?oid=-233657980&id=456239017&hash=932956d3b3c9b547" 
-                      className="w-full h-full" 
-                      style={{ backgroundColor: '#000' }}
-                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture" 
-                      allowFullScreen
-                      frameBorder="0"
+                      width="640" 
+                      height="360" 
+                      frameBorder="0" 
+                      allowFullScreen 
+                      style={{ backgroundColor: '#000' }} 
+                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                      className="w-full h-full"
                     ></iframe>
                   </div>
                 </div>
