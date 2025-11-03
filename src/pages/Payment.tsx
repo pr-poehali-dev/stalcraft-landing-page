@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { translations } from "@/lib/translations";
 
 const Payment = () => {
+  const [language] = useState<'ru' | 'en'>(() => {
+    return (localStorage.getItem('language') as 'ru' | 'en') || 'ru';
+  });
+  const t = translations[language].payment;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black">
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-primary/20">
@@ -24,7 +31,7 @@ const Payment = () => {
               className="border-primary/20 hover:bg-primary/10"
             >
               <Icon name="Home" className="mr-2" size={16} />
-              На главную
+              {t.backBtn}
             </Button>
           </div>
         </div>
@@ -34,18 +41,17 @@ const Payment = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              Оплата и подписки
+              {t.title}
             </h1>
-            <p className="text-muted-foreground">Управление через Telegram бот</p>
+            <p className="text-muted-foreground">{t.subtitle}</p>
           </div>
 
           <div className="space-y-8">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-10 rounded-2xl text-center">
               <Icon name="Bot" className="text-primary mx-auto mb-6" size={64} />
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Telegram Bot Panel</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t.botSection.title}</h2>
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-                Все подписки и платежи оформляются через нашего Telegram бота. 
-                Удобная панель управления, мгновенная активация, история покупок.
+                {t.botSection.desc}
               </p>
               <Button 
                 size="lg" 
@@ -53,7 +59,7 @@ const Payment = () => {
                 onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
               >
                 <Icon name="ExternalLink" className="mr-2" size={20} />
-                <span className="truncate">Открыть @KamiPanelbot</span>
+                <span className="truncate">{t.botSection.btnText}</span>
               </Button>
             </Card>
 
@@ -61,89 +67,51 @@ const Payment = () => {
               <section>
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                   <Icon name="HelpCircle" className="text-primary" size={28} />
-                  Как купить подписку?
+                  {t.howToBuy.title}
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-bold">
-                      1
+                  {t.howToBuy.steps.map((step, idx) => (
+                    <div key={idx} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-bold">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2">{step.title}</h3>
+                        <p className="text-muted-foreground text-sm sm:text-base break-words">{step.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Откройте Telegram бот</h3>
-                      <p className="text-muted-foreground text-sm sm:text-base break-words">Нажмите на кнопку выше или перейдите по ссылке <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">@KamiPanelbot</a></p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Выберите продукт</h3>
-                      <p className="text-muted-foreground text-sm sm:text-base">EspVision (базовый), ArtVision (артефакты) или PrivateVision (премиум)</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Выберите период</h3>
-                      <p className="text-muted-foreground text-sm sm:text-base">1 день, 7 дней, 30 дней — выберите удобный срок</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Оплатите</h3>
-                      <p className="text-muted-foreground text-sm sm:text-base">Доступны карты РФ, криптовалюта, электронные кошельки</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-bold">
-                      5
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Получите доступ</h3>
-                      <p className="text-muted-foreground text-sm sm:text-base">Мгновенная активация! Ключ и инструкция придут в бот</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                   <Icon name="CreditCard" className="text-primary" size={28} />
-                  Способы оплаты
+                  {t.paymentMethods.title}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="border border-primary/20 rounded-xl p-4 bg-card/20">
                     <Icon name="CreditCard" className="text-primary mb-3" size={32} />
-                    <h3 className="font-semibold mb-2">Банковские карты</h3>
-                    <p className="text-sm text-muted-foreground">Visa, Mastercard, МИР — карты РФ и СНГ</p>
+                    <h3 className="font-semibold mb-2">{t.paymentMethods.cards.title}</h3>
+                    <p className="text-sm text-muted-foreground">{t.paymentMethods.cards.desc}</p>
                   </div>
 
                   <div className="border border-primary/20 rounded-xl p-4 bg-card/20">
                     <Icon name="Wallet" className="text-primary mb-3" size={32} />
-                    <h3 className="font-semibold mb-2">Электронные кошельки</h3>
-                    <p className="text-sm text-muted-foreground">ЮMoney, QIWI, WebMoney</p>
+                    <h3 className="font-semibold mb-2">{t.paymentMethods.wallets.title}</h3>
+                    <p className="text-sm text-muted-foreground">{t.paymentMethods.wallets.desc}</p>
                   </div>
 
                   <div className="border border-primary/20 rounded-xl p-4 bg-card/20">
                     <Icon name="Bitcoin" className="text-primary mb-3" size={32} />
-                    <h3 className="font-semibold mb-2">Криптовалюта</h3>
-                    <p className="text-sm text-muted-foreground">BTC, ETH, USDT, TON</p>
+                    <h3 className="font-semibold mb-2">{t.paymentMethods.crypto.title}</h3>
+                    <p className="text-sm text-muted-foreground">{t.paymentMethods.crypto.desc}</p>
                   </div>
 
                   <div className="border border-primary/20 rounded-xl p-4 bg-card/20">
                     <Icon name="Smartphone" className="text-primary mb-3" size={32} />
-                    <h3 className="font-semibold mb-2">Мобильные платежи</h3>
-                    <p className="text-sm text-muted-foreground">Баланс телефона (МТС, Билайн, МегаФон)</p>
+                    <h3 className="font-semibold mb-2">{t.paymentMethods.mobile.title}</h3>
+                    <p className="text-sm text-muted-foreground">{t.paymentMethods.mobile.desc}</p>
                   </div>
                 </div>
               </section>
@@ -151,89 +119,39 @@ const Payment = () => {
               <section>
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                   <Icon name="ShieldCheck" className="text-primary" size={28} />
-                  Гарантии безопасности
+                  {t.security.title}
                 </h2>
                 <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span>Все платежи проходят через защищенные платежные системы</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span>Мы не храним данные вашей банковской карты</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span>Мгновенная активация после оплаты — автоматическая система</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span>Чек об оплате придёт в Telegram автоматически</span>
-                  </li>
+                  {t.security.points.map((point, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                      <span>{point}</span>
+                    </li>
+                  ))}
                 </ul>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                  <Icon name="RefreshCcw" className="text-primary" size={28} />
-                  Возврат средств
+                  <Icon name="Headphones" className="text-primary" size={28} />
+                  {t.support.title}
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Мы стремимся обеспечить лучший сервис, но понимаем, что иногда возникают ситуации, требующие возврата средств.
+                <p className="text-muted-foreground mb-4">
+                  {t.support.desc}
                 </p>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span>Возврат возможен в течение 24 часов, если продукт не был активирован</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span>При технических проблемах со стороны ExoVision — полный возврат или продление подписки</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                    <span>Возврат невозможен после активации ключа или при блокировке игрового аккаунта</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                    <span>Возврат невозможен, если продукт работает корректно, но вам не подошёл</span>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                  <Icon name="MessageCircle" className="text-primary" size={28} />
-                  Нужна помощь?
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Возникли вопросы по оплате? Наша поддержка работает 24/7:
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button 
-                    variant="outline"
-                    className="border-primary/20 hover:bg-primary/10"
-                    onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
-                  >
-                    <Icon name="Bot" className="mr-2" size={18} />
-                    Написать боту
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="border-primary/20 hover:bg-primary/10"
-                    onClick={() => window.open('https://t.me/+xNvCqrGN6uNhMTdi', '_blank')}
-                  >
-                    <Icon name="Users" className="mr-2" size={18} />
-                    Telegram чат
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="border-primary/20 hover:bg-primary/10"
-                    onClick={() => window.open('https://discord.gg/6JuG3e484Y', '_blank')}
-                  >
-                    <Icon name="Gamepad2" className="mr-2" size={18} />
-                    Discord
-                  </Button>
+                <div className="space-y-2 text-muted-foreground">
+                  <p className="flex items-start gap-2">
+                    <Icon name="MessageCircle" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span>{t.support.telegram}</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <Icon name="Gamepad2" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span>{t.support.discord}</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <Icon name="Clock" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span>{t.support.response}</span>
+                  </p>
                 </div>
               </section>
             </Card>

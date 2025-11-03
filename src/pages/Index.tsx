@@ -9,7 +9,13 @@ import HeroSection from "@/components/HeroSection";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
-  const [language, setLanguage] = useState<'ru' | 'en'>('ru');
+  const [language, setLanguage] = useState<'ru' | 'en'>(() => {
+    return (localStorage.getItem('language') as 'ru' | 'en') || 'ru';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
@@ -215,6 +221,9 @@ const Index = () => {
         youtubeDesc: 'Гайды и обзоры'
       },
       footer: {
+        terms: 'Условия использования',
+        payment: 'Оплата',
+        support: 'Поддержка',
         rights: '© 2019-2025 ExoVision Project. Все права защищены.',
         panel: 'Управление подписками: @KamiPanelbot'
       }
@@ -407,6 +416,9 @@ const Index = () => {
         youtubeDesc: 'Guides and reviews'
       },
       footer: {
+        terms: 'Terms of Service',
+        payment: 'Payment',
+        support: 'Support',
         rights: '© 2019-2025 ExoVision Project. All rights reserved.',
         panel: 'Subscription management: @KamiPanelbot'
       }
@@ -996,11 +1008,11 @@ const Index = () => {
       <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-primary/20 relative">
         <div className="container mx-auto text-center text-muted-foreground">
           <div className="flex justify-center gap-4 mb-4 text-xs sm:text-sm">
-            <a href="/terms" className="hover:text-primary transition-colors">Условия использования</a>
+            <a href="/terms" className="hover:text-primary transition-colors">{t.footer.terms}</a>
             <span>•</span>
-            <a href="/payment" className="hover:text-primary transition-colors">Оплата</a>
+            <a href="/payment" className="hover:text-primary transition-colors">{t.footer.payment}</a>
             <span>•</span>
-            <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Поддержка</a>
+            <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.footer.support}</a>
           </div>
           <p className="mb-2 text-xs sm:text-base">{t.footer.rights}</p>
           <p className="text-xs sm:text-sm">{t.footer.panel}</p>

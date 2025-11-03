@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { translations } from "@/lib/translations";
 
 const Terms = () => {
+  const [language] = useState<'ru' | 'en'>(() => {
+    return (localStorage.getItem('language') as 'ru' | 'en') || 'ru';
+  });
+  const t = translations[language].terms;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black">
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-primary/20">
@@ -24,7 +31,7 @@ const Terms = () => {
               className="border-primary/20 hover:bg-primary/10"
             >
               <Icon name="Home" className="mr-2" size={16} />
-              На главную
+              {t.backBtn}
             </Button>
           </div>
         </div>
@@ -34,174 +41,121 @@ const Terms = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              Условия использования
+              {t.title}
             </h1>
-            <p className="text-muted-foreground">Обновлено: Октябрь 2025</p>
+            <p className="text-muted-foreground">{t.updated}</p>
           </div>
 
           <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-10 rounded-2xl space-y-8">
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
                 <Icon name="FileText" className="text-primary flex-shrink-0" size={24} />
-                <span>1. Общие положения</span>
+                <span>{t.section1.title}</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
-                Используя продукты ExoVision (EspVision, ArtVision, PrivateVision), вы соглашаетесь с настоящими условиями использования. 
-                Если вы не согласны с какими-либо из этих условий, пожалуйста, не используйте наши продукты.
+                {t.section1.text1}
               </p>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
-                ExoVision — это независимый проект, не связанный с разработчиками игры STALCRAFT. 
-                Мы предоставляем программное обеспечение "как есть" без каких-либо гарантий.
+                {t.section1.text2}
               </p>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
                 <Icon name="AlertTriangle" className="text-primary flex-shrink-0" size={24} />
-                <span>2. Риски и ответственность</span>
+                <span>{t.section2.title}</span>
               </h2>
               <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Использование читов нарушает правила игры STALCRAFT и может привести к блокировке вашего игрового аккаунта</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Вы используете наши продукты на свой страх и риск. ExoVision не несёт ответственности за блокировки аккаунтов</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Мы прилагаем усилия для безопасности, но не можем гарантировать 100% защиту от обнаружения</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Возврат средств невозможен в случае блокировки вашего игрового аккаунта</span>
-                </li>
+                {t.section2.points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span className="break-words">{point}</span>
+                  </li>
+                ))}
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
                 <Icon name="ShieldCheck" className="text-primary flex-shrink-0" size={24} />
-                <span>3. Правила использования</span>
+                <span>{t.section3.title}</span>
               </h2>
               <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Один ключ активации = один игровой аккаунт. Передача ключей третьим лицам запрещена</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Запрещено декомпилировать, модифицировать или распространять наше программное обеспечение</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Запрещено использовать продукты для коммерческой выгоды (продажа игровых ресурсов и т.п.)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Требуется соблюдение системных требований: Windows 8-11, стабильное интернет-соединение</span>
-                </li>
+                {t.section3.points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span className="break-words">{point}</span>
+                  </li>
+                ))}
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
                 <Icon name="CreditCard" className="text-primary flex-shrink-0" size={24} />
-                <span>4. Подписка и оплата</span>
+                <span>{t.section4.title}</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
-                Все подписки приобретаются через Telegram бот <a href="https://t.me/KamiPanelbot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">@KamiPanelbot</a>. 
-                Подписка активируется мгновенно после оплаты.
+                {t.section4.text}
               </p>
               <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Подписка действует в течение оплаченного периода (день, неделя, месяц)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Автопродление отсутствует — подписку нужно продлевать вручную</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Возврат средств возможен только при технических проблемах со стороны ExoVision</span>
-                </li>
+                {t.section4.points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <Icon name="ChevronRight" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span className="break-words">{point}</span>
+                  </li>
+                ))}
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
                 <Icon name="RefreshCw" className="text-primary flex-shrink-0" size={24} />
-                <span>5. Обновления и поддержка</span>
+                <span>{t.section5.title}</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
-                Мы гарантируем быстрое обновление продуктов после патчей игры. Поддержка доступна 24/7 через Telegram и Discord.
+                {t.section5.text}
               </p>
               <ul className="space-y-3 text-muted-foreground text-sm sm:text-base">
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Обновления выходят в течение нескольких часов после игровых патчей</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Техподдержка отвечает в течение 1-24 часов в зависимости от сложности вопроса</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
-                  <span className="break-words">Мы оставляем за собой право изменять функционал продуктов для повышения безопасности</span>
-                </li>
+                {t.section5.points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                    <span className="break-words">{point}</span>
+                  </li>
+                ))}
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
                 <Icon name="Lock" className="text-primary flex-shrink-0" size={24} />
-                <span>6. Конфиденциальность</span>
+                <span>{t.section6.title}</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
-                Мы не собираем и не храним персональные данные игроков. Для работы продукта требуется только игровой аккаунт и 
-                Telegram ID для привязки подписки. Ваши игровые данные не передаются третьим лицам.
+                {t.section6.text}
               </p>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
-                <Icon name="Scale" className="text-primary flex-shrink-0" size={24} />
-                <span>7. Изменение условий</span>
+                <Icon name="FileEdit" className="text-primary flex-shrink-0" size={24} />
+                <span>{t.section7.title}</span>
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
-                ExoVision оставляет за собой право изменять данные условия использования в любое время. 
-                Об изменениях мы сообщаем в нашем Telegram-канале. Продолжая использовать продукты после изменений, 
-                вы автоматически соглашаетесь с новыми условиями.
+                {t.section7.text}
               </p>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 sm:gap-3 break-words">
-                <Icon name="MessageCircle" className="text-primary flex-shrink-0" size={24} />
-                <span>8. Контакты</span>
+                <Icon name="MessageSquare" className="text-primary flex-shrink-0" size={24} />
+                <span>{t.section8.title}</span>
               </h2>
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 break-words">
-                По вопросам условий использования обращайтесь:
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button 
-                  variant="outline"
-                  className="border-primary/20 hover:bg-primary/10"
-                  onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
-                >
-                  <Icon name="Bot" className="mr-2" size={18} />
-                  @KamiPanelbot
-                </Button>
-                <Button 
-                  variant="outline"
-                  className="border-primary/20 hover:bg-primary/10"
-                  onClick={() => window.open('https://t.me/+xNvCqrGN6uNhMTdi', '_blank')}
-                >
-                  <Icon name="Users" className="mr-2" size={18} />
-                  Telegram чат
-                </Button>
+              <div className="text-muted-foreground text-sm sm:text-base leading-relaxed space-y-2">
+                <p className="break-words">{t.section8.text1}</p>
+                <p className="break-words">{t.section8.text2}</p>
+                <p className="break-words">{t.section8.text3}</p>
+                <p className="break-words">{t.section8.text4}</p>
               </div>
             </section>
           </Card>
