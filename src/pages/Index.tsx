@@ -708,7 +708,7 @@ const Index = () => {
                 <div className="mt-6">
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
                     <iframe 
-                      src="https://vkvideo.ru/video_ext.php?oid=-233657980&id=456239017&hash=932956d3b3c9b547" 
+                      src="https://vkvideo.ru/video_ext.php?oid=-233657980&id=456239018&hash=c22f100fff9c5351" 
                       width="640" 
                       height="360" 
                       frameBorder="0" 
