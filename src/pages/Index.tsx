@@ -584,7 +584,40 @@ const Index = () => {
           </div>
           
           <div className="lg:hidden">
-            <div className="relative overflow-hidden">
+            <div 
+              className="relative overflow-hidden touch-pan-y"
+              style={{ touchAction: 'pan-y' }}
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                e.currentTarget.dataset.touchStartX = touch.clientX.toString();
+                e.currentTarget.dataset.touchStartY = touch.clientY.toString();
+              }}
+              onTouchMove={(e) => {
+                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
+                const touchCurrentX = e.touches[0].clientX;
+                const touchCurrentY = e.touches[0].clientY;
+                const diffX = Math.abs(touchStartX - touchCurrentX);
+                const diffY = Math.abs(touchStartY - touchCurrentY);
+                
+                if (diffX > diffY && diffX > 10) {
+                  e.preventDefault();
+                }
+              }}
+              onTouchEnd={(e) => {
+                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > 50) {
+                  if (diff > 0 && currentFeature < 3) {
+                    setCurrentFeature(prev => prev + 1);
+                  } else if (diff < 0 && currentFeature > 0) {
+                    setCurrentFeature(prev => prev - 1);
+                  }
+                }
+              }}
+            >
               <div 
                 className="flex transition-transform duration-300 ease-out"
                 style={{ transform: `translateX(-${currentFeature * 100}%)` }}
@@ -704,7 +737,40 @@ const Index = () => {
           </div>
           
           <div className="md:hidden">
-            <div className="relative overflow-hidden rounded-2xl">
+            <div 
+              className="relative overflow-hidden rounded-2xl touch-pan-y"
+              style={{ touchAction: 'pan-y' }}
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                e.currentTarget.dataset.touchStartX = touch.clientX.toString();
+                e.currentTarget.dataset.touchStartY = touch.clientY.toString();
+              }}
+              onTouchMove={(e) => {
+                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
+                const touchCurrentX = e.touches[0].clientX;
+                const touchCurrentY = e.touches[0].clientY;
+                const diffX = Math.abs(touchStartX - touchCurrentX);
+                const diffY = Math.abs(touchStartY - touchCurrentY);
+                
+                if (diffX > diffY && diffX > 10) {
+                  e.preventDefault();
+                }
+              }}
+              onTouchEnd={(e) => {
+                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > 50) {
+                  if (diff > 0 && currentScreenshot < 2) {
+                    setCurrentScreenshot(prev => prev + 1);
+                  } else if (diff < 0 && currentScreenshot > 0) {
+                    setCurrentScreenshot(prev => prev - 1);
+                  }
+                }
+              }}
+            >
               <div 
                 className="flex transition-transform duration-300 ease-out"
                 style={{ transform: `translateX(-${currentScreenshot * 100}%)` }}
