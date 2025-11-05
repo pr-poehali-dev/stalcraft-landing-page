@@ -851,12 +851,12 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
                 </div>
-                <div className="mb-6">
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div className="mb-6 overflow-x-auto scrollbar-hide">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 min-w-max sm:min-w-0">
                     {t.products.espVision.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                        <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                        <span className="text-xs sm:text-sm leading-tight">{feature}</span>
+                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors whitespace-nowrap">
+                        <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
+                        <span className="text-xs font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -888,12 +888,12 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
                 </div>
-                <div className="mb-6">
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div className="mb-6 overflow-x-auto scrollbar-hide">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 min-w-max sm:min-w-0">
                     {t.products.artVision.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                        <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                        <span className="text-xs sm:text-sm leading-tight">{feature}</span>
+                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors whitespace-nowrap">
+                        <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
+                        <span className="text-xs font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -929,13 +929,15 @@ const Index = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-sm font-semibold text-secondary">{t.products.privateVision.allFrom}</p>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                    {t.products.privateVision.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2 p-2 rounded-lg hover:bg-secondary/5 transition-colors">
-                        <Icon name="Check" className="text-secondary flex-shrink-0 mt-0.5" size={16} />
-                        <span className="text-xs sm:text-sm leading-tight">{feature}</span>
-                      </div>
-                    ))}
+                  <div className="overflow-x-auto scrollbar-hide">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 min-w-max sm:min-w-0">
+                      {t.products.privateVision.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary/5 border border-secondary/10 hover:bg-secondary/10 transition-colors whitespace-nowrap">
+                          <Icon name="Check" className="text-secondary flex-shrink-0" size={14} />
+                          <span className="text-xs font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="mt-6">
