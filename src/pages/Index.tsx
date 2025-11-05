@@ -12,6 +12,7 @@ const Index = () => {
   const [language, setLanguage] = useState<'ru' | 'en'>(() => {
     return (localStorage.getItem('language') as 'ru' | 'en') || 'ru';
   });
+  const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -915,7 +916,73 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="grid gap-6 sm:gap-8">
+          <div className="sm:hidden">
+            <div className="relative overflow-hidden">
+              <div 
+                className="flex transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(-${currentStep * 100}%)` }}
+              >
+                {t.howToBuy.steps.map((step, idx) => (
+                  <div key={idx} className="w-full flex-shrink-0 px-2">
+                    <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 rounded-2xl">
+                      <div className="flex flex-col items-start gap-4">
+                        <div className="flex items-center gap-4 w-full">
+                          <div className="text-5xl font-bold text-primary/20">
+                            {step.number}
+                          </div>
+                          <div className="p-3 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
+                            <Icon name={step.icon} className="text-primary" size={28} />
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                          <p className="text-sm text-muted-foreground">{step.desc}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
+                disabled={currentStep === 0}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="ChevronLeft" size={20} />
+              </Button>
+              
+              <div className="flex gap-2">
+                {t.howToBuy.steps.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentStep(idx)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      idx === currentStep 
+                        ? 'bg-primary w-8' 
+                        : 'bg-primary/30'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentStep(Math.min(t.howToBuy.steps.length - 1, currentStep + 1))}
+                disabled={currentStep === t.howToBuy.steps.length - 1}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="ChevronRight" size={20} />
+              </Button>
+            </div>
+          </div>
+
+          <div className="hidden sm:grid gap-6 sm:gap-8">
             {t.howToBuy.steps.map((step, idx) => (
               <Card 
                 key={idx}
