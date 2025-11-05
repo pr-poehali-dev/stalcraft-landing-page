@@ -13,6 +13,8 @@ const Index = () => {
     return (localStorage.getItem('language') as 'ru' | 'en') || 'ru';
   });
   const [currentStep, setCurrentStep] = useState(0);
+  const [currentFeature, setCurrentFeature] = useState(0);
+  const [currentScreenshot, setCurrentScreenshot] = useState(0);
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -578,7 +580,72 @@ const Index = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.whyChoose.brand}</h2>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="lg:hidden">
+            <div className="relative overflow-hidden">
+              <div 
+                className="flex transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(-${currentFeature * 100}%)` }}
+              >
+                {[
+                  { icon: 'Zap', color: 'primary', title: t.whyChoose.fastUpdate, desc: t.whyChoose.fastUpdateDesc, delay: '0s' },
+                  { icon: 'ShieldCheck', color: 'secondary', title: t.whyChoose.undetected, desc: t.whyChoose.undetectedDesc, delay: '0.5s' },
+                  { icon: 'Users', color: 'primary', title: t.whyChoose.support, desc: t.whyChoose.supportDesc, delay: '1s' },
+                  { icon: 'Settings', color: 'secondary', title: t.whyChoose.customization, desc: t.whyChoose.customizationDesc, delay: '1.5s' }
+                ].map((item, idx) => (
+                  <div key={idx} className="w-full flex-shrink-0 px-2">
+                    <div className="relative group">
+                      <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}/20 to-transparent rounded-2xl blur-xl glow-pulse`}></div>
+                      <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 rounded-2xl">
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-${item.color}/20 to-transparent flex items-center justify-center mb-4`}>
+                          <Icon name={item.icon} className={`text-${item.color}`} size={28} />
+                        </div>
+                        <h4 className="text-xl font-bold mb-3">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </Card>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentFeature(Math.max(0, currentFeature - 1))}
+                disabled={currentFeature === 0}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="ChevronLeft" size={20} />
+              </Button>
+              
+              <div className="flex gap-2">
+                {[0, 1, 2, 3].map((idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentFeature(idx)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      idx === currentFeature 
+                        ? 'bg-primary w-8' 
+                        : 'bg-primary/30'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentFeature(Math.min(3, currentFeature + 1))}
+                disabled={currentFeature === 3}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="ChevronRight" size={20} />
+              </Button>
+            </div>
+          </div>
+
+          <div className="hidden lg:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all glow-pulse"></div>
               <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 sm:p-8 rounded-2xl hover:border-primary/40 transition-all">
@@ -633,7 +700,74 @@ const Index = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Чит в действии</h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="md:hidden">
+            <div className="relative overflow-hidden rounded-2xl">
+              <div 
+                className="flex transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(-${currentScreenshot * 100}%)` }}
+              >
+                {[
+                  { img: 'https://cdn.poehali.dev/files/dfc53c5b-ecf1-460a-b412-fa582f397426.png', title: 'ESP через стены', desc: 'Видимость игроков и объектов' },
+                  { img: 'https://cdn.poehali.dev/files/c9b76ade-9b6a-46f7-8258-4db212d101ec.png', title: 'Разделение игроков и NPC', desc: 'Разные цвета подсветки' },
+                  { img: 'https://cdn.poehali.dev/files/01bf24f6-bf67-4298-aa3f-5c2a3c672fab.png', title: 'Визуалы', desc: 'Кастомные эффекты и подсветка' }
+                ].map((item, idx) => (
+                  <div key={idx} className="w-full flex-shrink-0 px-2">
+                    <div className="relative group overflow-hidden rounded-2xl border border-primary/20">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+                      <img 
+                        src={item.img} 
+                        alt={item.title}
+                        loading="lazy" 
+                        className="w-full h-64 object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                        <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentScreenshot(Math.max(0, currentScreenshot - 1))}
+                disabled={currentScreenshot === 0}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="ChevronLeft" size={20} />
+              </Button>
+              
+              <div className="flex gap-2">
+                {[0, 1, 2].map((idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentScreenshot(idx)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      idx === currentScreenshot 
+                        ? 'bg-primary w-8' 
+                        : 'bg-primary/30'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentScreenshot(Math.min(2, currentScreenshot + 1))}
+                disabled={currentScreenshot === 2}
+                className="border-primary/20 hover:bg-primary/10"
+              >
+                <Icon name="ChevronRight" size={20} />
+              </Button>
+            </div>
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-3 gap-4 sm:gap-6">
             <div className="relative group overflow-hidden rounded-2xl border border-primary/20 hover:border-primary/40 transition-all">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
               <img 
@@ -717,13 +851,15 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
-                  {t.products.espVision.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span className="text-sm sm:text-base">{feature}</span>
-                    </div>
-                  ))}
+                <div className="mb-6">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                    {t.products.espVision.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
+                        <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                        <span className="text-xs sm:text-sm leading-tight">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="mt-6">
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
@@ -752,13 +888,15 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
-                  {t.products.artVision.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span className="text-sm sm:text-base">{feature}</span>
-                    </div>
-                  ))}
+                <div className="mb-6">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                    {t.products.artVision.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
+                        <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                        <span className="text-xs sm:text-sm leading-tight">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="mt-6">
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-primary/20">
@@ -791,11 +929,11 @@ const Index = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-sm font-semibold text-secondary">{t.products.privateVision.allFrom}</p>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
                     {t.products.privateVision.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <Icon name="Check" className="text-secondary flex-shrink-0 mt-0.5" size={18} />
-                        <span className="text-sm sm:text-base">{feature}</span>
+                      <div key={idx} className="flex items-start gap-2 p-2 rounded-lg hover:bg-secondary/5 transition-colors">
+                        <Icon name="Check" className="text-secondary flex-shrink-0 mt-0.5" size={16} />
+                        <span className="text-xs sm:text-sm leading-tight">{feature}</span>
                       </div>
                     ))}
                   </div>
