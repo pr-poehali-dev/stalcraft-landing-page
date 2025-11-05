@@ -866,9 +866,9 @@ const Index = () => {
                           <div key={slideIdx} className="w-full flex-shrink-0 px-1">
                             <div className="grid grid-cols-2 gap-2">
                               {t.products.espVision.features.slice(slideIdx * 6, (slideIdx + 1) * 6).map((feature, idx) => (
-                                <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10">
-                                  <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
-                                  <span className="text-xs font-medium leading-tight">{feature}</span>
+                                <div key={idx} className="flex items-start gap-1.5 px-2 py-2 rounded-lg bg-primary/5 border border-primary/10 min-h-[48px]">
+                                  <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={12} />
+                                  <span className="text-[10px] leading-tight break-words">{feature}</span>
                                 </div>
                               ))}
                             </div>
@@ -958,9 +958,9 @@ const Index = () => {
                           <div key={slideIdx} className="w-full flex-shrink-0 px-1">
                             <div className="grid grid-cols-2 gap-2">
                               {t.products.artVision.features.slice(slideIdx * 6, (slideIdx + 1) * 6).map((feature, idx) => (
-                                <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10">
-                                  <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
-                                  <span className="text-xs font-medium leading-tight">{feature}</span>
+                                <div key={idx} className="flex items-start gap-1.5 px-2 py-2 rounded-lg bg-primary/5 border border-primary/10 min-h-[48px]">
+                                  <Icon name="Check" className="text-primary flex-shrink-0 mt-0.5" size={12} />
+                                  <span className="text-[10px] leading-tight break-words">{feature}</span>
                                 </div>
                               ))}
                             </div>
@@ -1054,9 +1054,9 @@ const Index = () => {
                           <div key={slideIdx} className="w-full flex-shrink-0 px-1">
                             <div className="grid grid-cols-2 gap-2">
                               {t.products.privateVision.features.slice(slideIdx * 6, (slideIdx + 1) * 6).map((feature, idx) => (
-                                <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary/5 border border-secondary/10">
-                                  <Icon name="Check" className="text-secondary flex-shrink-0" size={14} />
-                                  <span className="text-xs font-medium leading-tight">{feature}</span>
+                                <div key={idx} className="flex items-start gap-1.5 px-2 py-2 rounded-lg bg-secondary/5 border border-secondary/10 min-h-[48px]">
+                                  <Icon name="Check" className="text-secondary flex-shrink-0 mt-0.5" size={12} />
+                                  <span className="text-[10px] leading-tight break-words">{feature}</span>
                                 </div>
                               ))}
                             </div>
