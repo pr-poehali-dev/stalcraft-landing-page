@@ -857,7 +857,27 @@ const Index = () => {
                 <div className="mb-6">
                   {/* Mobile: Slider with 6 items per slide */}
                   <div className="md:hidden relative">
-                    <div className="overflow-hidden">
+                    <div 
+                      className="overflow-hidden"
+                      onTouchStart={(e) => {
+                        const touch = e.touches[0];
+                        e.currentTarget.dataset.touchStartX = touch.clientX.toString();
+                      }}
+                      onTouchEnd={(e) => {
+                        const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                        const touchEndX = e.changedTouches[0].clientX;
+                        const diff = touchStartX - touchEndX;
+                        const maxIndex = Math.ceil(t.products.espVision.features.length / 6) - 1;
+                        
+                        if (Math.abs(diff) > 50) {
+                          if (diff > 0 && espVisionFeatureIndex < maxIndex) {
+                            setEspVisionFeatureIndex(prev => prev + 1);
+                          } else if (diff < 0 && espVisionFeatureIndex > 0) {
+                            setEspVisionFeatureIndex(prev => prev - 1);
+                          }
+                        }
+                      }}
+                    >
                       <div 
                         className="flex transition-transform duration-300 ease-out"
                         style={{ transform: `translateX(-${espVisionFeatureIndex * 100}%)` }}
@@ -949,7 +969,27 @@ const Index = () => {
                 <div className="mb-6">
                   {/* Mobile: Slider with 6 items per slide */}
                   <div className="md:hidden relative">
-                    <div className="overflow-hidden">
+                    <div 
+                      className="overflow-hidden"
+                      onTouchStart={(e) => {
+                        const touch = e.touches[0];
+                        e.currentTarget.dataset.touchStartX = touch.clientX.toString();
+                      }}
+                      onTouchEnd={(e) => {
+                        const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                        const touchEndX = e.changedTouches[0].clientX;
+                        const diff = touchStartX - touchEndX;
+                        const maxIndex = Math.ceil(t.products.artVision.features.length / 6) - 1;
+                        
+                        if (Math.abs(diff) > 50) {
+                          if (diff > 0 && artVisionFeatureIndex < maxIndex) {
+                            setArtVisionFeatureIndex(prev => prev + 1);
+                          } else if (diff < 0 && artVisionFeatureIndex > 0) {
+                            setArtVisionFeatureIndex(prev => prev - 1);
+                          }
+                        }
+                      }}
+                    >
                       <div 
                         className="flex transition-transform duration-300 ease-out"
                         style={{ transform: `translateX(-${artVisionFeatureIndex * 100}%)` }}
@@ -1045,7 +1085,27 @@ const Index = () => {
                   
                   {/* Mobile: Slider with 6 items per slide */}
                   <div className="md:hidden relative">
-                    <div className="overflow-hidden">
+                    <div 
+                      className="overflow-hidden"
+                      onTouchStart={(e) => {
+                        const touch = e.touches[0];
+                        e.currentTarget.dataset.touchStartX = touch.clientX.toString();
+                      }}
+                      onTouchEnd={(e) => {
+                        const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                        const touchEndX = e.changedTouches[0].clientX;
+                        const diff = touchStartX - touchEndX;
+                        const maxIndex = Math.ceil(t.products.privateVision.features.length / 6) - 1;
+                        
+                        if (Math.abs(diff) > 50) {
+                          if (diff > 0 && privateVisionFeatureIndex < maxIndex) {
+                            setPrivateVisionFeatureIndex(prev => prev + 1);
+                          } else if (diff < 0 && privateVisionFeatureIndex > 0) {
+                            setPrivateVisionFeatureIndex(prev => prev - 1);
+                          }
+                        }
+                      }}
+                    >
                       <div 
                         className="flex transition-transform duration-300 ease-out"
                         style={{ transform: `translateX(-${privateVisionFeatureIndex * 100}%)` }}
