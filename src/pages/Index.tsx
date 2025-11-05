@@ -1322,7 +1322,27 @@ const Index = () => {
           </div>
           
           <div className="sm:hidden">
-            <div className="relative overflow-hidden">
+            <div 
+              className="relative overflow-hidden"
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                e.currentTarget.dataset.touchStartX = touch.clientX.toString();
+              }}
+              onTouchEnd={(e) => {
+                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                const maxIndex = t.howToBuy.steps.length - 1;
+                
+                if (Math.abs(diff) > 50) {
+                  if (diff > 0 && currentStep < maxIndex) {
+                    setCurrentStep(prev => prev + 1);
+                  } else if (diff < 0 && currentStep > 0) {
+                    setCurrentStep(prev => prev - 1);
+                  }
+                }
+              }}
+            >
               <div 
                 className="flex transition-transform duration-300 ease-out"
                 style={{ transform: `translateX(-${currentStep * 100}%)` }}
