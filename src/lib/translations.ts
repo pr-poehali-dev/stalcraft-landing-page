@@ -70,6 +70,31 @@ export const translations = {
         desc: 'Все подписки и платежи оформляются через нашего Telegram бота. Удобная панель управления, мгновенная активация, история покупок.',
         btnText: 'Открыть @KamiPanelbot'
       },
+      pricing: {
+        title: 'Тарифы и цены',
+        espvision: {
+          name: 'EspVision',
+          desc: 'Базовый продукт с ESP функционалом',
+          week: '1 неделя — 1 500 ₽',
+          month: '1 месяц — 3 900 ₽'
+        },
+        artvision: {
+          name: 'ArtVision',
+          desc: 'Специализация на артефактах',
+          week: '1 неделя — 800 ₽',
+          month: '1 месяц — 2 100 ₽'
+        },
+        private: {
+          name: 'Private',
+          desc: 'Премиум версия с расширенным функционалом',
+          price: 'Цена уточняется у тех. поддержки'
+        },
+        custom: {
+          name: 'Кастом роль',
+          desc: 'Возможность сбрасывать HWID, выдавать себе подписку, создавать ключи для друзей',
+          price: '20 000 ₽ за 3 месяца'
+        }
+      },
       howToBuy: {
         title: 'Как купить подписку?',
         steps: [
@@ -209,6 +234,31 @@ export const translations = {
         title: 'Telegram Bot Panel',
         desc: 'All subscriptions and payments are processed through our Telegram bot. Convenient control panel, instant activation, purchase history.',
         btnText: 'Open @KamiPanelbot'
+      },
+      pricing: {
+        title: 'Pricing Plans',
+        espvision: {
+          name: 'EspVision',
+          desc: 'Basic product with ESP functionality',
+          week: '1 week — 1,500 ₽',
+          month: '1 month — 3,900 ₽'
+        },
+        artvision: {
+          name: 'ArtVision',
+          desc: 'Specialized for artifacts',
+          week: '1 week — 800 ₽',
+          month: '1 month — 2,100 ₽'
+        },
+        private: {
+          name: 'Private',
+          desc: 'Premium version with extended features',
+          price: 'Price available from tech support'
+        },
+        custom: {
+          name: 'Custom Role',
+          desc: 'Ability to reset HWID, grant yourself subscription, create keys for friends',
+          price: '20,000 ₽ for 3 months'
+        }
       },
       howToBuy: {
         title: 'How to purchase subscription?',

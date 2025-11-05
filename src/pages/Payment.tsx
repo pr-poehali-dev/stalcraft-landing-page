@@ -66,6 +66,74 @@ const Payment = () => {
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-10 rounded-2xl space-y-8">
               <section>
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <Icon name="Tag" className="text-primary" size={28} />
+                  {t.pricing.title}
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="border border-purple-500/30 rounded-xl p-5 bg-gradient-to-br from-purple-950/40 to-card/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Icon name="Eye" className="text-purple-400" size={24} />
+                      <h3 className="font-bold text-lg">{t.pricing.espvision.name}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t.pricing.espvision.desc}</p>
+                    <div className="space-y-2 text-sm">
+                      <p className="flex items-center gap-2">
+                        <Icon name="Clock" className="text-purple-400" size={16} />
+                        <span>{t.pricing.espvision.week}</span>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Icon name="Calendar" className="text-purple-400" size={16} />
+                        <span className="font-semibold">{t.pricing.espvision.month}</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="border border-blue-500/30 rounded-xl p-5 bg-gradient-to-br from-blue-950/40 to-card/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Icon name="Sparkles" className="text-blue-400" size={24} />
+                      <h3 className="font-bold text-lg">{t.pricing.artvision.name}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t.pricing.artvision.desc}</p>
+                    <div className="space-y-2 text-sm">
+                      <p className="flex items-center gap-2">
+                        <Icon name="Clock" className="text-blue-400" size={16} />
+                        <span>{t.pricing.artvision.week}</span>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Icon name="Calendar" className="text-blue-400" size={16} />
+                        <span className="font-semibold">{t.pricing.artvision.month}</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="border border-pink-500/30 rounded-xl p-5 bg-gradient-to-br from-pink-950/40 to-card/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Icon name="Crown" className="text-pink-400" size={24} />
+                      <h3 className="font-bold text-lg">{t.pricing.private.name}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t.pricing.private.desc}</p>
+                    <p className="text-sm flex items-center gap-2">
+                      <Icon name="MessageCircle" className="text-pink-400" size={16} />
+                      <span className="font-semibold">{t.pricing.private.price}</span>
+                    </p>
+                  </div>
+
+                  <div className="border border-amber-500/30 rounded-xl p-5 bg-gradient-to-br from-amber-950/40 to-card/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Icon name="Star" className="text-amber-400" size={24} />
+                      <h3 className="font-bold text-lg">{t.pricing.custom.name}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t.pricing.custom.desc}</p>
+                    <p className="text-sm flex items-center gap-2">
+                      <Icon name="Wallet" className="text-amber-400" size={16} />
+                      <span className="font-semibold">{t.pricing.custom.price}</span>
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                   <Icon name="HelpCircle" className="text-primary" size={28} />
                   {t.howToBuy.title}
                 </h2>
