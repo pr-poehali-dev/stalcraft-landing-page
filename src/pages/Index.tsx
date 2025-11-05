@@ -15,6 +15,9 @@ const Index = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [currentFeature, setCurrentFeature] = useState(0);
   const [currentScreenshot, setCurrentScreenshot] = useState(0);
+  const [espVisionFeatureIndex, setEspVisionFeatureIndex] = useState(0);
+  const [artVisionFeatureIndex, setArtVisionFeatureIndex] = useState(0);
+  const [privateVisionFeatureIndex, setPrivateVisionFeatureIndex] = useState(0);
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -851,10 +854,65 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.espVision.desc}</p>
                   </div>
                 </div>
-                <div className="mb-6 overflow-x-auto scrollbar-hide">
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 min-w-max sm:min-w-0">
+                <div className="mb-6">
+                  {/* Mobile: Slider with 6 items per slide */}
+                  <div className="md:hidden relative">
+                    <div className="overflow-hidden">
+                      <div 
+                        className="flex transition-transform duration-300 ease-out"
+                        style={{ transform: `translateX(-${espVisionFeatureIndex * 100}%)` }}
+                      >
+                        {Array.from({ length: Math.ceil(t.products.espVision.features.length / 6) }).map((_, slideIdx) => (
+                          <div key={slideIdx} className="w-full flex-shrink-0 px-1">
+                            <div className="grid grid-cols-2 gap-2">
+                              {t.products.espVision.features.slice(slideIdx * 6, (slideIdx + 1) * 6).map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10">
+                                  <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
+                                  <span className="text-xs font-medium leading-tight">{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {Math.ceil(t.products.espVision.features.length / 6) > 1 && (
+                      <>
+                        <button
+                          onClick={() => setEspVisionFeatureIndex(prev => Math.max(0, prev - 1))}
+                          disabled={espVisionFeatureIndex === 0}
+                          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-primary/90 hover:bg-primary disabled:opacity-30 disabled:cursor-not-allowed text-primary-foreground p-2 rounded-full transition-all shadow-lg"
+                        >
+                          <Icon name="ChevronLeft" size={20} />
+                        </button>
+                        <button
+                          onClick={() => setEspVisionFeatureIndex(prev => Math.min(Math.ceil(t.products.espVision.features.length / 6) - 1, prev + 1))}
+                          disabled={espVisionFeatureIndex >= Math.ceil(t.products.espVision.features.length / 6) - 1}
+                          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-primary/90 hover:bg-primary disabled:opacity-30 disabled:cursor-not-allowed text-primary-foreground p-2 rounded-full transition-all shadow-lg"
+                        >
+                          <Icon name="ChevronRight" size={20} />
+                        </button>
+                        
+                        <div className="flex justify-center gap-2 mt-4">
+                          {Array.from({ length: Math.ceil(t.products.espVision.features.length / 6) }).map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => setEspVisionFeatureIndex(idx)}
+                              className={`h-1.5 rounded-full transition-all ${
+                                idx === espVisionFeatureIndex ? 'w-6 bg-primary' : 'w-1.5 bg-primary/30'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Desktop: Grid */}
+                  <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-2">
                     {t.products.espVision.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors whitespace-nowrap">
+                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
                         <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
                         <span className="text-xs font-medium">{feature}</span>
                       </div>
@@ -888,10 +946,65 @@ const Index = () => {
                     <p className="text-sm sm:text-base text-muted-foreground">{t.products.artVision.desc}</p>
                   </div>
                 </div>
-                <div className="mb-6 overflow-x-auto scrollbar-hide">
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 min-w-max sm:min-w-0">
+                <div className="mb-6">
+                  {/* Mobile: Slider with 6 items per slide */}
+                  <div className="md:hidden relative">
+                    <div className="overflow-hidden">
+                      <div 
+                        className="flex transition-transform duration-300 ease-out"
+                        style={{ transform: `translateX(-${artVisionFeatureIndex * 100}%)` }}
+                      >
+                        {Array.from({ length: Math.ceil(t.products.artVision.features.length / 6) }).map((_, slideIdx) => (
+                          <div key={slideIdx} className="w-full flex-shrink-0 px-1">
+                            <div className="grid grid-cols-2 gap-2">
+                              {t.products.artVision.features.slice(slideIdx * 6, (slideIdx + 1) * 6).map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10">
+                                  <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
+                                  <span className="text-xs font-medium leading-tight">{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {Math.ceil(t.products.artVision.features.length / 6) > 1 && (
+                      <>
+                        <button
+                          onClick={() => setArtVisionFeatureIndex(prev => Math.max(0, prev - 1))}
+                          disabled={artVisionFeatureIndex === 0}
+                          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-primary/90 hover:bg-primary disabled:opacity-30 disabled:cursor-not-allowed text-primary-foreground p-2 rounded-full transition-all shadow-lg"
+                        >
+                          <Icon name="ChevronLeft" size={20} />
+                        </button>
+                        <button
+                          onClick={() => setArtVisionFeatureIndex(prev => Math.min(Math.ceil(t.products.artVision.features.length / 6) - 1, prev + 1))}
+                          disabled={artVisionFeatureIndex >= Math.ceil(t.products.artVision.features.length / 6) - 1}
+                          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-primary/90 hover:bg-primary disabled:opacity-30 disabled:cursor-not-allowed text-primary-foreground p-2 rounded-full transition-all shadow-lg"
+                        >
+                          <Icon name="ChevronRight" size={20} />
+                        </button>
+                        
+                        <div className="flex justify-center gap-2 mt-4">
+                          {Array.from({ length: Math.ceil(t.products.artVision.features.length / 6) }).map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => setArtVisionFeatureIndex(idx)}
+                              className={`h-1.5 rounded-full transition-all ${
+                                idx === artVisionFeatureIndex ? 'w-6 bg-primary' : 'w-1.5 bg-primary/30'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Desktop: Grid */}
+                  <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-2">
                     {t.products.artVision.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors whitespace-nowrap">
+                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
                         <Icon name="Check" className="text-primary flex-shrink-0" size={14} />
                         <span className="text-xs font-medium">{feature}</span>
                       </div>
@@ -929,15 +1042,69 @@ const Index = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-sm font-semibold text-secondary">{t.products.privateVision.allFrom}</p>
-                  <div className="overflow-x-auto scrollbar-hide">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 min-w-max sm:min-w-0">
-                      {t.products.privateVision.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary/5 border border-secondary/10 hover:bg-secondary/10 transition-colors whitespace-nowrap">
-                          <Icon name="Check" className="text-secondary flex-shrink-0" size={14} />
-                          <span className="text-xs font-medium">{feature}</span>
-                        </div>
-                      ))}
+                  
+                  {/* Mobile: Slider with 6 items per slide */}
+                  <div className="md:hidden relative">
+                    <div className="overflow-hidden">
+                      <div 
+                        className="flex transition-transform duration-300 ease-out"
+                        style={{ transform: `translateX(-${privateVisionFeatureIndex * 100}%)` }}
+                      >
+                        {Array.from({ length: Math.ceil(t.products.privateVision.features.length / 6) }).map((_, slideIdx) => (
+                          <div key={slideIdx} className="w-full flex-shrink-0 px-1">
+                            <div className="grid grid-cols-2 gap-2">
+                              {t.products.privateVision.features.slice(slideIdx * 6, (slideIdx + 1) * 6).map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary/5 border border-secondary/10">
+                                  <Icon name="Check" className="text-secondary flex-shrink-0" size={14} />
+                                  <span className="text-xs font-medium leading-tight">{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
+                    
+                    {Math.ceil(t.products.privateVision.features.length / 6) > 1 && (
+                      <>
+                        <button
+                          onClick={() => setPrivateVisionFeatureIndex(prev => Math.max(0, prev - 1))}
+                          disabled={privateVisionFeatureIndex === 0}
+                          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-secondary/90 hover:bg-secondary disabled:opacity-30 disabled:cursor-not-allowed text-secondary-foreground p-2 rounded-full transition-all shadow-lg"
+                        >
+                          <Icon name="ChevronLeft" size={20} />
+                        </button>
+                        <button
+                          onClick={() => setPrivateVisionFeatureIndex(prev => Math.min(Math.ceil(t.products.privateVision.features.length / 6) - 1, prev + 1))}
+                          disabled={privateVisionFeatureIndex >= Math.ceil(t.products.privateVision.features.length / 6) - 1}
+                          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-secondary/90 hover:bg-secondary disabled:opacity-30 disabled:cursor-not-allowed text-secondary-foreground p-2 rounded-full transition-all shadow-lg"
+                        >
+                          <Icon name="ChevronRight" size={20} />
+                        </button>
+                        
+                        <div className="flex justify-center gap-2 mt-4">
+                          {Array.from({ length: Math.ceil(t.products.privateVision.features.length / 6) }).map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => setPrivateVisionFeatureIndex(idx)}
+                              className={`h-1.5 rounded-full transition-all ${
+                                idx === privateVisionFeatureIndex ? 'w-6 bg-secondary' : 'w-1.5 bg-secondary/30'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Desktop: Grid */}
+                  <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-2">
+                    {t.products.privateVision.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary/5 border border-secondary/10 hover:bg-secondary/10 transition-colors">
+                        <Icon name="Check" className="text-secondary flex-shrink-0" size={14} />
+                        <span className="text-xs font-medium">{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div className="mt-6">
