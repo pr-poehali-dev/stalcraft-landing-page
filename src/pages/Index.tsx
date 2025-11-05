@@ -134,7 +134,28 @@ const Index = () => {
         subtitle: 'Управление через @KamiPanelbot',
         panelTitle: 'Telegram Bot Panel',
         panelDesc: 'Все подписки и платежи оформляются через нашего Telegram бота. Удобная панель управления, мгновенная активация, история покупок.',
-        openBtn: 'Открыть @KamiPanelbot'
+        openBtn: 'Открыть @KamiPanelbot',
+        plans: {
+          espvision: {
+            name: 'EspVision',
+            week: '1 неделя — 1 500 ₽',
+            month: '1 месяц — 3 900 ₽'
+          },
+          artvision: {
+            name: 'ArtVision',
+            week: '1 неделя — 800 ₽',
+            month: '1 месяц — 2 100 ₽'
+          },
+          private: {
+            name: 'Private',
+            price: 'Цена уточняется у тех. поддержки'
+          },
+          custom: {
+            name: 'Кастом роль',
+            desc: 'Сброс HWID, выдача подписок, создание ключей',
+            price: '20 000 ₽ за 3 месяца'
+          }
+        }
       },
       howToBuy: {
         title: 'Как купить',
@@ -329,7 +350,28 @@ const Index = () => {
         subtitle: 'Managed via @KamiPanelbot',
         panelTitle: 'Telegram Bot Panel',
         panelDesc: 'All subscriptions and payments are processed through our Telegram bot. Convenient control panel, instant activation, purchase history.',
-        openBtn: 'Open @KamiPanelbot'
+        openBtn: 'Open @KamiPanelbot',
+        plans: {
+          espvision: {
+            name: 'EspVision',
+            week: '1 week — 1,500 ₽',
+            month: '1 month — 3,900 ₽'
+          },
+          artvision: {
+            name: 'ArtVision',
+            week: '1 week — 800 ₽',
+            month: '1 month — 2,100 ₽'
+          },
+          private: {
+            name: 'Private',
+            price: 'Price available from tech support'
+          },
+          custom: {
+            name: 'Custom Role',
+            desc: 'HWID reset, grant subscriptions, create keys',
+            price: '20,000 ₽ for 3 months'
+          }
+        }
       },
       howToBuy: {
         title: 'How to buy',
@@ -779,21 +821,85 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-neon">{t.pricing.title}</h2>
           <p className="text-center text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12">{t.pricing.subtitle}</p>
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto">
             <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-6 sm:p-12 rounded-2xl">
-              <Icon name="Bot" className="text-primary mx-auto mb-4 sm:mb-6" size={48} />
-              <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{t.pricing.panelTitle}</h4>
-              <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-                {t.pricing.panelDesc}
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-6 border-0 w-full sm:w-auto"
-                onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
-              >
-                <Icon name="ExternalLink" className="mr-2" size={18} />
-                <span className="truncate">{t.pricing.openBtn}</span>
-              </Button>
+              <div className="text-center mb-8 sm:mb-10">
+                <Icon name="Bot" className="text-primary mx-auto mb-4 sm:mb-6" size={48} />
+                <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{t.pricing.panelTitle}</h4>
+                <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
+                  {t.pricing.panelDesc}
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                <div className="border border-purple-500/30 rounded-xl p-4 sm:p-5 bg-gradient-to-br from-purple-950/40 to-card/20 text-left">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="Eye" className="text-purple-400" size={20} />
+                    <h5 className="font-bold text-base sm:text-lg">{t.pricing.plans.espvision.name}</h5>
+                  </div>
+                  <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
+                    <p className="flex items-center gap-2">
+                      <Icon name="Clock" className="text-purple-400 flex-shrink-0" size={14} />
+                      <span>{t.pricing.plans.espvision.week}</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Icon name="Calendar" className="text-purple-400 flex-shrink-0" size={14} />
+                      <span className="font-semibold text-foreground">{t.pricing.plans.espvision.month}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border border-blue-500/30 rounded-xl p-4 sm:p-5 bg-gradient-to-br from-blue-950/40 to-card/20 text-left">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="Sparkles" className="text-blue-400" size={20} />
+                    <h5 className="font-bold text-base sm:text-lg">{t.pricing.plans.artvision.name}</h5>
+                  </div>
+                  <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
+                    <p className="flex items-center gap-2">
+                      <Icon name="Clock" className="text-blue-400 flex-shrink-0" size={14} />
+                      <span>{t.pricing.plans.artvision.week}</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Icon name="Calendar" className="text-blue-400 flex-shrink-0" size={14} />
+                      <span className="font-semibold text-foreground">{t.pricing.plans.artvision.month}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border border-pink-500/30 rounded-xl p-4 sm:p-5 bg-gradient-to-br from-pink-950/40 to-card/20 text-left">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="Crown" className="text-pink-400" size={20} />
+                    <h5 className="font-bold text-base sm:text-lg">{t.pricing.plans.private.name}</h5>
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground flex items-start gap-2">
+                    <Icon name="MessageCircle" className="text-pink-400 flex-shrink-0 mt-0.5" size={14} />
+                    <span>{t.pricing.plans.private.price}</span>
+                  </p>
+                </div>
+
+                <div className="border border-amber-500/30 rounded-xl p-4 sm:p-5 bg-gradient-to-br from-amber-950/40 to-card/20 text-left">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="Star" className="text-amber-400" size={20} />
+                    <h5 className="font-bold text-base sm:text-lg">{t.pricing.plans.custom.name}</h5>
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-2">{t.pricing.plans.custom.desc}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-foreground flex items-center gap-2">
+                    <Icon name="Wallet" className="text-amber-400 flex-shrink-0" size={14} />
+                    <span>{t.pricing.plans.custom.price}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-sm sm:text-lg px-6 sm:px-12 py-5 sm:py-6 border-0 w-full sm:w-auto"
+                  onClick={() => window.open('https://t.me/KamiPanelbot', '_blank')}
+                >
+                  <Icon name="ExternalLink" className="mr-2" size={18} />
+                  <span className="truncate">{t.pricing.openBtn}</span>
+                </Button>
+              </div>
             </Card>
           </div>
         </div>
