@@ -585,24 +585,10 @@ const Index = () => {
           
           <div className="lg:hidden">
             <div 
-              className="relative overflow-hidden touch-pan-y"
-              style={{ touchAction: 'pan-y' }}
+              className="relative overflow-hidden"
               onTouchStart={(e) => {
                 const touch = e.touches[0];
                 e.currentTarget.dataset.touchStartX = touch.clientX.toString();
-                e.currentTarget.dataset.touchStartY = touch.clientY.toString();
-              }}
-              onTouchMove={(e) => {
-                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
-                const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
-                const touchCurrentX = e.touches[0].clientX;
-                const touchCurrentY = e.touches[0].clientY;
-                const diffX = Math.abs(touchStartX - touchCurrentX);
-                const diffY = Math.abs(touchStartY - touchCurrentY);
-                
-                if (diffX > diffY && diffX > 10) {
-                  e.preventDefault();
-                }
               }}
               onTouchEnd={(e) => {
                 const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
@@ -738,24 +724,10 @@ const Index = () => {
           
           <div className="md:hidden">
             <div 
-              className="relative overflow-hidden rounded-2xl touch-pan-y"
-              style={{ touchAction: 'pan-y' }}
+              className="relative overflow-hidden rounded-2xl"
               onTouchStart={(e) => {
                 const touch = e.touches[0];
                 e.currentTarget.dataset.touchStartX = touch.clientX.toString();
-                e.currentTarget.dataset.touchStartY = touch.clientY.toString();
-              }}
-              onTouchMove={(e) => {
-                const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
-                const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
-                const touchCurrentX = e.touches[0].clientX;
-                const touchCurrentY = e.touches[0].clientY;
-                const diffX = Math.abs(touchStartX - touchCurrentX);
-                const diffY = Math.abs(touchStartY - touchCurrentY);
-                
-                if (diffX > diffY && diffX > 10) {
-                  e.preventDefault();
-                }
               }}
               onTouchEnd={(e) => {
                 const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
@@ -924,24 +896,10 @@ const Index = () => {
                   {/* Mobile: Slider with 6 items per slide */}
                   <div className="md:hidden relative">
                     <div 
-                      className="overflow-hidden touch-pan-y"
-                      style={{ touchAction: 'pan-y' }}
+                      className="overflow-hidden"
                       onTouchStart={(e) => {
                         const touch = e.touches[0];
                         e.currentTarget.dataset.touchStartX = touch.clientX.toString();
-                        e.currentTarget.dataset.touchStartY = touch.clientY.toString();
-                      }}
-                      onTouchMove={(e) => {
-                        const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
-                        const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
-                        const touchCurrentX = e.touches[0].clientX;
-                        const touchCurrentY = e.touches[0].clientY;
-                        const diffX = Math.abs(touchStartX - touchCurrentX);
-                        const diffY = Math.abs(touchStartY - touchCurrentY);
-                        
-                        if (diffX > diffY && diffX > 10) {
-                          e.preventDefault();
-                        }
                       }}
                       onTouchEnd={(e) => {
                         const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
@@ -1050,24 +1008,10 @@ const Index = () => {
                   {/* Mobile: Slider with 6 items per slide */}
                   <div className="md:hidden relative">
                     <div 
-                      className="overflow-hidden touch-pan-y"
-                      style={{ touchAction: 'pan-y' }}
+                      className="overflow-hidden"
                       onTouchStart={(e) => {
                         const touch = e.touches[0];
                         e.currentTarget.dataset.touchStartX = touch.clientX.toString();
-                        e.currentTarget.dataset.touchStartY = touch.clientY.toString();
-                      }}
-                      onTouchMove={(e) => {
-                        const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
-                        const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
-                        const touchCurrentX = e.touches[0].clientX;
-                        const touchCurrentY = e.touches[0].clientY;
-                        const diffX = Math.abs(touchStartX - touchCurrentX);
-                        const diffY = Math.abs(touchStartY - touchCurrentY);
-                        
-                        if (diffX > diffY && diffX > 10) {
-                          e.preventDefault();
-                        }
                       }}
                       onTouchEnd={(e) => {
                         const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
@@ -1180,24 +1124,10 @@ const Index = () => {
                   {/* Mobile: Slider with 6 items per slide */}
                   <div className="md:hidden relative">
                     <div 
-                      className="overflow-hidden touch-pan-y"
-                      style={{ touchAction: 'pan-y' }}
+                      className="overflow-hidden"
                       onTouchStart={(e) => {
                         const touch = e.touches[0];
                         e.currentTarget.dataset.touchStartX = touch.clientX.toString();
-                        e.currentTarget.dataset.touchStartY = touch.clientY.toString();
-                      }}
-                      onTouchMove={(e) => {
-                        const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
-                        const touchStartY = parseFloat(e.currentTarget.dataset.touchStartY || '0');
-                        const touchCurrentX = e.touches[0].clientX;
-                        const touchCurrentY = e.touches[0].clientY;
-                        const diffX = Math.abs(touchStartX - touchCurrentX);
-                        const diffY = Math.abs(touchStartY - touchCurrentY);
-                        
-                        if (diffX > diffY && diffX > 10) {
-                          e.preventDefault();
-                        }
                       }}
                       onTouchEnd={(e) => {
                         const touchStartX = parseFloat(e.currentTarget.dataset.touchStartX || '0');
