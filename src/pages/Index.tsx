@@ -102,6 +102,8 @@ const Index = () => {
           desc: 'Специализированный пакет для поиска артефактов. Дальность: 80+ метров | Работает на 360°',
           features: [
             'ArtefactEsp - Отображение артефактов через стены',
+            'SoundEsp - Отображение действий игроков через стены',
+            'OtherEsp - Отображение аномалий и ивентовых плюшек через стены',
             'EspType (Edged,Filled,Line) - Тип рисовки',
             'Filled - Заливка бокса',
             'CheckName - Показывает название',
@@ -318,6 +320,8 @@ const Index = () => {
           desc: 'Specialized package for artifact hunting. Range: 80+ meters | Works 360°',
           features: [
             'ArtefactEsp - Display artifacts through walls',
+            'SoundEsp - Display player actions through walls',
+            'OtherEsp - Display anomalies and event items through walls',
             'EspType (Edged,Filled,Line) - Drawing type',
             'Filled - Box fill',
             'CheckName - Shows name',
