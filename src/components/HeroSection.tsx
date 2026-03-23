@@ -57,7 +57,7 @@ export default function HeroSection({ t, scrollToSection }: HeroSectionProps) {
                 STALCRAFT
               </span>
               <span className="block bg-gradient-to-r from-secondary via-purple-400 to-primary bg-clip-text text-transparent">
-                CHEAT
+                VISION
               </span>
             </h1>
           </div>

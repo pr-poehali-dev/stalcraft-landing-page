@@ -49,9 +49,9 @@ const Index = () => {
       },
       hero: {
         title1: 'STALCRAFT',
-        title2: 'CHEAT',
-        subtitle1: 'Мы предлагаем самые эффективные и необнаруживаемые читы,',
-        subtitle2: 'подкрепленные поддержкой 24/7 и непревзойденным набором функций.',
+        title2: 'VISION',
+        subtitle1: 'Мы предлагаем продвинутое программное обеспечение для игры,',
+        subtitle2: 'подкрепленное поддержкой 24/7 и непревзойденным набором функций.',
         aboutBtn: 'О нас',
         buyBtn: 'Купить сейчас'
       },
@@ -60,8 +60,8 @@ const Index = () => {
         brand: 'EXOVISION',
         fastUpdate: 'Быстрые обновления',
         fastUpdateDesc: 'Мгновенные обновления после каждого патча игры',
-        undetected: 'Необнаружим',
-        undetectedDesc: '100% защита от античита с 2019 года',
+        undetected: 'Стабильная работа',
+        undetectedDesc: 'Надёжный и стабильный софт с 2019 года',
         support: '24/7 Поддержка',
         supportDesc: 'Круглосуточная поддержка в Telegram и Discord',
         customization: 'Полная кастомизация',
@@ -72,13 +72,13 @@ const Index = () => {
         subtitle: 'Выберите подходящий пакет функций',
         espVision: {
           title: 'STALCRAFT EspVision',
-          status: '✅ Необнаружим',
-          desc: 'Базовый пакет с ESP функциями для отображения игроков и NPC',
+          status: '✅ Активен',
+          desc: 'Базовый пакет с визуальными функциями для отображения игроков и NPC',
           features: [
-            'PlayerEsp - Отображение игроков через стены',
-            'DrawName - Отображение имена игроков',
+            'PlayerEsp - Визуальное отображение игроков',
+            'DrawName - Отображение имён игроков',
             'CheckTeamates - Отображение союзников',
-            'NpcEsp - Отображение нпс через стены',
+            'NpcEsp - Визуальное отображение NPC',
             'EspType (Edged,Filled,Line) - Тип рисовки',
             'Filled - Заливка бокса',
             'EspColor - Изменение цвета бокса',
@@ -89,21 +89,21 @@ const Index = () => {
             'CrossHair - Прицел в центре экрана',
             'CrossHairType - Выбор типа прицела',
             'CrossHairColor - Цвет прицела',
-            'Clicker - Удобный автокликер',
+            'Clicker - Удобный кликер',
             'Hud - Полезная информация',
             'ShowWaterMark - Watermark на экране',
-            'MaxRange - Максимальный прогруз',
-            'AntiAnomaly - Удаляет аномалии'
+            'MaxRange - Максимальная дальность отображения',
+            'AntiAnomaly - Фильтр аномалий'
           ]
         },
         artVision: {
           title: 'STALCRAFT ArtVision',
-          status: '✅ Необнаружим',
+          status: '✅ Активен',
           desc: 'Специализированный пакет для поиска артефактов. Дальность: 80+ метров | Работает на 360°',
           features: [
-            'ArtefactEsp - Отображение артефактов через стены',
-            'SoundEsp - Отображение действий игроков через стены',
-            'OtherEsp - Отображение аномалий и ивентовых плюшек через стены',
+            'ArtefactEsp - Визуальное отображение артефактов',
+            'SoundEsp - Визуальное отображение действий игроков',
+            'OtherEsp - Отображение аномалий и ивентовых объектов',
             'EspType (Edged,Filled,Line) - Тип рисовки',
             'Filled - Заливка бокса',
             'CheckName - Показывает название',
@@ -121,18 +121,17 @@ const Index = () => {
         },
         privateVision: {
           title: 'STALCRAFT PrivateVision',
-          status: '✅ Необнаружим • Премиум',
-          desc: 'Полный пакет - все функции EspVision + ArtVision + эксклюзив',
+          status: '✅ Активен • Премиум',
+          desc: 'Полный пакет - все функции EspVision + ArtVision + эксклюзивные функции',
           allFrom: 'Все из EspVision + ArtVision',
           features: [
-            'CheckArmor - Броня врагов',
-            'CheckWeapons - Оружие врагов',
-            'BagsEsp - Сумки после смерти',
-            'TainikEsp - Схроны всех типов',
+            'CheckArmor - Информация о броне игроков',
+            'CheckWeapons - Информация об оружии игроков',
+            'BagsEsp - Отображение предметов на земле',
+            'TainikEsp - Отображение схронов всех типов',
             'BarterEsp - Бартеры, минералы',
             'MobEsp - Все мутанты',
-            'MaxPnv - Админ ПНВ',
-            'AimBot - Авто-наводка',
+            'MaxPnv - Расширенный ПНВ',
             '+ Полная кастомизация'
           ]
         }
@@ -160,7 +159,7 @@ const Index = () => {
           },
           custom: {
             name: 'Кастом роль',
-            desc: 'Сброс HWID, выдача подписок, создание ключей',
+            desc: 'Сброс HWID, управление доступом, создание ключей',
             price: '20 000 ₽ за 3 месяца'
           }
         }
@@ -184,7 +183,7 @@ const Index = () => {
           {
             number: '03',
             title: 'Выберите продукт',
-            desc: 'Нажмите «Покупка», выберите софт и период подписки',
+            desc: 'Нажмите «Покупка», выберите пакет и период подписки',
             icon: 'ShoppingCart'
           },
           {
@@ -196,7 +195,7 @@ const Index = () => {
           {
             number: '05',
             title: 'Начните играть',
-            desc: 'Скачайте лоадер и наслаждайтесь игрой с читом',
+            desc: 'Скачайте лоадер и наслаждайтесь игрой',
             icon: 'Rocket'
           }
         ]
@@ -217,14 +216,14 @@ const Index = () => {
           },
           {
             q: 'В чем разница между продуктами?',
-            a: 'EspVision - базовый ESP. ArtVision - артефакты. PrivateVision - премиум со всем.'
+            a: 'EspVision - базовый пакет визуализации. ArtVision - специализирован на артефактах. PrivateVision - премиум со всеми функциями.'
           }
         ]
       },
       about: {
         title: 'О проекте ExoVision',
         historyTitle: 'История проекта',
-        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал бесплатные инструменты для STALCRAFT - базовые ESP и колор аимбот. Спрос превзошел ожидания, наши разработки даже перепродавались на других площадках.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
+        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал инструменты визуализации для STALCRAFT. Спрос превзошел ожидания, наши разработки стали популярными.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
         teamTitle: 'Наша команда',
         admin: 'Администратор-Программист',
         adminDesc: '@KripKripo1ek - Главный архитектор',
@@ -267,8 +266,8 @@ const Index = () => {
       },
       hero: {
         title1: 'STALCRAFT',
-        title2: 'CHEAT',
-        subtitle1: 'We deliver the market\'s most effective and undetected cheats,',
+        title2: 'VISION',
+        subtitle1: 'We deliver advanced software for the game,',
         subtitle2: 'backed by 24/7 support and an unbeatable feature set.',
         aboutBtn: 'About Us',
         buyBtn: 'Buy Now'
@@ -278,8 +277,8 @@ const Index = () => {
         brand: 'EXOVISION',
         fastUpdate: 'Fastest to update',
         fastUpdateDesc: 'Instant updates after every game patch',
-        undetected: 'Undetected',
-        undetectedDesc: '100% anti-cheat protection since 2019',
+        undetected: 'Reliable Software',
+        undetectedDesc: 'Stable and reliable software since 2019',
         support: '24/7 Support',
         supportDesc: 'Round-the-clock support in Telegram and Discord',
         customization: 'Full customization',
@@ -290,13 +289,13 @@ const Index = () => {
         subtitle: 'Choose the right feature package',
         espVision: {
           title: 'STALCRAFT EspVision',
-          status: '✅ Undetected',
-          desc: 'Basic package with ESP features for displaying players and NPCs',
+          status: '✅ Active',
+          desc: 'Basic package with visual features for displaying players and NPCs',
           features: [
-            'PlayerEsp - Display players through walls',
+            'PlayerEsp - Visual display of players',
             'DrawName - Display player names',
             'CheckTeamates - Display teammates',
-            'NpcEsp - Display NPCs through walls',
+            'NpcEsp - Visual display of NPCs',
             'EspType (Edged,Filled,Line) - Drawing type',
             'Filled - Box fill',
             'EspColor - Box color change',
@@ -307,21 +306,21 @@ const Index = () => {
             'CrossHair - Crosshair in screen center',
             'CrossHairType - Crosshair type selection',
             'CrossHairColor - Crosshair color',
-            'Clicker - Convenient auto-clicker',
+            'Clicker - Convenient clicker',
             'Hud - Useful information',
             'ShowWaterMark - Watermark on screen',
-            'MaxRange - Maximum render distance',
-            'AntiAnomaly - Remove anomalies'
+            'MaxRange - Maximum display distance',
+            'AntiAnomaly - Anomaly filter'
           ]
         },
         artVision: {
           title: 'STALCRAFT ArtVision',
-          status: '✅ Undetected',
+          status: '✅ Active',
           desc: 'Specialized package for artifact hunting. Range: 80+ meters | Works 360°',
           features: [
-            'ArtefactEsp - Display artifacts through walls',
-            'SoundEsp - Display player actions through walls',
-            'OtherEsp - Display anomalies and event items through walls',
+            'ArtefactEsp - Visual display of artifacts',
+            'SoundEsp - Visual display of player actions',
+            'OtherEsp - Display of anomalies and event objects',
             'EspType (Edged,Filled,Line) - Drawing type',
             'Filled - Box fill',
             'CheckName - Shows name',
@@ -339,18 +338,17 @@ const Index = () => {
         },
         privateVision: {
           title: 'STALCRAFT PrivateVision',
-          status: '✅ Undetected • Premium',
-          desc: 'Full package - all EspVision + ArtVision features + exclusive',
+          status: '✅ Active • Premium',
+          desc: 'Full package - all EspVision + ArtVision features + exclusive features',
           allFrom: 'All from EspVision + ArtVision',
           features: [
-            'CheckArmor - Enemy armor',
-            'CheckWeapons - Enemy weapons',
-            'BagsEsp - Death bags',
-            'TainikEsp - All types of stashes',
+            'CheckArmor - Player armor information',
+            'CheckWeapons - Player weapon information',
+            'BagsEsp - Display items on the ground',
+            'TainikEsp - Display all types of stashes',
             'BarterEsp - Barters, minerals',
             'MobEsp - All mutants',
-            'MaxPnv - Admin NVG',
-            'AimBot - Auto aim',
+            'MaxPnv - Enhanced NVG',
             '+ Full customization'
           ]
         }
@@ -378,7 +376,7 @@ const Index = () => {
           },
           custom: {
             name: 'Custom Role',
-            desc: 'HWID reset, grant subscriptions, create keys',
+            desc: 'HWID reset, access management, create keys',
             price: '20,000 ₽ for 3 months'
           }
         }
@@ -414,7 +412,7 @@ const Index = () => {
           {
             number: '05',
             title: 'Start Playing',
-            desc: 'Download loader and enjoy the game with cheats',
+            desc: 'Download loader and enjoy the game',
             icon: 'Rocket'
           }
         ]
@@ -435,14 +433,14 @@ const Index = () => {
           },
           {
             q: 'What\'s the difference between products?',
-            a: 'EspVision - basic ESP. ArtVision - artifacts. PrivateVision - premium with everything.'
+            a: 'EspVision - basic visualization package. ArtVision - specialized for artifacts. PrivateVision - premium with all features.'
           }
         ]
       },
       about: {
         title: 'About ExoVision Project',
         historyTitle: 'Project History',
-        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create free tools for STALCRAFT - basic ESP and color aimbot. Demand exceeded expectations, our developments were even resold on other platforms.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
+        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create visualization tools for STALCRAFT. Demand exceeded expectations, our developments became widely popular.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
         teamTitle: 'Our Team',
         admin: 'Administrator-Programmer',
         adminDesc: '@KripKripo1ek - Chief Architect',
