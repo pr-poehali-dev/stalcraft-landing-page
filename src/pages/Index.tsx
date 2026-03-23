@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import HeroSection from "@/components/HeroSection";
-import ProductsSection from "@/components/ProductsSection";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
@@ -48,8 +48,10 @@ const Index = () => {
         getIt: 'Получить'
       },
       hero: {
-        subtitle1: 'Мы предлагаем продвинутое программное обеспечение для игры,',
-        subtitle2: 'подкрепленное поддержкой 24/7 и непревзойденным набором функций.',
+        title1: 'STALCRAFT',
+        title2: 'CHEAT',
+        subtitle1: 'Мы предлагаем самые эффективные и необнаруживаемые читы,',
+        subtitle2: 'подкрепленные поддержкой 24/7 и непревзойденным набором функций.',
         aboutBtn: 'О нас',
         buyBtn: 'Купить сейчас'
       },
@@ -58,8 +60,8 @@ const Index = () => {
         brand: 'EXOVISION',
         fastUpdate: 'Быстрые обновления',
         fastUpdateDesc: 'Мгновенные обновления после каждого патча игры',
-        undetected: 'Стабильная работа',
-        undetectedDesc: 'Надёжный и стабильный софт с 2019 года',
+        undetected: 'Необнаружим',
+        undetectedDesc: '100% защита от античита с 2019 года',
         support: '24/7 Поддержка',
         supportDesc: 'Круглосуточная поддержка в Telegram и Discord',
         customization: 'Полная кастомизация',
@@ -69,84 +71,69 @@ const Index = () => {
         title: 'Наши продукты',
         subtitle: 'Выберите подходящий пакет функций',
         espVision: {
-          title: 'EspVision',
-          status: '✅ Активен',
-          desc: 'Базовый пакет с ESP-функциями для отображения игроков, NPC и объектов на карте',
+          title: 'STALCRAFT EspVision',
+          status: '✅ Необнаружим',
+          desc: 'Базовый пакет с ESP функциями для отображения игроков и NPC',
           features: [
-            'AimBot — Автоматическая наводка на врагов',
-            'PlayerEsp — Отображение игроков',
-            'BagsEsp — Отображение трупов и сумок',
-            'BarterEsp — Отображение бартера',
-            'MobEsp — Отображение мобов',
-            'ArtefactEsp — Отображение артефактов',
-            'AnomalyEsp — Отображение аномалий',
-            'NpcEsp — Отображение NPC',
-            'DrawName — Имена объектов',
-            'EspType (Edged,Filled,Line) — Тип рисовки',
-            'Filled — Заливка бокса',
-            'EspColor — Цвет бокса',
-            'Distance — Дистанция до игрока',
-            'Tracers — Линия до игрока',
-            'DistanceColor — Цвет Distance',
-            'TracersColor — Цвет Tracers',
-            'MaxRange — Макс. прогруз игроков',
-            'CrossHair — Прицел в центре экрана',
-            'CrossHairType — Тип прицела',
-            'CrossHairColor — Цвет прицела',
-            'Hud — Полезная информация',
-            'ShowWaterMark — Watermark на экране',
-            'Полноэкранный режим | Все версии Windows'
+            'PlayerEsp - Отображение игроков через стены',
+            'DrawName - Отображение имена игроков',
+            'CheckTeamates - Отображение союзников',
+            'NpcEsp - Отображение нпс через стены',
+            'EspType (Edged,Filled,Line) - Тип рисовки',
+            'Filled - Заливка бокса',
+            'EspColor - Изменение цвета бокса',
+            'Distance - Дистанция до игрока',
+            'Tracers - Линия до игрока',
+            'DistanceColor - Цвет Distance',
+            'TracersColor - Цвет Tracers',
+            'CrossHair - Прицел в центре экрана',
+            'CrossHairType - Выбор типа прицела',
+            'CrossHairColor - Цвет прицела',
+            'Clicker - Удобный автокликер',
+            'Hud - Полезная информация',
+            'ShowWaterMark - Watermark на экране',
+            'MaxRange - Максимальный прогруз',
+            'AntiAnomaly - Удаляет аномалии'
           ]
         },
         artVision: {
-          title: 'ArtVision',
-          status: '✅ Активен',
-          desc: 'Специализированный пакет для поиска артефактов. Дальность: 80+ метров | 360°',
+          title: 'STALCRAFT ArtVision',
+          status: '✅ Необнаружим',
+          desc: 'Специализированный пакет для поиска артефактов. Дальность: 80+ метров | Работает на 360°',
           features: [
-            'ArtefactEsp — Дистанция и имя артефактов',
-            'SoundEsp — Отображение действий игроков',
-            'OtherEsp — Аномалии и ивентовые плюшки',
-            'EspType (Edged,Filled,Line) — Тип рисовки',
-            'Filled — Заливка бокса',
-            'CheckName — Название объекта',
-            'EspColor — Цвет бокса',
-            'DrawDistance — Дистанция до коробки',
-            'Tracers — Линия до артефакта',
-            'DistanceColor — Цвет Distance',
-            'TracersColor — Цвет Tracers',
-            'Distance — Ограничение дальности ESP',
-            'CrossHair — Прицел в центре экрана',
-            'CrossHairType — Тип прицела',
-            'CrossHairColor — Цвет прицела',
-            'Hud — Полезная информация',
-            'ShowWaterMark — Watermark на экране',
-            'Полноэкранный режим | Все версии Windows'
-          ]
-        },
-        addonSpoofer: {
-          title: 'Addon & Spoofer',
-          status: '✅ Бесплатно при подписке',
-          desc: 'Дополнительные утилиты, доступные при любой активной подписке',
-          features: [
-            'Addon — Антианомалии',
-            'Spoofer — Спуф системы',
-            'Доступны при любой активной подписке'
+            'ArtefactEsp - Отображение артефактов через стены',
+            'SoundEsp - Отображение действий игроков через стены',
+            'OtherEsp - Отображение аномалий и ивентовых плюшек через стены',
+            'EspType (Edged,Filled,Line) - Тип рисовки',
+            'Filled - Заливка бокса',
+            'CheckName - Показывает название',
+            'EspColor - Изменение цвета бокса',
+            'Distance - Дистанция до артефакта',
+            'Tracers - Линия до артефакта',
+            'DistanceColor - Цвет Distance',
+            'TracersColor - Цвет Tracers',
+            'CrossHair - Прицел в центре экрана',
+            'CrossHairType - Выбор типа прицела',
+            'CrossHairColor - Цвет прицела',
+            'Hud - Полезная информация',
+            'ShowWaterMark - Watermark на экране'
           ]
         },
         privateVision: {
-          title: 'PrivateVision',
-          status: '✅ Активен • Премиум',
-          desc: 'Все функции EspVision + ArtVision + эксклюзивные премиум-функции',
+          title: 'STALCRAFT PrivateVision',
+          status: '✅ Необнаружим • Премиум',
+          desc: 'Полный пакет - все функции EspVision + ArtVision + эксклюзив',
           allFrom: 'Все из EspVision + ArtVision',
           features: [
-            'CheckArmor | CheckWeapons — Броня и оружие игроков/NPC',
-            'BagsEsp | BagsDistance | BagsName — Сумки после смерти',
-            'TainikEsp | TainikDistance | TainikName — Схроны (малые/средние/большие)',
-            'BarterEsp | BarterDistance | BarterName — Бартер, мякоть, кусты, минералы',
-            'ArtefactEsp | ArtefactDistance | ArtefactName — Артефакты и их имена',
-            'MobEsp | MobDistance | MobName — Все мутанты и их имена',
-            'MaxPnv — ПНВ до максимального уровня',
-            'AimBot — Наводка с полной кастомизацией'
+            'CheckArmor - Броня врагов',
+            'CheckWeapons - Оружие врагов',
+            'BagsEsp - Сумки после смерти',
+            'TainikEsp - Схроны всех типов',
+            'BarterEsp - Бартеры, минералы',
+            'MobEsp - Все мутанты',
+            'MaxPnv - Админ ПНВ',
+            'AimBot - Авто-наводка',
+            '+ Полная кастомизация'
           ]
         }
       },
@@ -173,7 +160,7 @@ const Index = () => {
           },
           custom: {
             name: 'Кастом роль',
-            desc: 'Сброс HWID, управление доступом, создание ключей',
+            desc: 'Сброс HWID, выдача подписок, создание ключей',
             price: '20 000 ₽ за 3 месяца'
           }
         }
@@ -197,7 +184,7 @@ const Index = () => {
           {
             number: '03',
             title: 'Выберите продукт',
-            desc: 'Нажмите «Покупка», выберите пакет и период подписки',
+            desc: 'Нажмите «Покупка», выберите софт и период подписки',
             icon: 'ShoppingCart'
           },
           {
@@ -209,7 +196,7 @@ const Index = () => {
           {
             number: '05',
             title: 'Начните играть',
-            desc: 'Скачайте лоадер и наслаждайтесь игрой',
+            desc: 'Скачайте лоадер и наслаждайтесь игрой с читом',
             icon: 'Rocket'
           }
         ]
@@ -230,14 +217,14 @@ const Index = () => {
           },
           {
             q: 'В чем разница между продуктами?',
-            a: 'EspVision - базовый пакет визуализации. ArtVision - специализирован на артефактах. PrivateVision - премиум со всеми функциями.'
+            a: 'EspVision - базовый ESP. ArtVision - артефакты. PrivateVision - премиум со всем.'
           }
         ]
       },
       about: {
         title: 'О проекте ExoVision',
         historyTitle: 'История проекта',
-        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал инструменты визуализации для игр. Спрос превзошел ожидания, наши разработки стали популярными.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
+        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал бесплатные инструменты для STALCRAFT - базовые ESP и колор аимбот. Спрос превзошел ожидания, наши разработки даже перепродавались на других площадках.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
         teamTitle: 'Наша команда',
         admin: 'Администратор-Программист',
         adminDesc: '@KripKripo1ek - Главный архитектор',
@@ -279,7 +266,9 @@ const Index = () => {
         getIt: 'Get it'
       },
       hero: {
-        subtitle1: 'We deliver advanced software for the game,',
+        title1: 'STALCRAFT',
+        title2: 'CHEAT',
+        subtitle1: 'We deliver the market\'s most effective and undetected cheats,',
         subtitle2: 'backed by 24/7 support and an unbeatable feature set.',
         aboutBtn: 'About Us',
         buyBtn: 'Buy Now'
@@ -289,8 +278,8 @@ const Index = () => {
         brand: 'EXOVISION',
         fastUpdate: 'Fastest to update',
         fastUpdateDesc: 'Instant updates after every game patch',
-        undetected: 'Reliable Software',
-        undetectedDesc: 'Stable and reliable software since 2019',
+        undetected: 'Undetected',
+        undetectedDesc: '100% anti-cheat protection since 2019',
         support: '24/7 Support',
         supportDesc: 'Round-the-clock support in Telegram and Discord',
         customization: 'Full customization',
@@ -300,84 +289,69 @@ const Index = () => {
         title: 'Our Products',
         subtitle: 'Choose the right feature package',
         espVision: {
-          title: 'EspVision',
-          status: '✅ Active',
-          desc: 'Basic ESP package for displaying players, NPCs and objects on the map',
+          title: 'STALCRAFT EspVision',
+          status: '✅ Undetected',
+          desc: 'Basic package with ESP features for displaying players and NPCs',
           features: [
-            'AimBot — Automatic aim on enemies',
-            'PlayerEsp — Display players',
-            'BagsEsp — Display corpses and bags',
-            'BarterEsp — Display barter locations',
-            'MobEsp — Display mobs',
-            'ArtefactEsp — Display artifacts',
-            'AnomalyEsp — Display anomalies',
-            'NpcEsp — Display NPCs',
-            'DrawName — Object names',
-            'EspType (Edged,Filled,Line) — Drawing type',
-            'Filled — Box fill',
-            'EspColor — Box color',
-            'Distance — Distance to player',
-            'Tracers — Line to player',
-            'DistanceColor — Distance color',
-            'TracersColor — Tracers color',
-            'MaxRange — Max player render range',
-            'CrossHair — Crosshair on screen',
-            'CrossHairType — Crosshair type',
-            'CrossHairColor — Crosshair color',
-            'Hud — Useful overlay info',
-            'ShowWaterMark — Watermark on screen',
-            'Fullscreen mode | All Windows versions'
+            'PlayerEsp - Display players through walls',
+            'DrawName - Display player names',
+            'CheckTeamates - Display teammates',
+            'NpcEsp - Display NPCs through walls',
+            'EspType (Edged,Filled,Line) - Drawing type',
+            'Filled - Box fill',
+            'EspColor - Box color change',
+            'Distance - Distance to player',
+            'Tracers - Line to player',
+            'DistanceColor - Distance color',
+            'TracersColor - Tracers color',
+            'CrossHair - Crosshair in screen center',
+            'CrossHairType - Crosshair type selection',
+            'CrossHairColor - Crosshair color',
+            'Clicker - Convenient auto-clicker',
+            'Hud - Useful information',
+            'ShowWaterMark - Watermark on screen',
+            'MaxRange - Maximum render distance',
+            'AntiAnomaly - Remove anomalies'
           ]
         },
         artVision: {
-          title: 'ArtVision',
-          status: '✅ Active',
-          desc: 'Specialized artifact hunting package. Range: 80+ meters | 360°',
+          title: 'STALCRAFT ArtVision',
+          status: '✅ Undetected',
+          desc: 'Specialized package for artifact hunting. Range: 80+ meters | Works 360°',
           features: [
-            'ArtefactEsp — Artifact distance and name',
-            'SoundEsp — Player actions display',
-            'OtherEsp — Anomalies and event items',
-            'EspType (Edged,Filled,Line) — Drawing type',
-            'Filled — Box fill',
-            'CheckName — Object name',
-            'EspColor — Box color',
-            'DrawDistance — Distance to box',
-            'Tracers — Line to artifact',
-            'DistanceColor — Distance color',
-            'TracersColor — Tracers color',
-            'Distance — ESP range limit',
-            'CrossHair — Crosshair on screen',
-            'CrossHairType — Crosshair type',
-            'CrossHairColor — Crosshair color',
-            'Hud — Useful overlay info',
-            'ShowWaterMark — Watermark on screen',
-            'Fullscreen mode | All Windows versions'
-          ]
-        },
-        addonSpoofer: {
-          title: 'Addon & Spoofer',
-          status: '✅ Free with subscription',
-          desc: 'Extra utilities available with any active subscription',
-          features: [
-            'Addon — Anti-anomaly',
-            'Spoofer — System spoof',
-            'Available with any active subscription'
+            'ArtefactEsp - Display artifacts through walls',
+            'SoundEsp - Display player actions through walls',
+            'OtherEsp - Display anomalies and event items through walls',
+            'EspType (Edged,Filled,Line) - Drawing type',
+            'Filled - Box fill',
+            'CheckName - Shows name',
+            'EspColor - Box color change',
+            'Distance - Distance to artifact',
+            'Tracers - Line to artifact',
+            'DistanceColor - Distance color',
+            'TracersColor - Tracers color',
+            'CrossHair - Crosshair in screen center',
+            'CrossHairType - Crosshair type selection',
+            'CrossHairColor - Crosshair color',
+            'Hud - Useful information',
+            'ShowWaterMark - Watermark on screen'
           ]
         },
         privateVision: {
-          title: 'PrivateVision',
-          status: '✅ Active • Premium',
-          desc: 'All EspVision + ArtVision features + exclusive premium features',
+          title: 'STALCRAFT PrivateVision',
+          status: '✅ Undetected • Premium',
+          desc: 'Full package - all EspVision + ArtVision features + exclusive',
           allFrom: 'All from EspVision + ArtVision',
           features: [
-            'CheckArmor | CheckWeapons — Armor & weapon info for players/NPCs',
-            'BagsEsp | BagsDistance | BagsName — Death bags display',
-            'TainikEsp | TainikDistance | TainikName — All stash sizes',
-            'BarterEsp | BarterDistance | BarterName — Barters, minerals',
-            'ArtefactEsp | ArtefactDistance | ArtefactName — Artifacts & names',
-            'MobEsp | MobDistance | MobName — All mutants & names',
-            'MaxPnv — Maximum NVG level',
-            'AimBot — Aim assist with full customization'
+            'CheckArmor - Enemy armor',
+            'CheckWeapons - Enemy weapons',
+            'BagsEsp - Death bags',
+            'TainikEsp - All types of stashes',
+            'BarterEsp - Barters, minerals',
+            'MobEsp - All mutants',
+            'MaxPnv - Admin NVG',
+            'AimBot - Auto aim',
+            '+ Full customization'
           ]
         }
       },
@@ -404,7 +378,7 @@ const Index = () => {
           },
           custom: {
             name: 'Custom Role',
-            desc: 'HWID reset, access management, create keys',
+            desc: 'HWID reset, grant subscriptions, create keys',
             price: '20,000 ₽ for 3 months'
           }
         }
@@ -440,7 +414,7 @@ const Index = () => {
           {
             number: '05',
             title: 'Start Playing',
-            desc: 'Download loader and enjoy the game',
+            desc: 'Download loader and enjoy the game with cheats',
             icon: 'Rocket'
           }
         ]
@@ -461,14 +435,14 @@ const Index = () => {
           },
           {
             q: 'What\'s the difference between products?',
-            a: 'EspVision - basic visualization package. ArtVision - specialized for artifacts. PrivateVision - premium with all features.'
+            a: 'EspVision - basic ESP. ArtVision - artifacts. PrivateVision - premium with everything.'
           }
         ]
       },
       about: {
         title: 'About ExoVision Project',
         historyTitle: 'Project History',
-        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create visualization tools for games. Demand exceeded expectations, our developments became widely popular.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
+        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create free tools for STALCRAFT - basic ESP and color aimbot. Demand exceeded expectations, our developments were even resold on other platforms.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
         teamTitle: 'Our Team',
         admin: 'Administrator-Programmer',
         adminDesc: '@KripKripo1ek - Chief Architect',
@@ -562,7 +536,7 @@ const Index = () => {
                 className="w-8 h-8 sm:w-10 sm:h-10" 
                 style={{ filter: 'drop-shadow(0 0 8px rgba(255, 20, 147, 0.6))' }}
               />
-              <span className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision</span>
+              <span className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision Stalcraft</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
@@ -745,7 +719,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="sm:py-20 px-4 sm:px-6 relative overflow-hidden py-5 hidden">
+      <section className="sm:py-20 px-4 sm:px-6 relative overflow-hidden py-5">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">СКРИНШОТЫ</p>
@@ -884,17 +858,15 @@ const Index = () => {
         </div>
       </section>
 
-      <ProductsSection t={t} language={language} />
-
-      <section id="products-old" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative hidden">
+      <section id="products" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold mb-4">{t.products.title}</h2>
+            <h2 className="text-3xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h2>
             <p className="text-muted-foreground text-sm sm:text-lg">{t.products.subtitle}</p>
           </div>
 
           <Tabs defaultValue="espvision" className="w-full" onValueChange={setSelectedProduct}>
-            <TabsList className="grid w-full grid-cols-4 mb-8 bg-card/50 border border-primary/20 p-1 sm:p-2 rounded-xl max-w-3xl mx-auto h-auto">
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-card/50 border border-primary/20 p-1 sm:p-2 rounded-xl max-w-2xl mx-auto h-auto">
               <TabsTrigger value="espvision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2.5 sm:py-3 flex items-center justify-center">
                 <Icon name="Eye" className="mr-1 sm:mr-2" size={16} />
                 <span className="hidden sm:inline">EspVision</span>
@@ -904,11 +876,6 @@ const Index = () => {
                 <Icon name="Gem" className="mr-1 sm:mr-2" size={16} />
                 <span className="hidden sm:inline">ArtVision</span>
                 <span className="sm:hidden">Art</span>
-              </TabsTrigger>
-              <TabsTrigger value="addonspoofer" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2.5 sm:py-3 flex items-center justify-center">
-                <Icon name="Wrench" className="mr-1 sm:mr-2" size={16} />
-                <span className="hidden sm:inline">Addon & Spoofer</span>
-                <span className="sm:hidden">Addon</span>
               </TabsTrigger>
               <TabsTrigger value="privatevision" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white rounded-lg text-xs sm:text-sm py-2.5 sm:py-3 flex items-center justify-center">
                 <Icon name="Crown" className="mr-1 sm:mr-2" size={16} />
@@ -1139,29 +1106,6 @@ const Index = () => {
                       className="w-full h-full"
                     ></iframe>
                   </div>
-                </div>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="addonspoofer" className="animate-fade-in mt-0">
-              <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
-                  <div className="p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent">
-                    <Icon name="Wrench" className="text-primary" size={40} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl sm:text-3xl font-bold mb-2">{t.products.addonSpoofer.title}</h3>
-                    <p className="text-lg sm:text-xl text-primary mb-4">{t.products.addonSpoofer.status}</p>
-                    <p className="text-sm sm:text-base text-muted-foreground">{t.products.addonSpoofer.desc}</p>
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-3 gap-3">
-                  {t.products.addonSpoofer.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 px-4 py-3 rounded-xl bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
-                      <Icon name="Check" className="text-primary flex-shrink-0" size={16} />
-                      <span className="text-sm font-medium">{feature}</span>
-                    </div>
-                  ))}
                 </div>
               </Card>
             </TabsContent>
@@ -1540,27 +1484,13 @@ const Index = () => {
 
             <div className="relative h-full flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl blur-3xl glow-pulse"></div>
-              <div className="relative w-full rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-b from-purple-900/20 to-black/50 p-8 sm:p-12">
-                <div className="text-center space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4">
-                      <div className="text-3xl sm:text-4xl font-black text-primary mb-1">5000+</div>
-                      <div className="text-xs sm:text-sm text-muted-foreground">Пользователей</div>
-                    </div>
-                    <div className="bg-secondary/10 border border-secondary/20 rounded-2xl p-4">
-                      <div className="text-3xl sm:text-4xl font-black text-secondary mb-1">6+</div>
-                      <div className="text-xs sm:text-sm text-muted-foreground">Лет на рынке</div>
-                    </div>
-                    <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4">
-                      <div className="text-3xl sm:text-4xl font-black text-primary mb-1">24/7</div>
-                      <div className="text-xs sm:text-sm text-muted-foreground">Поддержка</div>
-                    </div>
-                    <div className="bg-secondary/10 border border-secondary/20 rounded-2xl p-4">
-                      <div className="text-3xl sm:text-4xl font-black text-secondary mb-1">4</div>
-                      <div className="text-xs sm:text-sm text-muted-foreground">Продукта</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-full rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-b from-purple-900/20 to-black/50">
+                <img 
+                  src="https://cdn.poehali.dev/files/4d9ec427-7885-4b16-919e-b640def4e82c.png" 
+                  alt="STALCRAFT Character"
+                  loading="lazy" 
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </div>
           </div>
@@ -1569,55 +1499,81 @@ const Index = () => {
 
       <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 relative">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs sm:text-sm text-primary mb-2 tracking-widest uppercase">{language === 'ru' ? 'ПОЧЕМУ МЫ' : 'WHY US'}</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{language === 'ru' ? 'ExoVision с 2019 года' : 'ExoVision since 2019'}</h2>
-            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">
-              {language === 'ru'
-                ? 'Мы создаём программное обеспечение для игр с 2019 года. За это время мы выпустили 4 продукта, собрали сообщество из 5000+ пользователей и обеспечиваем круглосуточную поддержку.'
-                : 'We have been creating software for games since 2019. Over this time we released 4 products, built a community of 5000+ users and provide round-the-clock support.'
-              }
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10">
-            {[
-              { icon: 'Calendar', color: 'primary', value: '2019', label: language === 'ru' ? 'Год основания' : 'Founded' },
-              { icon: 'Users', color: 'secondary', value: '5000+', label: language === 'ru' ? 'Пользователей' : 'Users' },
-              { icon: 'Package', color: 'primary', value: '4', label: language === 'ru' ? 'Продукта' : 'Products' },
-              { icon: 'Headphones', color: 'secondary', value: '24/7', label: language === 'ru' ? 'Поддержка' : 'Support' },
-            ].map((item, idx) => (
-              <div key={idx} className="relative group">
-                <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all`}></div>
-                <Card className="relative bg-card/40 backdrop-blur-sm border-primary/20 p-6 rounded-2xl text-center hover:border-primary/40 transition-all">
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br from-${item.color}/20 to-transparent flex items-center justify-center mb-4 mx-auto`}>
-                    <Icon name={item.icon} className={`text-${item.color}`} size={24} />
-                  </div>
-                  <div className={`text-3xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1`}>{item.value}</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider">{item.label}</div>
-                </Card>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-neon">{t.about.title}</h2>
+          
+          <div className="space-y-6 sm:space-y-8">
+            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                <Icon name="History" className="text-primary flex-shrink-0" size={28} />
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-bold mb-3">{t.about.historyTitle}</h4>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
+                    {t.about.historyText}
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+            </Card>
 
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { icon: 'Zap', title: language === 'ru' ? 'Быстрые обновления' : 'Fast updates', desc: language === 'ru' ? 'Обновляем ПО после каждого патча игры в кратчайшие сроки' : 'Software updated after every game patch as fast as possible' },
-              { icon: 'ShieldCheck', title: language === 'ru' ? 'Стабильная работа' : 'Stable operation', desc: language === 'ru' ? 'Надёжный и проверенный временем продукт с 2019 года' : 'Reliable and time-tested product since 2019' },
-              { icon: 'Settings', title: language === 'ru' ? 'Полная кастомизация' : 'Full customization', desc: language === 'ru' ? 'Гибкие настройки для каждой функции под ваши нужды' : 'Flexible settings for every feature to suit your needs' },
-            ].map((item, idx) => (
-              <Card key={idx} className="bg-card/40 backdrop-blur-sm border-primary/20 p-5 rounded-2xl hover:border-primary/40 transition-all">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center flex-shrink-0">
-                    <Icon name={item.icon} className="text-primary" size={20} />
+            <Card className="border border-primary/20 bg-card/40 backdrop-blur-sm p-4 sm:p-8 rounded-2xl">
+              <div className="flex items-start gap-3 sm:gap-4 mb-6">
+                <Icon name="Users" className="text-secondary flex-shrink-0" size={28} />
+                <h4 className="text-xl sm:text-2xl font-bold">{t.about.teamTitle}</h4>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Icon name="Crown" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.admin}</p>
+                      <a href="https://t.me/KripKripo1ek" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@KripKripo1ek</a>
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1">{language === 'ru' ? 'Главный архитектор' : 'Chief Architect'}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold mb-1 text-sm sm:text-base">{item.title}</h4>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="Wrench" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.support}</p>
+                      <a href="https://t.me/BelyaGetSexBelka" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@BelyaGetSexBelka</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Icon name="Video" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.smm}</p>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <a href="https://t.me/ii_558zmi" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@ii_558zmi</a>
+                        <a href="https://t.me/Mlecknul" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@Mlecknul</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </Card>
-            ))}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Icon name="Shield" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.mods}</p>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <a href="https://t.me/DrvSwapBuffers" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@DrvSwapBuffers</a>
+                        <a href="https://t.me/urchex" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@urchex</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Icon name="Heart" className="text-secondary mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-sm sm:text-base">{t.about.helpers}</p>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <a href="https://t.me/rxznve" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@rxznve</a>
+                        <a href="https://t.me/hehehoue" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@hehehoue</a>
+                        <a href="https://t.me/yaropolkkl" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@yaropolkkl</a>
+                        <a href="https://t.me/Cnclv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@Cnclv</a>
+                        <a href="https://t.me/akurise" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@akurise</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

@@ -4,8 +4,8 @@ import Icon from "@/components/ui/icon";
 interface HeroSectionProps {
   t: {
     hero: {
-      subtitle1?: string;
-      subtitle2?: string;
+      subtitle1: string;
+      subtitle2: string;
       aboutBtn: string;
       buyBtn: string;
     };
@@ -18,15 +18,30 @@ export default function HeroSection({ t, scrollToSection }: HeroSectionProps) {
     <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 relative overflow-hidden min-h-[90vh] flex items-center">
       <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 p-2 sm:p-8">
         <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-500 animate-[fadeInUp_1s_ease-out]">
-          <div className="w-full h-full bg-gradient-to-br from-primary/20 via-purple-900/30 to-transparent"></div>
+          <img 
+            src="https://cdn.poehali.dev/files/34bd024b-1cca-4af2-a8b2-0d72594000ee.png" 
+            alt="Stalcraft" 
+            loading="lazy"
+            className="w-full h-full object-cover opacity-0 sm:opacity-60 animate-[scaleIn_1.2s_ease-out_0.2s_forwards]"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/40 sm:from-primary/30 to-transparent"></div>
         </div>
         <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-secondary/30 hover:border-secondary/50 transition-all duration-500 animate-[fadeInUp_1s_ease-out_0.2s]">
-          <div className="w-full h-full bg-gradient-to-br from-secondary/20 via-pink-900/30 to-transparent"></div>
+          <img 
+            src="https://cdn.poehali.dev/files/3ed60931-0f20-49e0-a482-c892f552e81d.png" 
+            alt="Stalcraft"
+            loading="lazy" 
+            className="w-full h-full object-cover opacity-0 sm:opacity-60 animate-[scaleIn_1.2s_ease-out_0.4s_forwards]"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 sm:from-secondary/30 to-transparent"></div>
         </div>
         <div className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-500 animate-[fadeInUp_1s_ease-out_0.4s]">
-          <div className="w-full h-full bg-gradient-to-br from-primary/20 via-violet-900/30 to-transparent"></div>
+          <img 
+            src="https://cdn.poehali.dev/files/76dd263a-a1d7-451f-8f85-9e4a2d61260a.png" 
+            alt="Stalcraft"
+            loading="lazy" 
+            className="w-full h-full object-cover opacity-0 sm:opacity-60 animate-[scaleIn_1.2s_ease-out_0.6s_forwards]"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/40 sm:from-primary/30 to-transparent"></div>
         </div>
       </div>
@@ -39,10 +54,10 @@ export default function HeroSection({ t, scrollToSection }: HeroSectionProps) {
             <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 blur-3xl"></div>
             <h1 className="relative text-4xl sm:text-7xl md:text-9xl font-black tracking-tight leading-[0.9]">
               <span className="block bg-gradient-to-r from-primary via-purple-400 to-secondary bg-clip-text text-transparent">
-                EXO
+                STALCRAFT
               </span>
               <span className="block bg-gradient-to-r from-secondary via-purple-400 to-primary bg-clip-text text-transparent">
-                VISION
+                CHEAT
               </span>
             </h1>
           </div>
