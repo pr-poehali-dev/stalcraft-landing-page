@@ -22,7 +22,7 @@ const Payment = () => {
                 className="w-8 h-8 sm:w-10 sm:h-10" 
                 style={{ filter: 'drop-shadow(0 0 8px rgba(255, 20, 147, 0.6))' }}
               />
-              <span className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision Stalcraft</span>
+              <span className="text-lg sm:text-2xl font-bold text-neon tracking-wider">ExoVision</span>
             </div>
             <Button 
               variant="outline" 

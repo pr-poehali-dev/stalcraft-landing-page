@@ -4,8 +4,8 @@ import Icon from "@/components/ui/icon";
 interface HeroSectionProps {
   t: {
     hero: {
-      subtitle1: string;
-      subtitle2: string;
+      subtitle1?: string;
+      subtitle2?: string;
       aboutBtn: string;
       buyBtn: string;
     };
@@ -39,7 +39,7 @@ export default function HeroSection({ t, scrollToSection }: HeroSectionProps) {
             <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 blur-3xl"></div>
             <h1 className="relative text-4xl sm:text-7xl md:text-9xl font-black tracking-tight leading-[0.9]">
               <span className="block bg-gradient-to-r from-primary via-purple-400 to-secondary bg-clip-text text-transparent">
-                STALCRAFT
+                EXO
               </span>
               <span className="block bg-gradient-to-r from-secondary via-purple-400 to-primary bg-clip-text text-transparent">
                 VISION

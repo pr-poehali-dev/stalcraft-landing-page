@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import HeroSection from "@/components/HeroSection";
+import ProductsSection from "@/components/ProductsSection";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState('espvision');
@@ -48,8 +48,6 @@ const Index = () => {
         getIt: 'Получить'
       },
       hero: {
-        title1: 'STALCRAFT',
-        title2: 'VISION',
         subtitle1: 'Мы предлагаем продвинутое программное обеспечение для игры,',
         subtitle2: 'подкрепленное поддержкой 24/7 и непревзойденным набором функций.',
         aboutBtn: 'О нас',
@@ -239,7 +237,7 @@ const Index = () => {
       about: {
         title: 'О проекте ExoVision',
         historyTitle: 'История проекта',
-        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал инструменты визуализации для STALCRAFT. Спрос превзошел ожидания, наши разработки стали популярными.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
+        historyText: 'Всё началось в 2019 году с идеи KamiProject. Мы были одними из первых, кто создал инструменты визуализации для игр. Спрос превзошел ожидания, наши разработки стали популярными.\n\nВ 2024 году произошел момент X - полное обновление концепции и дизайна проекта. С 2021 по 2025 мы расширились на другие игры: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 и многие другие.',
         teamTitle: 'Наша команда',
         admin: 'Администратор-Программист',
         adminDesc: '@KripKripo1ek - Главный архитектор',
@@ -281,8 +279,6 @@ const Index = () => {
         getIt: 'Get it'
       },
       hero: {
-        title1: 'STALCRAFT',
-        title2: 'VISION',
         subtitle1: 'We deliver advanced software for the game,',
         subtitle2: 'backed by 24/7 support and an unbeatable feature set.',
         aboutBtn: 'About Us',
@@ -472,7 +468,7 @@ const Index = () => {
       about: {
         title: 'About ExoVision Project',
         historyTitle: 'Project History',
-        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create visualization tools for STALCRAFT. Demand exceeded expectations, our developments became widely popular.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
+        historyText: 'It all started in 2019 with the KamiProject idea. We were among the first to create visualization tools for games. Demand exceeded expectations, our developments became widely popular.\n\nIn 2024, moment X happened - a complete update of the project concept and design. From 2021 to 2025, we expanded to other games: Cristalix, VimeWorld, DeadLock, Valorant, GTA5 and many others.',
         teamTitle: 'Our Team',
         admin: 'Administrator-Programmer',
         adminDesc: '@KripKripo1ek - Chief Architect',
@@ -888,10 +884,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="products" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative">
+      <ProductsSection t={t} language={language} />
+
+      <section id="products-old" className="py-12 sm:py-20 px-4 sm:px-6 bg-black/30 relative hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold mb-4" style={{background: 'linear-gradient(to right, #8B5CF6, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t.products.title}</h2>
+            <h2 className="text-3xl sm:text-5xl font-bold mb-4">{t.products.title}</h2>
             <p className="text-muted-foreground text-sm sm:text-lg">{t.products.subtitle}</p>
           </div>
 
